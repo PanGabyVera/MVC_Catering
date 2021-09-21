@@ -17,8 +17,7 @@ public class Vista_principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Modelo_ConexionBD mbd=new Modelo_ConexionBD();
-        mbd.establecer_conexion();
+        
     }
     
 }

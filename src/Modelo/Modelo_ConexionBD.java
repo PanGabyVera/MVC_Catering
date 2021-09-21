@@ -24,7 +24,7 @@ public class Modelo_ConexionBD {
     
     Connection con;
 
-    public void establecer_conexion() {
+    public Modelo_ConexionBD () {
         
         try {
             Class.forName("org.postgresql.Driver");
