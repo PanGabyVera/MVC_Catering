@@ -157,7 +157,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jblMensaje">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Version Catering  1.0"/>
+            <Property name="text" type="java.lang.String" value="Version Catering 1.0"/>
           </Properties>
         </Component>
       </SubComponents>
