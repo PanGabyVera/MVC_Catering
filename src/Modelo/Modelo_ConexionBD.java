@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author Pandora
  */
 public class Modelo_ConexionBD {
-    String cadenaConexion="jdbc:postgresql://localhost:5432/Catering";
+    String cadenaConexion="jdbc:postgresql://localhost:5432/Sis_Catering";
     String usuario="postgres";
     String contraseña="1234";
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package ejecutable;
 
 import Modelo.Modelo_ConexionBD;
 
@@ -11,7 +11,7 @@ import Modelo.Modelo_ConexionBD;
  *
  * @author Pandora
  */
-public class Vista_principal {
+public class principal {
 
     /**
      * @param args the command line arguments
