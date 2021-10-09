@@ -9,19 +9,14 @@ package Modelo;
  *
  * @author USER
  */
-public class cliente {
-    private int cod_cliente;
+public class cliente extends persona{
 
-    public cliente(int cod_cliente) {
-        this.cod_cliente = cod_cliente;
+    public cliente() {
     }
 
-    public int getCod_cliente() {
-        return cod_cliente;
+    public cliente(String nombres, String apellidos, String telefono, String correo, String ci, String direccion) {
+        super(nombres, apellidos, telefono, correo, ci, direccion);
     }
-
-    public void setCod_cliente(int cod_cliente) {
-        this.cod_cliente = cod_cliente;
-    }
+    
     
 }

@@ -10,23 +10,23 @@ package Modelo;
  * @author USER
  */
 public class paquetes {
-     private int cod_paquete;
+     private String cod_paquete;
       private String nombre;
        private String tipo;
         private int precio;
 
-    public paquetes(int cod_paquete, String nombre, String tipo, int precio) {
+    public paquetes(String cod_paquete, String nombre, String tipo, int precio) {
         this.cod_paquete = cod_paquete;
         this.nombre = nombre;
         this.tipo = tipo;
         this.precio = precio;
     }
 
-    public int getCod_paquete() {
+    public String getCod_paquete() {
         return cod_paquete;
     }
 
-    public void setCod_paquete(int cod_paquete) {
+    public void setCod_paquete(String cod_paquete) {
         this.cod_paquete = cod_paquete;
     }
 

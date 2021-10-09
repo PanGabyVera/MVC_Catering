@@ -9,24 +9,20 @@ package Modelo;
  *
  * @author USER
  */
-public class empleado {
-     private int cod_empeado;
+public class empleado extends persona{
       private String cargo;
        private int salario;
 
-    public empleado(int cod_empeado, String cargo, int salario) {
-        this.cod_empeado = cod_empeado;
+    public empleado() {
+    }
+
+    public empleado(String cargo, int salario, String nombres, String apellidos, String telefono, String correo, String ci, String direccion) {
+        super(nombres, apellidos, telefono, correo, ci, direccion);
         this.cargo = cargo;
         this.salario = salario;
     }
 
-    public int getCod_empeado() {
-        return cod_empeado;
-    }
 
-    public void setCod_empeado(int cod_empeado) {
-        this.cod_empeado = cod_empeado;
-    }
 
     public String getCargo() {
         return cargo;

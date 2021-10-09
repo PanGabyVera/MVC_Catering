@@ -10,15 +10,15 @@ package Modelo;
  * @author USER
  */
 public class inventario {
-     private int cod_inventario;
+     private String cod_inventario;
       private String nombre;
        private int precio;
 
-    public int getCod_inventario() {
+    public String getCod_inventario() {
         return cod_inventario;
     }
 
-    public void setCod_inventario(int cod_inventario) {
+    public void setCod_inventario(String cod_inventario) {
         this.cod_inventario = cod_inventario;
     }
 
@@ -38,7 +38,7 @@ public class inventario {
         this.precio = precio;
     }
 
-    public inventario(int cod_inventario, String nombre, int precio) {
+    public inventario(String cod_inventario, String nombre, int precio) {
         this.cod_inventario = cod_inventario;
         this.nombre = nombre;
         this.precio = precio;
