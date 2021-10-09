@@ -1,7 +1,6 @@
 
 package Vista;
 
-import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
@@ -542,6 +541,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(154, 200, 200));
+        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createTitledBorder("")));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel8.setText("Datos de persona");
