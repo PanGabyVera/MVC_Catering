@@ -10,19 +10,19 @@ package Modelo;
  * @author USER
  */
 public class ingredientes {
-     private int cod_ingrediente;
+     private String cod_ingrediente;
       private String nombre;
 
-    public ingredientes(int cod_ingrediente, String nombre) {
+    public ingredientes(String cod_ingrediente, String nombre) {
         this.cod_ingrediente = cod_ingrediente;
         this.nombre = nombre;
     }
 
-    public int getCod_ingrediente() {
+    public String getCod_ingrediente() {
         return cod_ingrediente;
     }
 
-    public void setCod_ingrediente(int cod_ingrediente) {
+    public void setCod_ingrediente(String cod_ingrediente) {
         this.cod_ingrediente = cod_ingrediente;
     }
 

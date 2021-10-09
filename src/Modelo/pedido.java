@@ -12,15 +12,18 @@ import java.util.Date;
  * @author USER
  */
 public class pedido {
-     private int cod_pedido;
+     private String cod_pedido;
+     private String cod_cliente;
+     private String cod_paquete;
       private Date hora_entrega;
        private Date Fecha_enterega;
+       private String direccion_entre;
 
-    public int getCod_pedido() {
+    public String getCod_pedido() {
         return cod_pedido;
     }
 
-    public void setCod_pedido(int cod_pedido) {
+    public void setCod_pedido(String cod_pedido) {
         this.cod_pedido = cod_pedido;
     }
 
@@ -40,10 +43,18 @@ public class pedido {
         this.Fecha_enterega = Fecha_enterega;
     }
 
-    public pedido(int cod_pedido, Date hora_entrega, Date Fecha_enterega) {
+    public pedido() {
+    }
+
+    public pedido(String cod_pedido, String cod_cliente, String cod_paquete, Date hora_entrega, Date Fecha_enterega, String direccion_entre) {
         this.cod_pedido = cod_pedido;
+        this.cod_cliente = cod_cliente;
+        this.cod_paquete = cod_paquete;
         this.hora_entrega = hora_entrega;
         this.Fecha_enterega = Fecha_enterega;
+        this.direccion_entre = direccion_entre;
     }
+
+    
     
 }
