@@ -146,9 +146,7 @@
                       <Component id="btnac1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Component id="btnca" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnconpe" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="156" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -160,7 +158,6 @@
                           <Component id="btnac" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnac1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnca" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnconpe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
@@ -181,11 +178,6 @@
             <Component class="javax.swing.JButton" name="btnca">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnconpe">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar Persona"/>
               </Properties>
             </Component>
           </SubComponents>

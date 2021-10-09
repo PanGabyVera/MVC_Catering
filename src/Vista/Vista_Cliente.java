@@ -46,13 +46,7 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
         this.btnca = btnca;
     }
 
-    public JButton getBtnconpe() {
-        return btnconpe;
-    }
-
-    public void setBtnconpe(JButton btnconpe) {
-        this.btnconpe = btnconpe;
-    }
+    
 
     public JButton getBtncr() {
         return btncr;
@@ -260,7 +254,6 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
         btnac = new javax.swing.JButton();
         btnac1 = new javax.swing.JButton();
         btnca = new javax.swing.JButton();
-        btnconpe = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -343,8 +336,6 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
 
         btnca.setText("Cancelar");
 
-        btnconpe.setText("Consultar Persona");
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -356,9 +347,7 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
                 .addComponent(btnac1)
                 .addGap(81, 81, 81)
                 .addComponent(btnca)
-                .addGap(18, 18, 18)
-                .addComponent(btnconpe)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,8 +356,7 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnac)
                     .addComponent(btnac1)
-                    .addComponent(btnca)
-                    .addComponent(btnconpe))
+                    .addComponent(btnca))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -520,7 +508,6 @@ public class Vista_Cliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnac;
     private javax.swing.JButton btnac1;
     private javax.swing.JButton btnca;
-    private javax.swing.JButton btnconpe;
     private javax.swing.JButton btncr;
     private javax.swing.JButton btned;
     private javax.swing.JButton btnel;
