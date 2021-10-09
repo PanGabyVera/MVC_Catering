@@ -78,13 +78,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         this.btnli = btnli;
     }
 
-    public JButton getBtnlispa() {
-        return btnlispa;
-    }
-
-    public void setBtnlispa(JButton btnlispa) {
-        this.btnlispa = btnlispa;
-    }
+    
 
     public JDialog getDlgped() {
         return dlgped;
@@ -324,7 +318,6 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jPanel6 = new javax.swing.JPanel();
         btnac = new javax.swing.JButton();
         btnca = new javax.swing.JButton();
-        btnlispa = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -421,7 +414,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jdcfech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,8 +447,6 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
 
         btnca.setText("Cancelar");
 
-        btnlispa.setText("Listado de paquetes");
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -465,9 +456,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                 .addComponent(btnac)
                 .addGap(81, 81, 81)
                 .addComponent(btnca)
-                .addGap(18, 18, 18)
-                .addComponent(btnlispa)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,8 +464,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnac)
-                    .addComponent(btnca)
-                    .addComponent(btnlispa))
+                    .addComponent(btnca))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -636,7 +624,6 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnel;
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
-    private javax.swing.JButton btnlispa;
     private javax.swing.JDialog dlgped;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
