@@ -349,7 +349,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Version 1.0"/>
+        <Property name="text" type="java.lang.String" value="Version  1.0"/>
       </Properties>
     </Component>
   </SubComponents>

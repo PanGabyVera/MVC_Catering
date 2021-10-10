@@ -541,7 +541,7 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 351, Short.MAX_VALUE)
         );
 
-        jLabel1.setText("Version 1.0");
+        jLabel1.setText("Version  1.0");
 
         jmper.setText("Persona");
 
