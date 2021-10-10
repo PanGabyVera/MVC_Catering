@@ -1,6 +1,7 @@
 
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
@@ -540,8 +541,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(154, 200, 200));
-        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createTitledBorder("")));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel8.setText("Datos de persona");
@@ -551,7 +551,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(320, 320, 320)
+                .addGap(311, 311, 311)
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -563,7 +563,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
                 .addGap(40, 40, 40))
         );
 
-        jPanel2.setBackground(new java.awt.Color(243, 229, 194));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
         tblper.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -581,7 +581,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
             tblper.getColumnModel().getColumn(7).setResizable(false);
         }
 
-        jPanel3.setBackground(new java.awt.Color(154, 200, 200));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
         btnli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mvc/vista/Iconos/027-newspaper.png"))); // NOI18N
         btnli.setText("Listar");
@@ -659,7 +659,7 @@ public class VistaPersona extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -674,8 +674,8 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
