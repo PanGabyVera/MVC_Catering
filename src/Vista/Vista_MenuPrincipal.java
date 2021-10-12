@@ -506,13 +506,12 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         jToolBar1.setForeground(new java.awt.Color(255, 255, 255));
         jToolBar1.setRollover(true);
 
-        btncarg.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sebastian\\Downloads\\contrato1.png")); // NOI18N
         btncarg.setFocusable(false);
         btncarg.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btncarg.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btncarg);
 
-        btnimp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/png/015-printerr.png"))); // NOI18N
+        btnimp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/png/015-printer.png"))); // NOI18N
         btnimp.setToolTipText("Imprimir");
         btnimp.setFocusable(false);
         btnimp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -523,7 +522,7 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 888, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,11 +533,11 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         jdpmen.setLayout(jdpmenLayout);
         jdpmenLayout.setHorizontalGroup(
             jdpmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 928, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jdpmenLayout.setVerticalGroup(
             jdpmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 351, Short.MAX_VALUE)
+            .addGap(0, 499, Short.MAX_VALUE)
         );
 
         jLabel1.setText("Version  1.0");
@@ -681,9 +680,8 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jdpmen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpmen)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -691,11 +689,12 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdpmen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jdpmen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)))
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
