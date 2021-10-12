@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author Pandora
  */
 public class Modelo_ConexionBD {
-    String cadenaConexion="jdbc:postgresql://localhost:5432/Catering";
+    String cadenaConexion="jdbc:postgresql://localhost:5432/Sis_Catering";
     String usuario="postgres";
     String contraseña="1234";
     
@@ -49,5 +49,27 @@ public class Modelo_ConexionBD {
             return null;
         }
     
-    }    
+    }   
+
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+    
+    public boolean accion(String sqla){
+        try {
+            Statement st= con.createStatement();
+            boolean rb=st.execute(sqla);
+            st.close();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
+    
 }

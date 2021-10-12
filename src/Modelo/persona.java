@@ -10,25 +10,32 @@ package Modelo;
  * @author USER
  */
 public class persona {
+    
+    private String ci;
     private String nombres;
     private String apellidos;
     private String telefono;
     private String correo;
-    private String ci;
     private String direccion;
 
     public persona() {
     }
 
+    public persona(String ci, String nombres, String apellidos) {
+        this.ci = ci;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+    }
     
-    public persona(String nombres, String apellidos, String telefono, String correo, String ci, String direccion) {
+    public persona(String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+        this.ci = ci;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
-        this.ci = ci;
         this.direccion = direccion;
     }
+
 
     public String getNombres() {
         return nombres;
