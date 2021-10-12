@@ -1,18 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
+import javax.swing.JDesktopPane;
 import Modelo.Modelo_cliente;
+import Modelo.Ingredientes;
+import Modelo.Modelo_Ingrediente;
 import Vista.Vista_Cliente;
+import Vista.Vista_Ingrediente;
 import Vista.Vista_MenuPrincipal;
 
-/**
- *
- * @author Pandora
- */
+
+
 public class Control_principal {
     
     private Vista_MenuPrincipal vst;
@@ -24,6 +22,7 @@ public class Control_principal {
     
     public void iniciarControl(){
         vst.getJmicli().addActionListener(l->crudClienete());
+        vst.getJmiing().addActionListener(l->crudIngrediente());
     }
     
     private void crudClienete(){
@@ -34,4 +33,11 @@ public class Control_principal {
         cp.iniciaControl();
     }
     
+    private void crudIngrediente(){
+        Modelo_Ingrediente moin=new Modelo_Ingrediente();
+        Vista_Ingrediente viin=new Vista_Ingrediente();
+        vst.getJdpmen().add(viin);
+        Controlador_Ingrediente coin=new Controlador_Ingrediente(moin, viin);
+        coin.iniciaControl();
+    }
 }

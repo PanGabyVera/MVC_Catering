@@ -1,7 +1,7 @@
 
 package Vista;
 
-import com.toedter.calendar.JDateChooser;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;

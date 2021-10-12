@@ -222,6 +222,14 @@ public class Vista_Ingrediente extends javax.swing.JInternalFrame {
         this.txtnom = txtnom;
     }
 
+    public JButton getBtnac2() {
+        return btnac2;
+    }
+
+    public void setBtnac2(JButton btnac2) {
+        this.btnac2 = btnac2;
+    }
+
     
 
 
@@ -244,6 +252,7 @@ public class Vista_Ingrediente extends javax.swing.JInternalFrame {
         jPanel6 = new javax.swing.JPanel();
         btnac1 = new javax.swing.JButton();
         btnca = new javax.swing.JButton();
+        btnac2 = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -324,25 +333,30 @@ public class Vista_Ingrediente extends javax.swing.JInternalFrame {
 
         btnca.setText("Cancelar");
 
+        btnac2.setText("Aceptar");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(31, 31, 31)
                 .addComponent(btnac1)
-                .addGap(69, 69, 69)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnac2)
+                .addGap(32, 32, 32)
                 .addComponent(btnca)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnac1)
+                    .addComponent(btnac2)
                     .addComponent(btnca))
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout dlgingLayout = new javax.swing.GroupLayout(dlging.getContentPane());
@@ -491,6 +505,7 @@ public class Vista_Ingrediente extends javax.swing.JInternalFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnac1;
+    private javax.swing.JButton btnac2;
     private javax.swing.JButton btnca;
     private javax.swing.JButton btncr;
     private javax.swing.JButton btned;
