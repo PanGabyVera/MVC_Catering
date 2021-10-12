@@ -111,7 +111,7 @@
                           <Component id="aviso3" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="aviso2" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -160,7 +160,7 @@
                           <Component id="jtxtdirecion" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="aviso7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

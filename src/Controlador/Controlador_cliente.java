@@ -73,13 +73,13 @@ public class Controlador_cliente {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Crear registro de cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(540, 370);
+            vista.getDlgcli().setSize(348, 379);
             vista.getDlgcli().setVisible(true);
         } else if (origen == 2) {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Editar cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(540, 370);
+            vista.getDlgcli().setSize(348, 379);
             vista.getDlgcli().setVisible(true);
             pasarDatos();
         } else {
