@@ -37,13 +37,13 @@ public class Modelo_Ingrediente extends Ingredientes{
     
         try {
             String sql="select * from ingredientes WHERE ";
-            sql+=" UPPER(nombre) like UPPER('%"+aguja+"%')";
+            sql+=" UPPER(nom_ingre) like UPPER('%"+aguja+"%')";
             ResultSet rs=con.Consulta(sql);
             List<Ingredientes> lp= new ArrayList<Ingredientes>();
             while(rs.next()){
                 Ingredientes ingre= new Ingredientes();
                 ingre.setCod_ingrediente(rs.getString("cod_ingrediente"));
-                ingre.setNombre(rs.getString("nombre"));
+                ingre.setNombre(rs.getString("nom_ingre"));
          
                 lp.add(ingre);
             }
@@ -59,7 +59,7 @@ public class Modelo_Ingrediente extends Ingredientes{
     public boolean grabar(){
         
         String sql;
-        sql="INSERT INTO ingredeintes(cod_ingrediente,nombres) ";
+        sql="INSERT INTO ingredientes(cod_ingrediente,nom_ingre) ";
         sql+=" VALUES ('"+getCod_ingrediente()+"','"+getNombre()+"')";
         return con.accion(sql);
     }
@@ -73,7 +73,7 @@ public class Modelo_Ingrediente extends Ingredientes{
     }
      public boolean Editar() {
         String sql;
-        sql = "UPDATE ingrediente set nombre='" + getNombre() +"'";
+        sql = "UPDATE ingredientes set nom_ingre='" + getNombre() +"'";
         sql += " WHERE cod_ingrediente='" + getCod_ingrediente() + "'";
         return con.accion(sql);
     }

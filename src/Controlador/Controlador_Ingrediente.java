@@ -2,6 +2,7 @@
 package Controlador;
 
 import Modelo.Ingredientes;
+import Modelo.Modelo_ConexionBD;
 import Vista.Vista_Ingrediente;
 import Modelo.Modelo_Ingrediente;
 import Vista.Vista_MenuPrincipal;
@@ -61,10 +62,10 @@ public class Controlador_Ingrediente extends Ingredientes{
     Vista.getBtnli().addActionListener(l->cargaListados(""));
     Vista.getBtncr().addActionListener(l->cargarDialogo(11));
     Vista.getBtned().addActionListener(l->cargarDialogo(22));
-    Vista.getBtnac1().addActionListener(l->Guardarpersona());
-    Vista.getBtnac2().addActionListener(l->EditarPersona());
-    Vista.getBtnel().addActionListener(l-> EliminarPersona());
-    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
+    Vista.getBtnac1().addActionListener(l->GuardarIngrediente());
+    Vista.getBtnac2().addActionListener(l->EditarIngrediente());
+    Vista.getBtnel().addActionListener(l-> EliminarIngrediente());
+//    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
     Vista.getBtnca().addActionListener(l->Vista.getDlging().setVisible(false));
     
     //Controlador Buscar
@@ -72,233 +73,115 @@ public class Controlador_Ingrediente extends Ingredientes{
     
     
     }
-    private void  ImprimirRegistro(){
-        ConectarBD con =new ConectarBD();
-        try {
-        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/mvc/vista/reportes/ListaPersonas.jasper"));
-        Map<String,Object> parametros= new HashMap<String, Object>();
-        String aguja = vista.getTxtbu().getText();
-        parametros.put("paguja" , "%"+aguja+"%");
-        JasperPrint jp= JasperFillManager.fillReport(jr, parametros,con.getCon());
-        JasperViewer jv= new JasperViewer(jp);
-        jv.setVisible(true);    
-        } catch (JRException ex) {
-            Logger.getLogger(ControlPersona.class.getName()).log(Level.SEVERE,null,ex);
-        }      
-    } 
+//    private void  ImprimirRegistro(){
+//        Modelo_ConexionBD con =new Modelo_ConexionBD();
+//        try {
+//        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/mvc/vista/reportes/ListaPersonas.jasper"));
+//        Map<String,Object> parametros= new HashMap<String, Object>();
+//        String aguja = vista.getTxtbu().getText();
+//        parametros.put("paguja" , "%"+aguja+"%");
+//        JasperPrint jp= JasperFillManager.fillReport(jr, parametros,con.getCon());
+//        JasperViewer jv= new JasperViewer(jp);
+//        jv.setVisible(true);    
+//        } catch (JRException ex) {
+//            Logger.getLogger(ControlPersona.class.getName()).log(Level.SEVERE,null,ex);
+//        }      
+//    } 
     private void cargarDialogo(int origen){
-        vista.getDlgper().setSize(600,350);
-        vista.getDlgper().setLocationRelativeTo(vista);
-        vista.getTxtid().setText("");
-        vista.getTxtnom().setText("");
-        vista.getTxtape().setText("");
-        vista.getDtcfe().setCalendar(null);
-        vista.getTxtte().setText("");
-        vista.getTxtse().setText("");
-        vista.getTxtsu().setText("");
-        vista.getTxtcu().setText("");
-        vista.getLblfo().setIcon(null);
+        Vista.getDlging().setSize(600,350);
+        Vista.getDlging().setLocationRelativeTo(Vista);
+        Vista.getTxtcoin().setText("");
+        Vista.getTxtnom().setText("");
         if(origen==11){
-            vista.getDlgper().setTitle("Crear Persona");
-            vista.getBtnac1().setVisible(false);
-            vista.getBtnac().setVisible(true);
+            Vista.getDlging().setTitle("Crear Ingrediente");
+            Vista.getBtnac2().setVisible(false);
+            Vista.getBtnac1().setVisible(true);
         }
             if(origen==22){
-            vista.getDlgper().setTitle("Editar Persona");
-            int cont = vista.getTblper().getSelectedRow();
+            Vista.getDlging().setTitle("Editar Ingrediente");
+            int cont = Vista.getTbling().getSelectedRow();
             if (cont != -1) {
-            String idPersona = vista.getTblper().getValueAt(cont, 0).toString();
-                String nombres = vista.getTblper().getValueAt(cont, 1).toString();
-                String apellidos = vista.getTblper().getValueAt(cont, 2).toString();
+            String cod_ingrediente = Vista.getTbling().getValueAt(cont, 0).toString();
+                String nombre = Vista.getTbling().getValueAt(cont, 1).toString();
                 
-                String telefono = vista.getTblper().getValueAt(cont, 4).toString();
-                String sexo = vista.getTblper().getValueAt(cont, 5).toString();
-                String sueldo = vista.getTblper().getValueAt(cont, 6).toString();
-                String cupo = vista.getTblper().getValueAt(cont, 7).toString();
-                ImageIcon imagen = null;
-                if (vista.getTblper().getValueAt(cont, 8) != null) {
-                    imagen = (ImageIcon) ((javax.swing.JLabel) vista.getTblper().getValueAt(cont, 8)).getIcon();
-                }
-                 ModeloPersona p1 = new ModeloPersona();
-                p1.setIdpersona(idPersona);
-                vista.getTxtid().setText(idPersona);
-                vista.getTxtnom().setText(nombres);
-                vista.getTxtape().setText(apellidos);
-                vista.getTxtte().setText(telefono);
-                vista.getTxtse().setText(sexo);
-                vista.getDtcfe().setDate(new java.util.Date(p1.traerFecha().getTime()));
-                //vista.getDtcfe().setText(fechanacimiento);
-                vista.getTxtsu().setText(sueldo);
-                vista.getTxtcu().setText(cupo);
-                if (imagen != null) {
-                    java.awt.Image i = imagen.getImage();
-                    ImageIcon ime = new ImageIcon(i.getScaledInstance(vista.getLblfo().getWidth(), vista.getLblfo().getHeight(), java.awt.Image.SCALE_DEFAULT));
-                    vista.getLblfo().setIcon(ime);
-                } else {
-
-                }
-               
-                vista.getLblfo().updateUI();
-                vista.getBtnac().setVisible(false);
-                vista.getBtnac1().setVisible(true);
+                Modelo_Ingrediente p1 = new Modelo_Ingrediente();
+                p1.setCod_ingrediente(cod_ingrediente);
+                Vista.getTxtcoin().setText(cod_ingrediente);
+                Vista.getTxtnom().setText(nombre);
+                Vista.getBtnac1().setVisible(false);
+                Vista.getBtnac2().setVisible(true); 
         }
         
         }
-        vista.getDlgper().setVisible(true);
+        Vista.getDlging().setVisible(true);
     }
     
-//    private void cargaLista(){
-//    //Acciones necesarios para extraer los datos MODELO Y Mostrar en la Vista
-//        DefaultTableModel tablaMd;
-//        tablaMd=(DefaultTableModel)vista.getTblper().getModel();
-//        tablaMd.setNumRows(0);
-//        List<Persona> lista=modelo.listaPersonas("");
-//        lista.stream().forEach(per->{
-//         String[] fila={per.getIdpersona(),per.getNombres(),per.getApellidos(),String.valueOf(per.getEdad()),per.getTelefono(),per.getSexo(),per.getSueldo().toString(),String.valueOf(per.getCupo()),};
-//         tablaMd.addRow(fila);
-//        });
-//        
-//    }
+
     private void cargaListados(String aguja){
     
-        vista.getTblper().setDefaultRenderer(Object.class, new ImagenTabla());
-        vista.getTblper().setRowHeight(100);
-        DefaultTableCellRenderer renderer= new DefaultTableCellHeaderRenderer();
+        
         DefaultTableModel tblModel; 
-        tblModel=(DefaultTableModel)vista.getTblper().getModel();
+        tblModel=(DefaultTableModel)Vista.getTbling().getModel();
         tblModel.setNumRows(0);
-        List<Persona> lista=modelo.listaPersonas(aguja);
+        List<Ingredientes> lista=Modelo.listaIngrediente(aguja);
         int ncols=tblModel.getColumnCount();
         Holder<Integer> i = new Holder<>(0);
         lista.stream().forEach(per->{
         tblModel.addRow(new Object[ncols]);
-           vista.getTblper().setValueAt(per.getIdpersona() , i.value , 0);
-            vista.getTblper().setValueAt(per.getNombres(), i.value , 1);
-            vista.getTblper().setValueAt(per.getApellidos(), i.value, 2);
-            vista.getTblper().setValueAt( String.valueOf(per.getEdad()), i.value, 3);
-            vista.getTblper().setValueAt(per.getTelefono(), i.value, 4);
-            vista.getTblper().setValueAt(per.getSexo(), i.value, 5);
-            vista.getTblper().setValueAt(per.getSueldo(), i.value, 6);
-            vista.getTblper().setValueAt(per.getCupo(), i.value, 7);
-        java.awt.Image img = per.getFoto();
-           
-           if(img!=null){
-                Image newimg = img.getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
-                ImageIcon icon = new ImageIcon(newimg);
-                renderer.setIcon(icon);
-                vista.getTblper().setValueAt(new JLabel(icon), i.value, 8);
-           }else{
-               vista.getTblper().setValueAt(null, i.value, 8);
-           }
+           Vista.getTbling().setValueAt(per.getCod_ingrediente() , i.value , 0);
+           Vista.getTbling().setValueAt(per.getNombre(), i.value , 1);
            i.value++;
           
         });
 
         
     }
-    private void examinaFoto(){
-        JFileChooser jfc= new JFileChooser();
-        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        int estado=jfc.showOpenDialog(null);
-        if(estado==JFileChooser.APPROVE_OPTION){
-            try {
-                Image miImagen = ImageIO.read(jfc.getSelectedFile()).getScaledInstance(
-                        vista.getLblfo().getWidth(),
-                        vista.getLblfo().getHeight(),
-                        Image.SCALE_DEFAULT);
-                Icon icon=new ImageIcon(miImagen);
-                vista.getLblfo().setIcon(icon);
-                vista.getLblfo().updateUI();
-            } catch (IOException ex) {
-                Logger.getLogger(ControlPersona.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-    private void Guardarpersona(){
-      String idpersona = vista.getTxtid().getText();
-      String nombre = vista.getTxtnom().getText();
-      String apellido = vista.getTxtape().getText();
+    
+    private void GuardarIngrediente(){
+      String cod_ingrediente = Vista.getTxtcoin().getText();
+      String nombre = Vista.getTxtnom().getText();
       
-      Instant instant= vista.getDtcfe().getDate().toInstant();
-      ZoneId zid= ZoneId.of("America/Guayaquil");
-      ZonedDateTime zdt=ZonedDateTime.ofInstant(instant, zid);  
-      Date fecha = Date.valueOf(zdt.toLocalDate());
-      
-      String telefono = vista.getTxtte().getText();
-      String sexo = vista.getTxtse().getText();
-      double sueldo = Double.parseDouble(vista.getTxtsu().getText());
-      int cupo = Integer.parseInt(vista.getTxtcu().getText());
-      
-      
-      
-      
-      ModeloPersona persona = new ModeloPersona();
-      persona.setIdpersona(idpersona);
-      persona.setNombres(nombre);
-      persona.setApellidos(apellido);
-      persona.setFechanacimiento(fecha);
-      persona.setTelefono(telefono);
-      persona.setSexo(sexo);
-      persona.setSueldo(sueldo);
-      persona.setCupo(cupo);
-      
-      ImageIcon ic= (ImageIcon)vista.getLblfo().getIcon();
-        persona.setFoto(ic.getImage());
+      Modelo_Ingrediente ingre = new Modelo_Ingrediente();
+      ingre.setCod_ingrediente(cod_ingrediente);
+      ingre.setNombre(nombre);
        
-        if (persona.grabar()) {
-            JOptionPane.showMessageDialog(vista, "No se logro guardar");
-        } else {
+        if (ingre.grabar()) {
             cargaListados("");
-            vista.getDlgper().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Se guardo la persona");
+            Vista.getDlging().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Se guardo ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro guardar");
         }
     }
-    public void EliminarPersona(){
-        int ind=vista.getTblper().getSelectedRow();
+    public void EliminarIngrediente(){
+        int ind=Vista.getTbling().getSelectedRow();
         
-            String idpersona = vista.getTblper().getValueAt(ind, 0).toString();
-                ModeloPersona persona = new ModeloPersona();
-                persona.setIdpersona(idpersona);
-                if(persona.Eliminar()){
-                    JOptionPane.showMessageDialog(vista, "No se pudo eliminar");  
+            String cod_ingrediente = Vista.getTbling().getValueAt(ind, 0).toString();
+                Modelo_Ingrediente ingre = new Modelo_Ingrediente();
+                ingre.setCod_ingrediente(cod_ingrediente);
+                if(ingre.Eliminar()){
+                    cargaListados("");
+                   JOptionPane.showMessageDialog(Vista, "Se elimino");
                 }else{
-                   cargaListados("");
-                   JOptionPane.showMessageDialog(vista, "Se elimino la persona");
+                   
+                   JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");
                 }
         
     }
-    public void EditarPersona() {
-        int cont = vista.getTblper().getSelectedRow();
-        String idpersona = vista.getTblper().getValueAt(cont, 0).toString();
-        String nombres = vista.getTxtnom().getText();
-        String apellidos = vista.getTxtape().getText();
+    public void EditarIngrediente() {
+        int cont = Vista.getTbling().getSelectedRow();
+        String cod_ingrediente = Vista.getTbling().getValueAt(cont, 0).toString();
+        String nombre = Vista.getTxtnom().getText();
         
-        Instant instant= vista.getDtcfe().getDate().toInstant();
-        ZoneId zid= ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt=ZonedDateTime.ofInstant(instant, zid);  
-        Date fechanacimiento = Date.valueOf(zdt.toLocalDate());
-      
-        String telefono = vista.getTxtte().getText();
-        String sexo = vista.getTxtse().getText();
-        double sueldo = Double.parseDouble(vista.getTxtsu().getText());
-        int cupo = Integer.parseInt(vista.getTxtcu().getText());
-        ModeloPersona persona = new ModeloPersona();
-        persona.setIdpersona(idpersona);
-        persona.setNombres(nombres);
-        persona.setApellidos(apellidos);
-        persona.setFechanacimiento(fechanacimiento);
-        persona.setTelefono(telefono);
-        persona.setSexo(sexo);
-        persona.setSueldo(sueldo);
-        persona.setCupo(cupo);
-        ImageIcon imagen = (ImageIcon) vista.getLblfo().getIcon();
-        persona.setFoto(imagen.getImage());
-        if (persona.Editar() == true) {
-            JOptionPane.showMessageDialog(vista, "Hubo un error");
-        } else {
+        Modelo_Ingrediente ingre = new Modelo_Ingrediente();
+        ingre.setCod_ingrediente(cod_ingrediente);
+        ingre.setNombre(nombre);
+        if (ingre.Editar() == true) {
             cargaListados("");
-            vista.getDlgper().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Registro actualizado");
+            Vista.getDlging().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Registro actualizado");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "Hubo un error");
         }
     }
 }
