@@ -135,13 +135,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btncaring" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnfi" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                          <Component id="btncaring" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="lblid" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtcoin" min="-2" pref="66" max="-2" attributes="0"/>
@@ -149,9 +144,14 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtcan" min="-2" pref="77" max="-2" attributes="0"/>
-                              <EmptySpace pref="106" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="20" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnfi" max="32767" attributes="0"/>
+                          <Component id="btnfi1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnagre" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="btnagre1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -171,9 +171,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btncaring" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnfi" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnagre1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnca3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnfi1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -183,6 +183,7 @@
                           <Component id="txtcan" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnagre" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnca" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnfi" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                   </Group>
@@ -238,6 +239,11 @@
             <Component class="javax.swing.JButton" name="btnca3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Atras"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnfi1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Siguiente"/>
               </Properties>
             </Component>
           </SubComponents>

@@ -76,7 +76,7 @@ public class Modelo_Menu extends Menu{
     }
      public boolean EditarMe() {
         String sql;
-        sql = "UPDATE menu set precio_menu='" + getPrecio() +"'";
+        sql = "UPDATE menu set nom_menu='"+ getNombre()+"',precio_menu='" + getPrecio() +"'";
         sql += " WHERE cod_menu='" + getCod_menu() + "'";
         return con.accion(sql);
     }

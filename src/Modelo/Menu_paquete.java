@@ -1,27 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
-/**
- *
- * @author Pandora
- */
+
 public class Menu_paquete {
-    private String cod_menu;
     private String cod_paq;
+    private String cod_menu;
     private int cantidad;
+    private String nombre;
 
     public Menu_paquete() {
     }
 
-    public Menu_paquete(String cod_menu, String cod_paq, int cantidad) {
-        this.cod_menu = cod_menu;
+    public Menu_paquete(String cod_paq, String cod_menu, int cantidad, String nombre) {
         this.cod_paq = cod_paq;
+        this.cod_menu = cod_menu;
         this.cantidad = cantidad;
+        this.nombre = nombre;
     }
+
+    
 
     public String getCod_menu() {
         return cod_menu;
@@ -45,6 +42,14 @@ public class Menu_paquete {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 
