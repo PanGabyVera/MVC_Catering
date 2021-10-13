@@ -152,7 +152,7 @@ public class Controlador_inventario {
         Double pre=Double.parseDouble(vista.getTxtpre().getText());
         modelo.setPrecio(pre);
          
-        if (Validaciones() == false) {
+       // if (Validaciones() == false) {
 
             int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Informacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {
@@ -163,9 +163,9 @@ public class Controlador_inventario {
                     JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
                 }
             }
-        } else {
+      //  } else {
             JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
-        }
+        //}
 
     }
     
