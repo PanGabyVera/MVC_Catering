@@ -8,10 +8,14 @@ import Modelo.Ingredientes;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
 import Modelo.Modelo_Menu;
+import Modelo.Modelo_inventario;
+import Modelo.Modelo_pedido;
 import Vista.Vista_Cliente;
 import Vista.Vista_Ingrediente;
+import Vista.Vista_Inventario;
 import Vista.Vista_Menu;
 import Vista.Vista_MenuPrincipal;
+import Vista.Vista_Pedido;
 
 /**
  *
@@ -30,6 +34,8 @@ public class Control_principal {
         vst.getJmicli().addActionListener(l->crudClienete());
         vst.getJmiing().addActionListener(l->crudIngrediente());
         vst.getJmimen().addActionListener(l->crudMenu());
+        vst.getJmiinv().addActionListener(l->crudInventario());
+        vst.getJmiped().addActionListener(l->crudPedido());
     }
     
     private void crudClienete(){
@@ -39,6 +45,7 @@ public class Control_principal {
         Controlador_cliente cp=new Controlador_cliente(mp, vp);
         cp.iniciaControl();
     }
+    
     private void crudIngrediente(){
         Modelo_Ingrediente moin=new Modelo_Ingrediente();
         Vista_Ingrediente viin=new Vista_Ingrediente();
@@ -46,6 +53,7 @@ public class Control_principal {
         Controlador_Ingrediente coin=new Controlador_Ingrediente(moin, viin);
         coin.iniciaControl();
     }
+    
     private void crudMenu(){
         Modelo_Menu mome=new Modelo_Menu();
         Modelo_Ingrediente moin=new Modelo_Ingrediente();
@@ -56,6 +64,21 @@ public class Control_principal {
         come.iniciaControl();
     }
     
+    private void crudInventario(){
+        Modelo_inventario inv=new Modelo_inventario();
+        Vista_Inventario vp=new Vista_Inventario();
+        vst.getJdpmen().add(vp);
+        Controlador_inventario cp=new Controlador_inventario(inv, vp);
+        cp.iniciaControl();
+    }
+    
+    private void crudPedido(){
+        Modelo_pedido ped=new Modelo_pedido();
+        Vista_Pedido vp=new Vista_Pedido();
+        vst.getJdpmen().add(vp);
+        Controlador_pedido cp=new Controlador_pedido(ped, vp);
+        cp.iniciaControl();
+    }
      
     
     

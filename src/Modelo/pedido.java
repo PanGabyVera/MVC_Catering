@@ -5,7 +5,8 @@
  */
 package Modelo;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 
 /**
  *
@@ -15,7 +16,7 @@ public class pedido {
      private String cod_pedido;
      private String cod_cliente;
      private String cod_paquete;
-      private Date hora_entrega;
+      private Time hora_entrega;
        private Date Fecha_enterega;
        private String direccion_entre;
 
@@ -23,15 +24,39 @@ public class pedido {
         return cod_pedido;
     }
 
+    public String getCod_cliente() {
+        return cod_cliente;
+    }
+
+    public void setCod_cliente(String cod_cliente) {
+        this.cod_cliente = cod_cliente;
+    }
+
+    public String getCod_paquete() {
+        return cod_paquete;
+    }
+
+    public void setCod_paquete(String cod_paquete) {
+        this.cod_paquete = cod_paquete;
+    }
+
+    public String getDireccion_entre() {
+        return direccion_entre;
+    }
+
+    public void setDireccion_entre(String direccion_entre) {
+        this.direccion_entre = direccion_entre;
+    }
+
     public void setCod_pedido(String cod_pedido) {
         this.cod_pedido = cod_pedido;
     }
 
-    public Date getHora_entrega() {
+    public Time getHora_entrega() {
         return hora_entrega;
     }
 
-    public void setHora_entrega(Date hora_entrega) {
+    public void setHora_entrega(Time hora_entrega) {
         this.hora_entrega = hora_entrega;
     }
 
@@ -46,7 +71,7 @@ public class pedido {
     public pedido() {
     }
 
-    public pedido(String cod_pedido, String cod_cliente, String cod_paquete, Date hora_entrega, Date Fecha_enterega, String direccion_entre) {
+    public pedido(String cod_pedido, String cod_cliente, String cod_paquete, Time hora_entrega, Date Fecha_enterega, String direccion_entre) {
         this.cod_pedido = cod_pedido;
         this.cod_cliente = cod_cliente;
         this.cod_paquete = cod_paquete;

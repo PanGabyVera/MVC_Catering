@@ -86,14 +86,14 @@ public class Controlador_inventario {
             btcrear_editar(origen);
             vista.getDlginv().setTitle("Crear Inventario");
             vista.getDlginv().setLocationRelativeTo(vista);
-            vista.getDlginv().setSize(358, 370);
+            vista.getDlginv().setSize(397, 300);
             vista.getDlginv().setVisible(true);
 
         } else if (origen == 2) {
             btcrear_editar(origen);
             vista.getDlginv().setTitle("Editar Inventario");
             vista.getDlginv().setLocationRelativeTo(vista);
-            vista.getDlginv().setSize(358, 370);
+            vista.getDlginv().setSize(397, 300);
             vista.getDlginv().setVisible(true);
             pasarDatos();
         } else {
@@ -164,7 +164,7 @@ public class Controlador_inventario {
                 }
             }
       //  } else {
-            JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
+          //  JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
         //}
 
     }
@@ -173,7 +173,7 @@ public class Controlador_inventario {
         DefaultTableModel tblinv = (DefaultTableModel) vista.getTblinv().getModel();
         int fila = vista.getTblinv().getSelectedRow();
         if (fila != -1) {
-            String idPersona = tblinv.getValueAt(fila, 1).toString();
+            String idPersona = tblinv.getValueAt(fila, 0).toString();
             Modelo_inventario cli = new Modelo_inventario();
             int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Eliminar?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {

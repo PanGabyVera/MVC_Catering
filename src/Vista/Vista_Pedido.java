@@ -3,6 +3,7 @@ package Vista;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -248,21 +249,78 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         this.txtbu = txtbu;
     }
 
-    public JTextField getTxtcocli() {
-        return txtcocli;
+    public JLabel getAvi1() {
+        return Avi1;
     }
 
-    public void setTxtcocli(JTextField txtcocli) {
-        this.txtcocli = txtcocli;
+    public void setAvi1(JLabel Avi1) {
+        this.Avi1 = Avi1;
     }
 
-    public JTextField getTxtcopaq() {
-        return txtcopaq;
+    public JLabel getAvi2() {
+        return Avi2;
     }
 
-    public void setTxtcopaq(JTextField txtcopaq) {
-        this.txtcopaq = txtcopaq;
+    public void setAvi2(JLabel Avi2) {
+        this.Avi2 = Avi2;
     }
+
+    public JLabel getAvi3() {
+        return Avi3;
+    }
+
+    public void setAvi3(JLabel Avi3) {
+        this.Avi3 = Avi3;
+    }
+
+    public JLabel getAvi4() {
+        return Avi4;
+    }
+
+    public void setAvi4(JLabel Avi4) {
+        this.Avi4 = Avi4;
+    }
+
+    public JLabel getAvi5() {
+        return Avi5;
+    }
+
+    public void setAvi5(JLabel Avi5) {
+        this.Avi5 = Avi5;
+    }
+
+    public JLabel getAvi6() {
+        return Avi6;
+    }
+
+    public void setAvi6(JLabel Avi6) {
+        this.Avi6 = Avi6;
+    }
+
+    public JButton getjBttsalir() {
+        return jBttsalir;
+    }
+
+    public void setjBttsalir(JButton jBttsalir) {
+        this.jBttsalir = jBttsalir;
+    }
+
+    public JComboBox<String> getCBcliente() {
+        return CBcliente;
+    }
+
+    public void setCBcliente(JComboBox<String> CBcliente) {
+        this.CBcliente = CBcliente;
+    }
+
+    public JComboBox<String> getCBpaquete() {
+        return CBpaquete;
+    }
+
+    public void setCBpaquete(JComboBox<String> CBpaquete) {
+        this.CBpaquete = CBpaquete;
+    }
+
 
     public JTextField getTxtcoped() {
         return txtcoped;
@@ -304,17 +362,24 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txtcocli = new javax.swing.JTextField();
         lblape = new javax.swing.JLabel();
         txtcoped = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtcopaq = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtdir = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txthor = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jdcfech = new com.toedter.calendar.JDateChooser();
+        CBcliente = new javax.swing.JComboBox<>();
+        CBpaquete = new javax.swing.JComboBox<>();
+        Avi1 = new javax.swing.JLabel();
+        Avi2 = new javax.swing.JLabel();
+        Avi3 = new javax.swing.JLabel();
+        Avi4 = new javax.swing.JLabel();
+        Avi5 = new javax.swing.JLabel();
+        Avi6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         btnac = new javax.swing.JButton();
         btnca = new javax.swing.JButton();
@@ -332,6 +397,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         btncr = new javax.swing.JButton();
         btnli = new javax.swing.JButton();
+        jBttsalir = new javax.swing.JButton();
 
         dlgped.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -383,62 +449,124 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Fecha de entrega");
 
+        CBcliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<<Seleccione>>" }));
+
+        CBpaquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<<Seleccione>>" }));
+
+        Avi1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi1.setForeground(new java.awt.Color(255, 0, 0));
+        Avi1.setText("*");
+
+        Avi2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi2.setForeground(new java.awt.Color(255, 0, 0));
+        Avi2.setText("*");
+
+        Avi3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi3.setForeground(new java.awt.Color(255, 0, 0));
+        Avi3.setText("*");
+
+        Avi4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi4.setForeground(new java.awt.Color(255, 0, 0));
+        Avi4.setText("*");
+
+        Avi5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi5.setForeground(new java.awt.Color(255, 0, 0));
+        Avi5.setText("*");
+
+        Avi6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Avi6.setForeground(new java.awt.Color(255, 0, 0));
+        Avi6.setText("*");
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel8.setText("Formato: hh:mm:ss");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcocli, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(47, 47, 47)
                         .addComponent(lblape)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcoped, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcopaq, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtdir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txthor, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
+                        .addComponent(txtcoped, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jdcfech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                        .addComponent(Avi1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel2))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CBpaquete, 0, 135, Short.MAX_VALUE)
+                            .addComponent(txthor)
+                            .addComponent(txtdir))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Avi2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Avi3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(14, 14, 14)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jdcfech, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(CBcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Avi5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Avi6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Avi4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcocli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblape)
-                    .addComponent(txtcoped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcoped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Avi1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtcopaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtdir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel3)
+                    .addComponent(CBcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Avi2)
+                    .addComponent(Avi5))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Avi3)
+                                .addComponent(txthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6)
+                            .addComponent(jdcfech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Avi6)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(jLabel5)
-                        .addComponent(txthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jdcfech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtdir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Avi4))
+                .addGap(33, 33, 33))
         );
 
         jPanel6.setBackground(new java.awt.Color(0, 102, 102));
@@ -451,12 +579,12 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnac)
                 .addGap(81, 81, 81)
                 .addComponent(btnca)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(148, 148, 148))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,7 +593,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnac)
                     .addComponent(btnca))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dlgpedLayout = new javax.swing.GroupLayout(dlgped.getContentPane());
@@ -481,9 +609,9 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
             .addGroup(dlgpedLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -520,7 +648,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Código de cliente", "Código de pedido", "Código de Paquete", "Dirección de entrega", "Hora de entrega", "Fecha de entrega"
+                "Código de pedido", "Código de cliente", "Código de Paquete", "Hora de entrega", "Fecha de entrega", "Dirección de entrega"
             }
         ));
         jScrollPane1.setViewportView(tblped);
@@ -539,6 +667,8 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         btncr.setText("Crear");
 
         btnli.setText("Cargar");
+
+        jBttsalir.setText("Salir");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -559,21 +689,28 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtbu, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jBttsalir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btned)
-                    .addComponent(btnel)
-                    .addComponent(btnim)
-                    .addComponent(jLabel1)
-                    .addComponent(txtbu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btncr)
-                    .addComponent(btnli))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btned)
+                            .addComponent(btnel)
+                            .addComponent(btnim)
+                            .addComponent(jLabel1)
+                            .addComponent(txtbu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btncr)
+                            .addComponent(btnli)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jBttsalir)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -617,6 +754,14 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Avi1;
+    private javax.swing.JLabel Avi2;
+    private javax.swing.JLabel Avi3;
+    private javax.swing.JLabel Avi4;
+    private javax.swing.JLabel Avi5;
+    private javax.swing.JLabel Avi6;
+    private javax.swing.JComboBox<String> CBcliente;
+    private javax.swing.JComboBox<String> CBpaquete;
     private javax.swing.JButton btnac;
     private javax.swing.JButton btnca;
     private javax.swing.JButton btncr;
@@ -625,6 +770,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
     private javax.swing.JDialog dlgped;
+    private javax.swing.JButton jBttsalir;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -633,6 +779,7 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -645,8 +792,6 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblape;
     private javax.swing.JTable tblped;
     private javax.swing.JTextField txtbu;
-    private javax.swing.JTextField txtcocli;
-    private javax.swing.JTextField txtcopaq;
     private javax.swing.JTextField txtcoped;
     private javax.swing.JTextField txtdir;
     private javax.swing.JTextField txthor;
