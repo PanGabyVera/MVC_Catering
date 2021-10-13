@@ -40,7 +40,7 @@ public class Controlador_pedido {
         this.vista = vista;
         vista.setTitle("CRUD PEDIDO");
         vista.setVisible(true);
-        // Cargarlistados("");
+        Cargarlistados("");
         vista.getAvi1().setVisible(false);
         vista.getAvi2().setVisible(false);
         vista.getAvi3().setVisible(false);
@@ -104,6 +104,7 @@ public class Controlador_pedido {
             vista.getDlgped().setLocationRelativeTo(vista);
             vista.getDlgped().setSize(580, 410);
             vista.getDlgped().setVisible(true);
+            Limpiar();
 
         } else if (origen == 2) {
             btcrear_editar(origen);
@@ -201,15 +202,18 @@ public class Controlador_pedido {
         modelo.setCod_paquete(vista.getCBpaquete().getSelectedItem().toString());
 
         //hora
-        DateFormat formatter = new SimpleDateFormat("hh:mm:ss");
-        Time hora = null;
+        String s = vista.getTxthor().getText();
+        DateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        long ms = 0;
         try {
-            hora = (Time) formatter.parse(vista.getTxthor().getText());
+            ms = sdf.parse(s).getTime();
         } catch (ParseException ex) {
             Logger.getLogger(Controlador_pedido.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Time t = new Time(ms);
 
-        modelo.setHora_entrega(hora);
+
+        modelo.setHora_entrega(t);
         modelo.setFecha_enterega(fecha);
         modelo.setDireccion_entre(vista.getTxtcoped().getText());
 

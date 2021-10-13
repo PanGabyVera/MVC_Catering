@@ -449,8 +449,10 @@ public class Vista_Pedido extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel6.setText("Fecha de entrega");
 
+        CBcliente.setEditable(true);
         CBcliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<<Seleccione>>" }));
 
+        CBpaquete.setEditable(true);
         CBpaquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<<Seleccione>>" }));
 
         Avi1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N

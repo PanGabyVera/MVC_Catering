@@ -8,6 +8,8 @@ import Modelo.Ingredientes;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
 import Modelo.Modelo_Menu;
+import Modelo.Modelo_Menu_Paquete;
+import Modelo.Modelo_Paquete;
 import Modelo.Modelo_inventario;
 import Modelo.Modelo_pedido;
 import Vista.Vista_Cliente;
@@ -15,6 +17,7 @@ import Vista.Vista_Ingrediente;
 import Vista.Vista_Inventario;
 import Vista.Vista_Menu;
 import Vista.Vista_MenuPrincipal;
+import Vista.Vista_Paquete;
 import Vista.Vista_Pedido;
 
 /**
@@ -63,6 +66,15 @@ public class Control_principal {
         Controlador_Menu come=new Controlador_Menu(mome, vime,moin,moinme);
         come.iniciaControl();
     }
+    private void crudPaquete(){
+        Modelo_Menu mome=new Modelo_Menu();
+        Modelo_Paquete mopa=new Modelo_Paquete();
+        Modelo_Menu_Paquete momepa=new Modelo_Menu_Paquete();
+        Vista_Paquete vipa=new Vista_Paquete();
+        vst.getJdpmen().add(vipa);
+        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa);
+        come.iniciaControl();
+    }
     
     private void crudInventario(){
         Modelo_inventario inv=new Modelo_inventario();
@@ -80,17 +92,6 @@ public class Control_principal {
         cp.iniciaControl();
     }
      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

@@ -63,8 +63,8 @@ public class Modelo_pedido extends pedido{
   public boolean Crear() {
        String sql;
         sql = "INSERT INTO pedido(cod_pedido,cod_cliente,cod_paquete,fecha_entre,hora_entre,direccion_pe) ";
-        sql += " VALUES ('" + getCod_pedido() + "','" + getCod_cliente() + "','" + getCod_paquete()
-                +"',to_date('" + getFecha_enterega() + "','yyyy-MM-dd') ,'" +getHora_entrega()+"','"+getDireccion_entre()+"','" +"')";
+        sql += " VALUES ('" + getCod_pedido() + "','" + getCod_cliente() + "','" + getCod_paquete()+"','"+getHora_entrega()
+                +"',to_date('" + getFecha_enterega() + "','yyyy-MM-dd') ,'" +getDireccion_entre()+"')";
          
       return conexion.accion(sql);
     }

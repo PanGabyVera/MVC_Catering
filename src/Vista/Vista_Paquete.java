@@ -1,7 +1,6 @@
 
 package Vista;
 
-import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
@@ -558,6 +557,174 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         this.txttip = txttip;
     }
 
+    public JButton getBtnacep() {
+        return btnacep;
+    }
+
+    public void setBtnacep(JButton btnacep) {
+        this.btnacep = btnacep;
+    }
+
+    public JButton getBtnagre1() {
+        return btnagre1;
+    }
+
+    public void setBtnagre1(JButton btnagre1) {
+        this.btnagre1 = btnagre1;
+    }
+
+    public JButton getBtnca3() {
+        return btnca3;
+    }
+
+    public void setBtnca3(JButton btnca3) {
+        this.btnca3 = btnca3;
+    }
+
+    public JButton getBtnfi1() {
+        return btnfi1;
+    }
+
+    public void setBtnfi1(JButton btnfi1) {
+        this.btnfi1 = btnfi1;
+    }
+
+    public JButton getBtncarmen() {
+        return btncarmen;
+    }
+
+    public void setBtncarmen(JButton btncarmen) {
+        this.btncarmen = btncarmen;
+    }
+
+    public JButton getBtnca2() {
+        return btnca2;
+    }
+
+    public void setBtnca2(JButton btnca2) {
+        this.btnca2 = btnca2;
+    }
+
+    public JButton getBtncared() {
+        return btncared;
+    }
+
+    public void setBtncared(JButton btncared) {
+        this.btncared = btncared;
+    }
+
+    public JButton getBtnedime() {
+        return btnedime;
+    }
+
+    public void setBtnedime(JButton btnedime) {
+        this.btnedime = btnedime;
+    }
+
+    public JButton getBtnelied() {
+        return btnelied;
+    }
+
+    public void setBtnelied(JButton btnelied) {
+        this.btnelied = btnelied;
+    }
+
+    public JButton getBtnsiged() {
+        return btnsiged;
+    }
+
+    public void setBtnsiged(JButton btnsiged) {
+        this.btnsiged = btnsiged;
+    }
+
+    public JDialog getDlgedmen() {
+        return dlgedmen;
+    }
+
+    public void setDlgedmen(JDialog dlgedmen) {
+        this.dlgedmen = dlgedmen;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPanel getjPanel16() {
+        return jPanel16;
+    }
+
+    public void setjPanel16(JPanel jPanel16) {
+        this.jPanel16 = jPanel16;
+    }
+
+    public JPanel getjPanel17() {
+        return jPanel17;
+    }
+
+    public void setjPanel17(JPanel jPanel17) {
+        this.jPanel17 = jPanel17;
+    }
+
+    public JPanel getjPanel18() {
+        return jPanel18;
+    }
+
+    public void setjPanel18(JPanel jPanel18) {
+        this.jPanel18 = jPanel18;
+    }
+
+    public JScrollPane getjScrollPane5() {
+        return jScrollPane5;
+    }
+
+    public void setjScrollPane5(JScrollPane jScrollPane5) {
+        this.jScrollPane5 = jScrollPane5;
+    }
+
+    public JLabel getLblid6() {
+        return lblid6;
+    }
+
+    public void setLblid6(JLabel lblid6) {
+        this.lblid6 = lblid6;
+    }
+
+    public JTable getTblmenpaqed() {
+        return tblmenpaqed;
+    }
+
+    public void setTblmenpaqed(JTable tblmenpaqed) {
+        this.tblmenpaqed = tblmenpaqed;
+    }
+
+    public JTextField getTxtcaned() {
+        return txtcaned;
+    }
+
+    public void setTxtcaned(JTextField txtcaned) {
+        this.txtcaned = txtcaned;
+    }
+
+    public JTextField getTxtcomeed() {
+        return txtcomeed;
+    }
+
+    public void setTxtcomeed(JTextField txtcomeed) {
+        this.txtcomeed = txtcomeed;
+    }
+
    
     
 
@@ -581,6 +748,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         jPanel6 = new javax.swing.JPanel();
         btnsig = new javax.swing.JButton();
         btnca4 = new javax.swing.JButton();
+        btnacep = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
         dlgesinv = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
@@ -617,11 +785,31 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         lblid5 = new javax.swing.JLabel();
         txtcanmen = new javax.swing.JTextField();
         btnagrmen = new javax.swing.JButton();
+        btnfi1 = new javax.swing.JButton();
+        btnagre1 = new javax.swing.JButton();
+        btnca3 = new javax.swing.JButton();
+        btncarmen = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblesmen = new javax.swing.JTable();
         jPanel15 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
+        dlgedmen = new javax.swing.JDialog();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblmenpaqed = new javax.swing.JTable();
+        jPanel18 = new javax.swing.JPanel();
+        btnsiged = new javax.swing.JButton();
+        btnca2 = new javax.swing.JButton();
+        lblid6 = new javax.swing.JLabel();
+        txtcomeed = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtcaned = new javax.swing.JTextField();
+        btnelied = new javax.swing.JButton();
+        btnedime = new javax.swing.JButton();
+        btncared = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -710,13 +898,17 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
 
         btnca4.setText("Cancelar");
 
+        btnacep.setText("Aceptar");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(45, 45, 45)
                 .addComponent(btnca4)
+                .addGap(5, 5, 5)
+                .addComponent(btnacep)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnsig)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -727,7 +919,8 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsig)
-                    .addComponent(btnca4))
+                    .addComponent(btnca4)
+                    .addComponent(btnacep))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -994,40 +1187,67 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
 
         btnagrmen.setText("Agregar");
 
+        btnfi1.setText("Siguiente");
+
+        btnagre1.setText("Agregar");
+
+        btnca3.setText("Atras");
+
+        btncarmen.setText("Cargar ");
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(btncanmen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnfinme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(btnagrmen)
-                .addGap(18, 18, 18)
-                .addComponent(lblid4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtcomen, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblid5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtcanmen, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnfinme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnfi1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(btnagre1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnca3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(btnagrmen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btncanmen)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addComponent(lblid4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtcomen, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblid5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtcanmen, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btncarmen, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnfinme)
+                    .addComponent(btnagre1)
+                    .addComponent(btnca3)
+                    .addComponent(btnfi1)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtcanmen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblid5)
+                        .addComponent(txtcomen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblid4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnagrmen)
                     .addComponent(btncanmen)
-                    .addComponent(txtcanmen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblid5)
-                    .addComponent(txtcomen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblid4)
-                    .addComponent(btnagrmen))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnfinme)
+                    .addComponent(btncarmen))
+                .addContainerGap())
         );
 
         jPanel14.setBackground(new java.awt.Color(0, 153, 153));
@@ -1040,7 +1260,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Código de men", "Nombre", "Precio", "Tipo"
+                "Código de men", "Nombre", "Tipo", "Precio"
             }
         ));
         jScrollPane4.setViewportView(tblesmen);
@@ -1097,6 +1317,154 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        dlgedmen.setBackground(new java.awt.Color(0, 153, 153));
+
+        jPanel16.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel11.setText("Editar ingredientes de menú");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(156, 156, 156))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(27, 27, 27))
+        );
+
+        jPanel17.setBackground(new java.awt.Color(0, 153, 153));
+
+        tblmenpaqed.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Código de paquete", "Código de menú", "Cantidad", "Nombre"
+            }
+        ));
+        jScrollPane5.setViewportView(tblmenpaqed);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 166, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel17Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel18.setBackground(new java.awt.Color(0, 102, 102));
+
+        btnsiged.setText("Siguiente");
+
+        btnca2.setText("Cancelar");
+
+        lblid6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblid6.setText("Código de menu");
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel5.setText("Cantidad");
+
+        btnelied.setText("Eliminar");
+
+        btnedime.setText("Editar");
+
+        btncared.setText("Cargar");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnelied, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnca2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(btnedime, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnsiged)))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addComponent(lblid6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btncared)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(txtcomeed, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtcaned, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblid6)
+                    .addComponent(txtcomeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtcaned, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnca2)
+                    .addComponent(btnsiged)
+                    .addComponent(btncared))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnelied)
+                    .addComponent(btnedime))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout dlgedmenLayout = new javax.swing.GroupLayout(dlgedmen.getContentPane());
+        dlgedmen.getContentPane().setLayout(dlgedmenLayout);
+        dlgedmenLayout.setHorizontalGroup(
+            dlgedmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dlgedmenLayout.setVerticalGroup(
+            dlgedmenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgedmenLayout.createSequentialGroup()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -1226,32 +1594,45 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnacep;
+    private javax.swing.JButton btnagre1;
     private javax.swing.JButton btnagremp;
     private javax.swing.JButton btnagrin;
     private javax.swing.JButton btnagrmen;
+    private javax.swing.JButton btnca2;
+    private javax.swing.JButton btnca3;
     private javax.swing.JButton btnca4;
     private javax.swing.JButton btncaemp;
     private javax.swing.JButton btncainv;
     private javax.swing.JButton btncanmen;
+    private javax.swing.JButton btncared;
+    private javax.swing.JButton btncarmen;
     private javax.swing.JButton btncr;
     private javax.swing.JButton btned;
+    private javax.swing.JButton btnedime;
     private javax.swing.JButton btnel;
+    private javax.swing.JButton btnelied;
+    private javax.swing.JButton btnfi1;
     private javax.swing.JButton btnfinme;
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
     private javax.swing.JButton btnsig;
+    private javax.swing.JButton btnsiged;
     private javax.swing.JButton btnsigemp;
     private javax.swing.JButton btnsigin;
+    private javax.swing.JDialog dlgedmen;
     private javax.swing.JDialog dlgesemp;
     private javax.swing.JDialog dlgesinv;
     private javax.swing.JDialog dlgesmen;
     private javax.swing.JDialog dlgpaq;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1261,6 +1642,9 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1273,6 +1657,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lblape;
     private javax.swing.JLabel lblid;
     private javax.swing.JLabel lblid1;
@@ -1280,15 +1665,19 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblid3;
     private javax.swing.JLabel lblid4;
     private javax.swing.JLabel lblid5;
+    private javax.swing.JLabel lblid6;
     private javax.swing.JTable tblesemp;
     private javax.swing.JTable tblesinv;
     private javax.swing.JTable tblesmen;
+    private javax.swing.JTable tblmenpaqed;
     private javax.swing.JTable tblpaq;
     private javax.swing.JTextField txtbu;
+    private javax.swing.JTextField txtcaned;
     private javax.swing.JTextField txtcaninv;
     private javax.swing.JTextField txtcanmen;
     private javax.swing.JTextField txtcoem;
     private javax.swing.JTextField txtcoin;
+    private javax.swing.JTextField txtcomeed;
     private javax.swing.JTextField txtcomen;
     private javax.swing.JTextField txtcopa;
     private javax.swing.JTextField txtnom;

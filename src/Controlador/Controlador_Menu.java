@@ -89,6 +89,7 @@ public class Controlador_Menu extends Menu{
     Vista.getBtnelied().addActionListener(l->EliminarIngreMenu());
     Vista.getBtnagre1().addActionListener(l->GuardarEdcing());
     Vista.getBtnca3().addActionListener(l->cargaListadosIng_Menu(""));
+    Vista.getBtnfi1().addActionListener(l->cargarDialogo(22));
 //    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
     Vista.getBtnca1().addActionListener(l->Vista.getDlgmen().setVisible(false));
     Vista.getBtnca2().addActionListener(l->Vista.getDlgedcing().setVisible(false));
@@ -159,6 +160,8 @@ public class Controlador_Menu extends Menu{
             Vista.getBtnagre().setVisible(true);
             Vista.getBtnca3().setVisible(false);
             Vista.getBtnca().setVisible(true);
+            Vista.getBtnfi1().setVisible(false);
+            Vista.getBtnfi().setVisible(true);
         }
         if(origen==55){
             Vista.getDlgescing().setTitle("Escoger Ingrediente");
@@ -166,6 +169,8 @@ public class Controlador_Menu extends Menu{
             Vista.getBtnagre().setVisible(false);
             Vista.getBtnca3().setVisible(true);
             Vista.getBtnca().setVisible(false);
+            Vista.getBtnfi1().setVisible(true);
+            Vista.getBtnfi().setVisible(false);
         }
         Vista.getDlgescing().setVisible(true);
     }
@@ -347,6 +352,8 @@ public class Controlador_Menu extends Menu{
         if (menu.EditarMe() == true) {
             cargaListadosMe("");
             Vista.getDlging().setVisible(false);
+            Vista.getDlgedcing().setVisible(false);
+            Vista.getDlgescing().setVisible(false);
             JOptionPane.showMessageDialog(Vista, "Registro actualizado");
         } else {
             JOptionPane.showMessageDialog(Vista, "Hubo un error");
