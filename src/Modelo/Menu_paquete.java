@@ -9,17 +9,17 @@ package Modelo;
  *
  * @author Pandora
  */
-public class ingrediente_menu {
-   private String cod_menu;
-    private String cod_ing;
+public class Menu_paquete {
+    private String cod_menu;
+    private String cod_paq;
     private int cantidad;
 
-    public ingrediente_menu() {
+    public Menu_paquete() {
     }
 
-    public ingrediente_menu(String cod_menu, String cod_ing, int cantidad) {
+    public Menu_paquete(String cod_menu, String cod_paq, int cantidad) {
         this.cod_menu = cod_menu;
-        this.cod_ing = cod_ing;
+        this.cod_paq = cod_paq;
         this.cantidad = cantidad;
     }
 
@@ -31,12 +31,12 @@ public class ingrediente_menu {
         this.cod_menu = cod_menu;
     }
 
-    public String getCod_ing() {
-        return cod_ing;
+    public String getCod_paq() {
+        return cod_paq;
     }
 
-    public void setCod_ing(String cod_ing) {
-        this.cod_ing = cod_ing;
+    public void setCod_paq(String cod_paq) {
+        this.cod_paq = cod_paq;
     }
 
     public int getCantidad() {
@@ -47,5 +47,5 @@ public class ingrediente_menu {
         this.cantidad = cantidad;
     }
     
- 
+
 }
