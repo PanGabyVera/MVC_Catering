@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Modelo.Ingrediente_menu;
 import Modelo.Ingredientes;
 import Modelo.Menu;
 import Modelo.Modelo_ConexionBD;
@@ -39,10 +40,12 @@ public class Controlador_Menu extends Menu{
     private Modelo_Menu Modelo;
     private Modelo_Ingrediente ModeloIngre;
     private Vista_Menu Vista;
-    public Controlador_Menu(Modelo_Menu Modelo, Vista_Menu Vista, Modelo_Ingrediente ModeloIngre) {
+    private Modelo_Ingrediente_Menu Modelo_Ingre_Men;
+    public Controlador_Menu(Modelo_Menu Modelo, Vista_Menu Vista, Modelo_Ingrediente ModeloIngre,Modelo_Ingrediente_Menu Modelo_Ingre_Men) {
         this.Modelo = Modelo;
         this.Vista = Vista;
         this.ModeloIngre = ModeloIngre;
+        this.Modelo_Ingre_Men =Modelo_Ingre_Men;
         Vista.setVisible(true);
     }
     public void iniciaControl(){
@@ -67,7 +70,8 @@ public class Controlador_Menu extends Menu{
    //Controlar los eventos de la vista
     Vista.getBtnli().addActionListener(l->cargaListadosMe(""));
     Vista.getBtncr().addActionListener(l->cargarDialogo(11));
-    Vista.getBtned().addActionListener(l->cargarDialogo(22));
+    Vista.getBtned().addActionListener(l->cargarDialogoEsingEd(44));
+    Vista.getBtned().addActionListener(l->cargaListadosIng_Menu(""));
     Vista.getBtnsig().addActionListener(l->cargarDialogoEsing(33));
     Vista.getBtnsig().addActionListener(l->cargaListadosIngMe(""));
     Vista.getBtnsig().addActionListener(l->GuardarMenuP());
@@ -77,10 +81,20 @@ public class Controlador_Menu extends Menu{
     Vista.getBtncaring().addActionListener(l->AgregramIng());
     Vista.getBtnca().addActionListener(l->EliminarMenuP());
     Vista.getBtnagre().addActionListener(l->GuardarEscing());
+    //EDITAR INGREDIENTE_MENU
+    Vista.getBtncared().addActionListener(l->EditarIngMe());
+    Vista.getBtnedime().addActionListener(l->EditarIngreMenu());
+    Vista.getBtnsiged().addActionListener(l->cargarDialogoEsing(55));
+    Vista.getBtnsiged().addActionListener(l->cargaListadosIngMe(""));
+    Vista.getBtnelied().addActionListener(l->EliminarIngreMenu());
+    Vista.getBtnagre1().addActionListener(l->GuardarEdcing());
+    Vista.getBtnca3().addActionListener(l->cargaListadosIng_Menu(""));
 //    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
     Vista.getBtnca1().addActionListener(l->Vista.getDlgmen().setVisible(false));
+    Vista.getBtnca2().addActionListener(l->Vista.getDlgedcing().setVisible(false));
     Vista.getBtnca().addActionListener(l->Vista.getDlgescing().setVisible(false));
     Vista.getBtnca().addActionListener(l->Vista.getDlgmen().setVisible(true));
+    Vista.getBtnca3().addActionListener(l->Vista.getDlgescing().setVisible(false));
     //Controlador Buscar
     Vista.getTxtbu().addKeyListener(kl);
     
@@ -141,8 +155,29 @@ public class Controlador_Menu extends Menu{
         Vista.getTxtcoin().setText("");
         if(origen==33){
             Vista.getDlgescing().setTitle("Escoger Ingrediente");
+            Vista.getBtnagre1().setVisible(false);
+            Vista.getBtnagre().setVisible(true);
+            Vista.getBtnca3().setVisible(false);
+            Vista.getBtnca().setVisible(true);
+        }
+        if(origen==55){
+            Vista.getDlgescing().setTitle("Escoger Ingrediente");
+            Vista.getBtnagre1().setVisible(true);
+            Vista.getBtnagre().setVisible(false);
+            Vista.getBtnca3().setVisible(true);
+            Vista.getBtnca().setVisible(false);
         }
         Vista.getDlgescing().setVisible(true);
+    }
+    private void cargarDialogoEsingEd(int origen){
+        Vista.getDlgedcing().setSize(650,400);
+        Vista.getDlgedcing().setLocationRelativeTo(Vista);
+        Vista.getTxtcoined().setText("");
+        Vista.getTxtcaned().setText("");
+        if(origen==44){
+            Vista.getDlgedcing().setTitle("Editar ingrediente de menú");
+        }
+        Vista.getDlgedcing().setVisible(true);
     }
 
     private void cargaListadosMe(String aguja){
@@ -167,8 +202,7 @@ public class Controlador_Menu extends Menu{
         
     }
     private void cargaListadosIngMe(String aguja){
-    
-        
+ 
         DefaultTableModel tblModel; 
         tblModel=(DefaultTableModel)Vista.getTblingme().getModel();
         tblModel.setNumRows(0);
@@ -185,6 +219,7 @@ public class Controlador_Menu extends Menu{
 
         
     }
+    
     private void GuardarMenu(){
 //      String cod_menu = Vista.getTxtcome().getText();
 //      String nombre = Vista.getTxtnom().getText();
@@ -253,6 +288,8 @@ public class Controlador_Menu extends Menu{
         }
     }
     
+    
+    
     public void EliminarMenu(){
         int ind=Vista.getTblmen().getSelectedRow();
         
@@ -313,6 +350,91 @@ public class Controlador_Menu extends Menu{
             JOptionPane.showMessageDialog(Vista, "Registro actualizado");
         } else {
             JOptionPane.showMessageDialog(Vista, "Hubo un error");
+        }
+    }
+    //DIALOGO DE EDICION INGREDIENTE_MENU
+    public void EditarIngreMenu() {
+        int cont = Vista.getTblingmeed().getSelectedRow();
+        String cod_menu = Vista.getTblingmeed().getValueAt(cont, 0).toString();
+        String cod_ing = Vista.getTblingmeed().getValueAt(cont, 1).toString();
+        int cantidad = Integer.parseInt(Vista.getTxtcaned().getText());
+        
+        Modelo_Ingrediente_Menu ingre_me = new Modelo_Ingrediente_Menu();
+        ingre_me.setCod_menu(cod_menu) ; 
+        ingre_me.setCod_ing(cod_ing);
+        ingre_me.setCantidad(cantidad);
+        if (ingre_me.EditarIng_menu() == true) {
+            cargaListadosIng_Menu("");
+            Vista.getDlging().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Registro actualizado");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "Hubo un error");
+        }
+    }
+    public void EditarIngMe(){
+        int cont = Vista.getTblingmeed().getSelectedRow();
+            if (cont != -1) {
+                String cod_ing = Vista.getTblingmeed().getValueAt(cont, 1).toString();
+                String cantidad = Vista.getTblingmeed().getValueAt(cont, 2).toString();
+                Modelo_Ingrediente_Menu ingre_me = new Modelo_Ingrediente_Menu();
+                ingre_me.setCod_ing(cod_ing);
+                Vista.getTxtcoined().setText(cod_ing);
+                Vista.getTxtcaned().setText(cantidad);
+        }
+    }
+    private void cargaListadosIng_Menu(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblingmeed().getModel();
+        tblModel.setNumRows(0);
+        
+        List<Ingrediente_menu> lista=Modelo_Ingre_Men.listaIngrediente_Menu(aguja);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblingmeed().setValueAt(per.getCod_menu() , i.value , 0);
+           Vista.getTblingmeed().setValueAt(per.getCod_ing(), i.value , 1);
+           Vista.getTblingmeed().setValueAt(per.getCantidad(), i.value , 2);
+           Vista.getTblingmeed().setValueAt(per.getNombre(), i.value , 3);
+           i.value++;
+          
+        });   
+    }
+    public void EliminarIngreMenu(){
+        int cont = Vista.getTblingmeed().getSelectedRow();
+        String cod_menu = Vista.getTblingmeed().getValueAt(cont, 0).toString();    
+        String cod_ing = Vista.getTxtcoined().getText();
+            Modelo_Ingrediente_Menu ingre_menu = new Modelo_Ingrediente_Menu();
+            ingre_menu.setCod_menu(cod_menu) ;   
+            ingre_menu.setCod_ing(cod_ing);
+                if(ingre_menu.EliminarIng_menu()){
+                        cargaListadosIng_Menu("");
+                        JOptionPane.showMessageDialog(Vista, "Eliminado");
+                    }else{
+                         JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");   
+       
+                    }   
+        
+    }
+    private void GuardarEdcing(){
+      int ind=Vista.getTblingmeed().getSelectedRow();
+        
+      String cod_menu = Vista.getTblingmeed().getValueAt(ind, 0).toString();
+      String cod_ing = Vista.getTxtcoin().getText();
+      int cantidad = Integer.parseInt(Vista.getTxtcan().getText());
+      
+      Modelo_Ingrediente_Menu ingre_menu = new Modelo_Ingrediente_Menu();
+      ingre_menu.setCod_menu(cod_menu);
+      ingre_menu.setCod_ing(cod_ing);
+      ingre_menu.setCantidad(cantidad);
+       
+        if (ingre_menu.grabarIng_menu()) {
+            cargaListadosIng_Menu("");
+            Vista.getDlging().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Se agrego ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro agregar");
         }
     }
 }

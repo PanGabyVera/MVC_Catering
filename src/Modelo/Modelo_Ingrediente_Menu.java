@@ -28,24 +28,25 @@ public class Modelo_Ingrediente_Menu extends Ingrediente_menu{
     public Modelo_Ingrediente_Menu(){
         
     }
-    public Modelo_Ingrediente_Menu(String cod_menu, String cod_ing, int cantidad) {
-        super(cod_menu,cod_ing,cantidad);
+    public Modelo_Ingrediente_Menu(String cod_menu, String cod_ing, int cantidad, String nombre) {
+        super(cod_menu,cod_ing,cantidad,nombre);
     }
     
     
     public List<Ingrediente_menu> listaIngrediente_Menu(String aguja){
     
         try {
-            String sql="select * from ing_menu WHERE ";
+            String sql="select * from ing_menu join ingredientes ON (ing_menu.cod_ing=ingredientes.cod_ingrediente) WHERE ";
             sql+=" UPPER(cod_men) like UPPER('%"+aguja+"%') OR";
             sql+=" UPPER(cod_ing) like UPPER('%"+aguja+"%')";
             ResultSet rs=con.Consulta(sql);
             List<Ingrediente_menu> lp= new ArrayList<Ingrediente_menu>();
             while(rs.next()){
                 Ingrediente_menu ingre_menu= new Ingrediente_menu();
-                ingre_menu.setCod_menu(rs.getString("cod_menu"));
+                ingre_menu.setCod_menu(rs.getString("cod_men"));
                 ingre_menu.setCod_ing(rs.getString("cod_ing"));
                 ingre_menu.setCantidad(rs.getInt("cantidad")); 
+                ingre_menu.setNombre(rs.getString("nom_ingre"));
                 lp.add(ingre_menu);
             }
           rs.close();
@@ -68,14 +69,14 @@ public class Modelo_Ingrediente_Menu extends Ingrediente_menu{
     public boolean EliminarIng_menu(){
         
         String sql;
-        sql="DELETE FROM ing_menu where cod_men='"+getCod_menu()+"'";
+        sql="DELETE FROM ing_menu where cod_men='"+getCod_menu()+"' and cod_ing='"+getCod_ing()+"'";
         return con.accion(sql);
          
     }
     public boolean EditarIng_menu() {
         String sql;
-        sql = "UPDATE ing_menu set precio_men='" + getCantidad() +"'";
-        sql += " WHERE cod_men='" + getCod_menu() + "'";
+        sql = "UPDATE ing_menu set cantidad='" + getCantidad() +"'";
+        sql += " WHERE cod_men='"+getCod_menu()+"' and cod_ing='"+getCod_ing()+"'";
         return con.accion(sql);
     }
 }
