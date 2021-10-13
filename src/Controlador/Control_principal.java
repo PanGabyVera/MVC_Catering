@@ -5,8 +5,10 @@ import javax.swing.JDesktopPane;
 import Modelo.Modelo_cliente;
 import Modelo.Ingredientes;
 import Modelo.Modelo_Ingrediente;
+import Modelo.Modelo_Menu;
 import Vista.Vista_Cliente;
 import Vista.Vista_Ingrediente;
+import Vista.Vista_Menu;
 import Vista.Vista_MenuPrincipal;
 
 
@@ -23,6 +25,7 @@ public class Control_principal {
     public void iniciarControl(){
         vst.getJmicli().addActionListener(l->crudClienete());
         vst.getJmiing().addActionListener(l->crudIngrediente());
+        vst.getJmimen().addActionListener(l->crudMenu());
     }
     
     private void crudClienete(){
@@ -39,5 +42,13 @@ public class Control_principal {
         vst.getJdpmen().add(viin);
         Controlador_Ingrediente coin=new Controlador_Ingrediente(moin, viin);
         coin.iniciaControl();
+    }
+    private void crudMenu(){
+        Modelo_Menu mome=new Modelo_Menu();
+        Modelo_Ingrediente moin=new Modelo_Ingrediente();
+        Vista_Menu vime=new Vista_Menu();
+        vst.getJdpmen().add(vime);
+        Controlador_Menu come=new Controlador_Menu(mome, vime,moin);
+        come.iniciaControl();
     }
 }

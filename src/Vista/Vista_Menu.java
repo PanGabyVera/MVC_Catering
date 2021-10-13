@@ -358,6 +358,54 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
         this.txttip = txttip;
     }
 
+    public JButton getBtnacep() {
+        return btnacep;
+    }
+
+    public void setBtnacep(JButton btnacep) {
+        this.btnacep = btnacep;
+    }
+
+    public JButton getBtnagre() {
+        return btnagre;
+    }
+
+    public void setBtnagre(JButton btnagre) {
+        this.btnagre = btnagre;
+    }
+
+    public JDialog getDlgescing() {
+        return dlgescing;
+    }
+
+    public void setDlgescing(JDialog dlgescing) {
+        this.dlgescing = dlgescing;
+    }
+
+    public JDialog getDlgmen() {
+        return dlgmen;
+    }
+
+    public void setDlgmen(JDialog dlgmen) {
+        this.dlgmen = dlgmen;
+    }
+
+    public JTable getTblmen() {
+        return tblmen;
+    }
+
+    public void setTblmen(JTable tblmen) {
+        this.tblmen = tblmen;
+    }
+
+    public JButton getBtncaring() {
+        return btncaring;
+    }
+
+    public void setBtncaring(JButton btncaring) {
+        this.btncaring = btncaring;
+    }
+
     
 
     
@@ -383,6 +431,8 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
         txtcoin = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtcan = new javax.swing.JTextField();
+        btnagre = new javax.swing.JButton();
+        btncaring = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
         dlgmen = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
@@ -399,6 +449,7 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
         jPanel9 = new javax.swing.JPanel();
         btnsig = new javax.swing.JButton();
         btnca1 = new javax.swing.JButton();
+        btnacep = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -424,17 +475,17 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(175, 175, 175)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(196, 196, 196))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addGap(26, 26, 26))
+                .addGap(27, 27, 27))
         );
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
@@ -482,16 +533,24 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Cantidad");
 
+        btnagre.setText("Agregar");
+
+        btncaring.setText("Cargar ");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(btnca)
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnca)
+                    .addComponent(btnfi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnfi)
-                .addGap(16, 16, 16)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnagre)
+                    .addComponent(btncaring))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(lblid)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtcoin, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -499,22 +558,27 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtcan, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblid)
-                        .addComponent(txtcoin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addComponent(txtcan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnca)
-                        .addComponent(btnfi)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnca)
+                    .addComponent(btnagre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnfi)
+                    .addComponent(btncaring)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblid)
+                    .addComponent(txtcoin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtcan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout dlgescingLayout = new javax.swing.GroupLayout(dlgescing.getContentPane());
@@ -622,14 +686,18 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
 
         btnca1.setText("Cancelar");
 
+        btnacep.setText("Aceptar");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(29, 29, 29)
                 .addComponent(btnca1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnacep)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnsig)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -639,7 +707,8 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnca1)
-                    .addComponent(btnsig))
+                    .addComponent(btnsig)
+                    .addComponent(btnacep))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -695,7 +764,7 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Código de menu", "Nombre ", "Precio", "Tipo"
+                "Código de menu", "Nombre ", "Tipo", "Precio"
             }
         ));
         jScrollPane1.setViewportView(tblmen);
@@ -788,8 +857,11 @@ public class Vista_Menu extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnacep;
+    private javax.swing.JButton btnagre;
     private javax.swing.JButton btnca;
     private javax.swing.JButton btnca1;
+    private javax.swing.JButton btncaring;
     private javax.swing.JButton btncr;
     private javax.swing.JButton btned;
     private javax.swing.JButton btnel;
