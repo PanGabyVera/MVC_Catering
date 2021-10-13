@@ -53,27 +53,27 @@ public class Modelo_cliente extends cliente {
 
     public boolean Crear() {
        String sql;
-        sql = "INSERT INTO persona(id,nom_cli,ape_cli,,telefono,correo,direccion,cod_cli) ";
+        sql = "INSERT INTO cliente(id,nom_cli,ape_cli,telefono,correo,direccion,cod_cli) ";
         sql += " VALUES ('" + getCi() + "','" + getNombres() + "','"
-                + getApellidos() + "','" + "','" + "','" + getTelefono()
-                + "','" + getCorreo() + "','" + getDireccion() + "''" + getCod() +"')";
+                + getApellidos() + "','" + getTelefono()+ "','"
+                + getCorreo() + "','" + getDireccion() + "','" + getCod() +"')";
       return conexion.accion(sql);
     }
     
     public boolean Eliminar(String id) {
         String sql;
-        sql = "DELETE FROM persona where idpersona='" + id + "'";
+        sql = "DELETE FROM cliente where id='" + id + "'";
         return conexion.accion(sql);
 
     }
     
     public boolean Editar(String id) {
-        String sqla = "UPDATE public.cliente "
+        String sql = "UPDATE public.cliente "
                 + "SET id='" + getCi() + "', nom_cli='" + getNombres()+ "',ape_cli='" + getApellidos()
-                + "', telefono='" + getTelefono() + "', correo='" + getCorreo() + "', direccion=" + getDireccion()
-                + ", cod_cli=" + getCod()+"'"
-                + "WHERE id='" + id + "'";
-        return conexion.accion(sqla);
+                + "', telefono='" + getTelefono() + "', correo='" + getCorreo() + "', direccion='" + getDireccion() 
+                + "', cod_cli='" + getCod()+"'"
+                + " WHERE id = '" + id + "'";
+        return conexion.accion(sql);
     }
     
 }

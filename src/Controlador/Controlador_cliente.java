@@ -4,6 +4,7 @@ import Modelo.Modelo_cliente;
 import Modelo.cliente;
 import Vista.Vista_Cliente;
 import Vista.Vista_MenuPrincipal;
+import com.sun.xml.internal.txw2.TXW;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -31,39 +32,55 @@ public class Controlador_cliente {
         //SOLAMENTE INICIALIZAR ELEMENTOS.
         vista.setTitle("CRUD CLIENTE");
         vista.setVisible(true);
+        Cargarlistados("");
+
+        vista.getAviso1().setVisible(false);
+        vista.getAviso2().setVisible(false);
+        vista.getAviso3().setVisible(false);
+        vista.getAviso4().setVisible(false);
+        vista.getAviso5().setVisible(false);
+        vista.getAviso6().setVisible(false);
+        vista.getAviso7().setVisible(false);
     }
 
     public void iniciaControl() {
         KeyListener kl = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Cargarlistados(vista.getTxtbu().getText());
+                vista.getTxtbu().setText(vista.getTxtbu().getText().toUpperCase());
+
             }
         };
         //Controlar los eventos de los botones
-    vista.getBtnli().addActionListener(l->Cargarlistados(""));
-    vista.getBtncr().addActionListener(l->MostarVentana(1));
-    vista.getBtned().addActionListener(l->MostarVentana(2));
-    vista.getBtnel().addActionListener(l->EliminarCli());
-   // vista.getBtnim().addActionListener(l->);
-    vista.getjBttSalir().addActionListener(l->vista.setVisible(false));
+        vista.getBtnli().addActionListener(l -> Cargarlistados(""));
+        vista.getBtncr().addActionListener(l -> MostarVentana(1));
+        vista.getBtned().addActionListener(l -> MostarVentana(2));
+        vista.getBtnel().addActionListener(l -> EliminarCli());
+        vista.getBtnca().addActionListener(l -> vista.getDlgcli().setVisible(false));
+        vista.getjBttSalir().addActionListener(l -> vista.setVisible(false));
+
+        //reporte y busqueda
+        // vista.getBtnim().addActionListener(l->);
+        vista.getTxtbu().addKeyListener(kl);
     }
 
     private void btcrear_editar(int origen) {
         if (origen == 1) {
-             vista.getBtncr().addActionListener(l->GuardarCli());
+            vista.getBtnac().addActionListener(l -> GuardarCli());
         } else if (origen == 2) {
-              vista.getBtnac().addActionListener(l->EditarCli()); 
+            vista.getBtnac().addActionListener(l -> EditarCli());
 
         }
     }
@@ -73,13 +90,14 @@ public class Controlador_cliente {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Crear registro de cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(348, 379);
+            vista.getDlgcli().setSize(358, 420);
             vista.getDlgcli().setVisible(true);
+
         } else if (origen == 2) {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Editar cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(348, 379);
+            vista.getDlgcli().setSize(358, 420);
             vista.getDlgcli().setVisible(true);
             pasarDatos();
         } else {
@@ -94,13 +112,13 @@ public class Controlador_cliente {
             //llenamos datos en la ventana emergente
             Modelo_cliente mc = new Modelo_cliente();
             mc.setCi(vista.getTblcli().getValueAt(cont, 0).toString());
-            vista.getTxtcocli().setText(vista.getTblcli().getValueAt(cont, 0).toString());
-            vista.getTxtced().setText(vista.getTblcli().getValueAt(cont, 1).toString());
-            vista.getJtxtnombre().setText(vista.getTblcli().getValueAt(cont, 2).toString());
-            vista.getJtxtapellidos().setText(vista.getTblcli().getValueAt(cont, 3).toString());
-            vista.getJtxttelefono().setText(vista.getTblcli().getValueAt(cont, 4).toString());
-            vista.getJtxtcorreo().setText(vista.getTblcli().getValueAt(cont, 5).toString());
-            vista.getJtxtdirecion().setText(vista.getTblcli().getValueAt(cont, 6).toString());
+            vista.getTxtcocli().setText(vista.getTblcli().getValueAt(cont, 0).toString().toUpperCase());
+            vista.getTxtced().setText(vista.getTblcli().getValueAt(cont, 1).toString().toUpperCase());
+            vista.getJtxtnombre().setText(vista.getTblcli().getValueAt(cont, 2).toString().toUpperCase());
+            vista.getJtxtapellidos().setText(vista.getTblcli().getValueAt(cont, 3).toString().toUpperCase());
+            vista.getJtxttelefono().setText(vista.getTblcli().getValueAt(cont, 4).toString().toUpperCase());
+            vista.getJtxtcorreo().setText(vista.getTblcli().getValueAt(cont, 5).toString().toUpperCase());
+            vista.getJtxtdirecion().setText(vista.getTblcli().getValueAt(cont, 6).toString().toUpperCase());
 
         } else {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar una fila");
@@ -108,8 +126,10 @@ public class Controlador_cliente {
     }
 
     private void Cargarlistados(String aguja) {
+
         DefaultTableCellRenderer render = new DefaultTableCellRenderer();
         DefaultTableModel tblModel; //Estructura JTbable
+
         tblModel = (DefaultTableModel) vista.getTblcli().getModel();
         tblModel.setNumRows(0);
         List<cliente> lista = modelo.ListaClientes(aguja);
@@ -139,22 +159,26 @@ public class Controlador_cliente {
 
     private void GuardarCli() {
 
-        modelo.setCod(vista.getTxtcocli().getText());
-        modelo.setCi(vista.getTxtcocli().getText());
-        modelo.setNombres(vista.getTxtcocli().getText());
-        modelo.setApellidos(vista.getTxtcocli().getText());
-        modelo.setTelefono(vista.getTxtcocli().getText());
-        modelo.setCorreo(vista.getTxtcocli().getText());
-        modelo.setDireccion(vista.getTxtcocli().getText());
+        modelo.setCod(vista.getTxtcocli().getText().toUpperCase());
+        modelo.setCi(vista.getTxtced().getText());
+        modelo.setNombres(vista.getJtxtnombre().getText().toUpperCase());
+        modelo.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
+        modelo.setTelefono(vista.getJtxttelefono().getText());
+        modelo.setCorreo(vista.getJtxtcorreo().getText());
+        modelo.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
+        if (Validaciones() == false) {
 
-        int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Si", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (resultado == JOptionPane.YES_NO_OPTION) {
-            if (modelo.Crear()) {
-                JOptionPane.showMessageDialog(vista, "Se guardo correctamente..");
+            int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Informacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (resultado == JOptionPane.YES_NO_OPTION) {
+                if (modelo.Crear()) {
+                    JOptionPane.showMessageDialog(vista, "Se guardo correctamente..");
                     Limpiar();
-            } else {
-                JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
+                } else {
+                    JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
         }
 
     }
@@ -163,9 +187,9 @@ public class Controlador_cliente {
         DefaultTableModel tblPersonas = (DefaultTableModel) vista.getTblcli().getModel();
         int fila = vista.getTblcli().getSelectedRow();
         if (fila != -1) {
-            String idPersona = tblPersonas.getValueAt(fila, 0).toString();
+            String idPersona = tblPersonas.getValueAt(fila, 1).toString();
             Modelo_cliente cli = new Modelo_cliente();
-            int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Eliminar?", "Si", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Eliminar?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {
                 if (cli.Eliminar(idPersona)) {
                     JOptionPane.showMessageDialog(vista, "Se elimino correctamente....");
@@ -180,18 +204,18 @@ public class Controlador_cliente {
 
     }
 
-    public void EditarCli(){
+    public void EditarCli() {
         int cont = vista.getTblcli().getSelectedRow();
         Modelo_cliente clie = new Modelo_cliente();
-        clie.setCod(vista.getTblcli().getValueAt(cont, 0).toString());
-        clie.setCi(vista.getTblcli().getValueAt(cont, 1).toString());
-        clie.setNombres(vista.getTblcli().getValueAt(cont, 2).toString());
-        clie.setApellidos(vista.getTblcli().getValueAt(cont, 3).toString());
-        clie.setTelefono(vista.getTblcli().getValueAt(cont, 4).toString());
-        clie.setCorreo(vista.getTblcli().getValueAt(cont, 5).toString());
-        clie.setDireccion(vista.getTblcli().getValueAt(cont, 6).toString());
+        clie.setCi(vista.getTblcli().getValueAt(cont, 1).toString().toUpperCase());
+        clie.setNombres(vista.getJtxtnombre().getText().toUpperCase());
+        clie.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
+        clie.setTelefono(vista.getJtxttelefono().getText().toUpperCase());
+        clie.setCorreo(vista.getJtxtcorreo().getText().toUpperCase());
+        clie.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
+        clie.setCod(vista.getTxtcocli().getText().toUpperCase());
 
-        int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Modificar los datos?", "Si", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Modificar los datos?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (resultado == JOptionPane.YES_NO_OPTION) {
             if (clie.Editar(vista.getTxtced().getText())) {
                 JOptionPane.showMessageDialog(vista, "Se modifico correctamente los datos");
@@ -203,16 +227,51 @@ public class Controlador_cliente {
         }
 
     }
-    
-    private void Limpiar(){
-    vista.getTxtcocli().setText("");
-    vista.getTxtced().setText("");
-    vista.getJtxtnombre().setText("");
-    vista.getJtxtapellidos().setText("");
-    vista.getJtxttelefono().setText("");
-    vista.getJtxtcorreo().setText("");
-    vista.getJtxtdirecion().setText("");
-    
+
+    private void Limpiar() {
+        vista.getTxtcocli().setText("");
+        vista.getTxtced().setText("");
+        vista.getJtxtnombre().setText("");
+        vista.getJtxtapellidos().setText("");
+        vista.getJtxttelefono().setText("");
+        vista.getJtxtcorreo().setText("");
+        vista.getJtxtdirecion().setText("");
+
     }
+
+    private boolean Validaciones() {
+
+        if (vista.getTxtcocli().getText().isEmpty()) {
+            vista.getAviso1().setVisible(true);
+
+            if (vista.getTxtced().getText().trim().isEmpty()) {
+                vista.getAviso2().setVisible(true);
+
+                if (vista.getJtxtnombre().getText().trim().isEmpty()) {
+                    vista.getAviso3().setVisible(true);
+
+                    if (vista.getJtxtapellidos().getText().trim().isEmpty()) {
+                        vista.getAviso4().setVisible(true);
+
+                        if (vista.getJtxttelefono().getText().trim().isEmpty()) {
+                            vista.getAviso5().setVisible(true);
+
+                            if (vista.getJtxtcorreo().getText().trim().isEmpty()) {
+                                vista.getAviso6().setVisible(true);
+
+                                if (vista.getJtxtdirecion().getText().trim().isEmpty()) {
+                                    vista.getAviso7().setVisible(true);
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    
 
 }

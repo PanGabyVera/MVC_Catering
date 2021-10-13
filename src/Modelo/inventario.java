@@ -12,8 +12,18 @@ package Modelo;
 public class inventario {
      private String cod_inventario;
       private String nombre;
-       private int precio;
+       private double precio;
 
+    public inventario() {
+    }
+
+    public inventario(String cod_inventario, String nombre, double precio) {
+        this.cod_inventario = cod_inventario;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+       
     public String getCod_inventario() {
         return cod_inventario;
     }
@@ -30,17 +40,12 @@ public class inventario {
         this.nombre = nombre;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    public inventario(String cod_inventario, String nombre, int precio) {
-        this.cod_inventario = cod_inventario;
-        this.nombre = nombre;
-        this.precio = precio;
-    }
 }

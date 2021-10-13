@@ -2,7 +2,9 @@
 package Controlador;
 
 import Modelo.Modelo_cliente;
+import Modelo.Modelo_inventario;
 import Vista.Vista_Cliente;
+import Vista.Vista_Inventario;
 import Vista.Vista_MenuPrincipal;
 
 /**
@@ -29,5 +31,20 @@ public class Control_principal {
         Controlador_cliente cp=new Controlador_cliente(mp, vp);
         cp.iniciaControl();
     }
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
