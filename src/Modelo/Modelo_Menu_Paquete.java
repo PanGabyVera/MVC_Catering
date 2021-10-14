@@ -70,8 +70,13 @@ public class Modelo_Menu_Paquete extends Menu_paquete{
         
         String sql;
         sql="DELETE FROM menu_paque where cod_paq='"+getCod_paq()+"' and cod_men='"+getCod_menu()+"'";
-        return con.accion(sql);
-         
+        return con.accion(sql);   
+    }
+    public boolean EliminarMenu_paquete(){
+        
+        String sql;
+        sql="DELETE FROM menu_paque where cod_paq='"+getCod_paq()+"'";
+        return con.accion(sql);   
     }
     public boolean EditarMenu_paq() {
         String sql;

@@ -301,7 +301,7 @@ public class Controlador_Menu extends Menu{
             String cod_menu = Vista.getTblmen().getValueAt(ind, 0).toString();
             Modelo_Ingrediente_Menu ingre_menu = new Modelo_Ingrediente_Menu();
                 ingre_menu.setCod_menu(cod_menu);
-                if(ingre_menu.EliminarIng_menu()){
+                if(ingre_menu.EliminarIngre_menu()){
                     Modelo_Menu menu = new Modelo_Menu();
                     menu.setCod_menu(cod_menu);
                     if(menu.EliminarMe()){
@@ -321,7 +321,7 @@ public class Controlador_Menu extends Menu{
             String cod_menu = Vista.getTxtcome().getText();
             Modelo_Ingrediente_Menu ingre_menu = new Modelo_Ingrediente_Menu();
                 ingre_menu.setCod_menu(cod_menu);
-                if(ingre_menu.EliminarIng_menu()){
+                if(ingre_menu.EliminarIngre_menu()){
                     Modelo_Menu menu = new Modelo_Menu();
                     menu.setCod_menu(cod_menu);
                     if(menu.EliminarMe()){
