@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.awt.Label;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 /**
  *
@@ -63,8 +65,8 @@ public class Modelo_pedido extends pedido{
   public boolean Crear() {
        String sql;
         sql = "INSERT INTO pedido(cod_pedido,cod_cliente,cod_paquete,fecha_entre,hora_entre,direccion_pe) ";
-        sql += " VALUES ('" + getCod_pedido() + "','" + getCod_cliente() + "','" + getCod_paquete()+"','"+getHora_entrega()
-                +"',to_date('" + getFecha_enterega() + "','yyyy-MM-dd') ,'" +getDireccion_entre()+"')";
+        sql += " VALUES ('" + getCod_pedido() + "','" + getCod_cliente() + "','" + getCod_paquete()
+           +"',('"+getHora_entrega()+"','HH:mm:ss')',to_date('" + getFecha_enterega() + "','yyyy-MM-dd') ,'" +getDireccion_entre()+"')";
          
       return conexion.accion(sql);
     }
@@ -140,5 +142,55 @@ public boolean Eliminar(String id) {
             }
         }
     }
+    public void Listareferen_paq(String aguja,JLabel lb){
     
+        String sql="SELECT nom_paq FROM paquete WHERE cod_paq='"+aguja+"'";
+        java.sql.Connection con=null; 
+            con=conexion.getCon();
+        try {
+            //cliente
+            PreparedStatement ps= con.prepareStatement(sql);//preparar sentencia
+            ResultSet result=ps.executeQuery();//ejecuta y guarda la sentencia
+            
+            while (result.next()) {        
+                lb.setText("Paquete: "+result.getString("nom_paq"));//se llena
+            }
+            
+        } catch (SQLException e) {
+            System.err.println(e);
+        }finally{
+        
+            if (con!=null) {
+                System.err.println("Nom de paquete");
+            } else {
+                System.err.println("Sin datos paquete");
+            }
+    }
+    }
+    public void Listareferen_cli(String aguja,JLabel lb){
+    
+        String sql="SELECT nom_cli,ape_cli FROM cliente WHERE id='"+aguja+"'";
+        java.sql.Connection con=null; 
+            con=conexion.getCon();
+        try {
+            //cliente
+            PreparedStatement ps= con.prepareStatement(sql);//preparar sentencia
+            ResultSet result=ps.executeQuery();//ejecuta y guarda la sentencia
+            
+            while (result.next()) {        
+                lb.setText("Cliente: "+result.getString("nom_cli")+" "+result.getString("ape_cli"));//se llena
+               
+            }
+            
+        } catch (SQLException e) {
+            System.err.println(e);
+        }finally{
+        
+            if (con!=null) {
+                System.err.println("Nom de cliente");
+            } else {
+                System.err.println("Sin datos paquete");
+            }
+    }
+    }
 }

@@ -106,7 +106,7 @@ public class Controlador_empleado {
             btcrear_editar(origen);
             vista.getDlgemp().setTitle("Editar empleado");
             vista.getDlgemp().setLocationRelativeTo(vista);
-            vista.getDlgemp().setSize(580, 450);
+            vista.getDlgemp().setSize(580, 480);
             vista.getDlgemp().setVisible(true);
             pasarDatos();
         } else if (origen == 3) {
@@ -279,7 +279,10 @@ public class Controlador_empleado {
         e.setCorreo(vista.getJtxtcorreo().getText().toUpperCase());
         e.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
         e.setCod(vista.getTxtcoem().getText().toUpperCase());
-        e.setCargo(vista.getTxtcargo().getText().toUpperCase());
+        e.setCargo(vista.getTxtcargo().getText().toUpperCase());/*
+        e.setNom_car(vista.getLbNombreca1().getText().toUpperCase());
+        int a =Integer.valueOf(vista.getLbsueldoca().getText().toUpperCase());
+        e.setSuel(a);*/
 
         int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Modificar los datos?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (resultado == JOptionPane.YES_NO_OPTION) {

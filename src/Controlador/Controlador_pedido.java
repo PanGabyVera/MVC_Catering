@@ -50,6 +50,7 @@ public class Controlador_pedido {
         //combos
         modelo.llenar_comboCli(vista.getCBcliente());
         modelo.llenar_comboPaq(vista.getCBpaquete());
+        
 
     }
 
@@ -82,8 +83,10 @@ public class Controlador_pedido {
         vista.getBtnel().addActionListener(l -> EliminarPE());
         vista.getBtnca().addActionListener(l -> vista.getDlgped().setVisible(false));
         vista.getjBttsalir().addActionListener(l -> vista.setVisible(false));
-
-        //reporte y busqueda
+        vista.getCBpaquete().addActionListener(l -> modelo.Listareferen_paq(vista.getCBpaquete().getSelectedItem().toString(), vista.getLbpaquete()));
+        vista.getCBcliente().addActionListener(l -> modelo.Listareferen_cli(vista.getCBcliente().getSelectedItem().toString(), vista.getLblcliente()));
+        
+       //reporte y busqueda
         // vista.getBtnim().addActionListener(l->);
         vista.getTxtbu().addKeyListener(kl);
     }
@@ -102,7 +105,7 @@ public class Controlador_pedido {
             btcrear_editar(origen);
             vista.getDlgped().setTitle("Crear Pedido");
             vista.getDlgped().setLocationRelativeTo(vista);
-            vista.getDlgped().setSize(580, 410);
+            vista.getDlgped().setSize(678, 430);//ancho y largo
             vista.getDlgped().setVisible(true);
             Limpiar();
 
@@ -110,7 +113,7 @@ public class Controlador_pedido {
             btcrear_editar(origen);
             vista.getDlgped().setTitle("Editar Pedido");
             vista.getDlgped().setLocationRelativeTo(vista);
-            vista.getDlgped().setSize(580, 410);
+            vista.getDlgped().setSize(678, 430);
             vista.getDlgped().setVisible(true);
             pasarDatos();
         } else {
@@ -143,7 +146,7 @@ public class Controlador_pedido {
                 Logger.getLogger(Controlador_pedido.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            vista.getTxthor().setText(vista.getTblped().getValueAt(cont, 3).toString());
+            vista.getHora().setText(vista.getTblped().getValueAt(cont, 3).toString());
             vista.getTxtdir().setText(vista.getTblped().getValueAt(cont, 5).toString().toUpperCase());
 
         } else {
@@ -202,7 +205,7 @@ public class Controlador_pedido {
         modelo.setCod_paquete(vista.getCBpaquete().getSelectedItem().toString());
 
         //hora
-        String s = vista.getTxthor().getText();
+        String s = vista.getHora().getText();
         DateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         long ms = 0;
         try {
@@ -259,7 +262,7 @@ public class Controlador_pedido {
         Date fecha = Date.valueOf(zdt.toLocalDate());
 
         //hora
-        String s = vista.getTxthor().getText();
+        String s = vista.getHora().getText();
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         long ms = 0;
         try {
@@ -289,7 +292,7 @@ public class Controlador_pedido {
 
     public void Limpiar() {
         vista.getTxtcoped().setText("");
-        vista.getTxthor().setText("");
+        vista.getHora().setText("");
         vista.getTxtdir().setText("");
         vista.getJdcfech().setCalendar(null);
         vista.getCBcliente().setSelectedIndex(0);

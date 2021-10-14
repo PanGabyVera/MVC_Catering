@@ -85,7 +85,7 @@ public class Modelo_empleado extends empleado{
                 + " WHERE id = '" + id + "'";
         return conexion.accion(sql);
     }
-    
+    //org.postgresql.util.PSQLException: ERROR: update o delete en «empleado» viola la llave foránea «emp_del_paq» en la tabla «emp_paq»
     
     
     
