@@ -22,13 +22,6 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public JButton getBttagregar() {
-        return bttagregar;
-    }
-
-    public void setBttagregar(JButton bttagregar) {
-        this.bttagregar = bttagregar;
-    }
 
 
     
@@ -294,7 +287,6 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
         btncr = new javax.swing.JButton();
         btnli = new javax.swing.JButton();
         bttsalir = new javax.swing.JButton();
-        bttagregar = new javax.swing.JButton();
 
         dlgcar.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -473,8 +465,6 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
 
         bttsalir.setText("Salir");
 
-        bttagregar.setText("Agregar");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -497,8 +487,6 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bttagregar)
-                .addGap(18, 18, 18)
                 .addComponent(bttsalir)
                 .addGap(20, 20, 20))
         );
@@ -514,10 +502,8 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
                     .addComponent(txtbu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncr)
                     .addComponent(btnli))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bttsalir)
-                    .addComponent(bttagregar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bttsalir)
                 .addContainerGap())
         );
 
@@ -525,8 +511,8 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,7 +520,8 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -565,7 +552,6 @@ public class Vista_Cargo extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnel;
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
-    private javax.swing.JButton bttagregar;
     private javax.swing.JButton bttsalir;
     private javax.swing.JDialog dlgcar;
     private javax.swing.JFileChooser jFileChooser1;

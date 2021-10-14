@@ -13,12 +13,12 @@ public class empleado extends persona{
       private String cargo;
        private String cod;
        private String nom_car;
-       private String suel;
+       private int suel;
 
     public empleado() {
     }
 
-    public empleado(String cargo, String cod, String nom_car, String suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+    public empleado(String cargo, String cod, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
         super(ci, nombres, apellidos, telefono, correo, direccion);
         this.cargo = cargo;
         this.cod = cod;
@@ -34,11 +34,11 @@ public class empleado extends persona{
         this.nom_car = nom_car;
     }
 
-    public String getSuel() {
+    public int getSuel() {
         return suel;
     }
 
-    public void setSuel(String suel) {
+    public void setSuel(int suel) {
         this.suel = suel;
     }
 

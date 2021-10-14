@@ -293,8 +293,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
               <Component id="jScrollPane1" alignment="0" pref="700" max="32767" attributes="0"/>
+              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -304,6 +304,7 @@
                   <Component id="jScrollPane1" pref="189" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -380,8 +381,6 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="bttagregar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="bttsalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
@@ -400,11 +399,8 @@
                           <Component id="btncr" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnli" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="bttsalir" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bttagregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="bttsalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -449,11 +445,6 @@
             <Component class="javax.swing.JButton" name="bttsalir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="bttagregar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
             </Component>
           </SubComponents>

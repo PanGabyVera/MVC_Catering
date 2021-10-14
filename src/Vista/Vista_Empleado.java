@@ -23,15 +23,18 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public JButton getjBttsalir() {
-        return jBttsalir;
+    public JDialog getDlgCargo() {
+        return DlgCargo;
     }
 
-    public void setjBttsalir(JButton jBttsalir) {
-        this.jBttsalir = jBttsalir;
+    public JTable getTblcargos() {
+        return Tblcargos;
     }
 
-    
+    public void setTblcargos(JTable Tblcargos) {
+        this.Tblcargos = Tblcargos;
+    }
+
     public JButton getBtnac() {
         return btnac;
     }
@@ -40,23 +43,6 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         this.btnac = btnac;
     }
 
-    public JButton getBttBuscar() {
-        return bttBuscar;
-    }
-
-    public void setBttBuscar(JButton bttBuscar) {
-        this.bttBuscar = bttBuscar;
-    }
-
-    public JTextField getTxtcargo() {
-        return txtcargo;
-    }
-
-    public void setTxtcargo(JTextField txtcargo) {
-        this.txtcargo = txtcargo;
-    }
-
-    
     public JButton getBtnca() {
         return btnca;
     }
@@ -105,6 +91,30 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         this.btnli = btnli;
     }
 
+    public JButton getBttBuscar() {
+        return bttBuscar;
+    }
+
+    public void setBttBuscar(JButton bttBuscar) {
+        this.bttBuscar = bttBuscar;
+    }
+
+    public JButton getBttagregar() {
+        return bttagregar;
+    }
+
+    public void setBttagregar(JButton bttagregar) {
+        this.bttagregar = bttagregar;
+    }
+
+    public JButton getBttatras() {
+        return bttatras;
+    }
+
+    public void setBttatras(JButton bttatras) {
+        this.bttatras = bttatras;
+    }
+
     public JDialog getDlgemp() {
         return dlgemp;
     }
@@ -113,143 +123,13 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         this.dlgemp = dlgemp;
     }
 
-    public JFileChooser getjFileChooser1() {
-        return jFileChooser1;
+    public JButton getjBttsalir() {
+        return jBttsalir;
     }
 
-    public void setjFileChooser1(JFileChooser jFileChooser1) {
-        this.jFileChooser1 = jFileChooser1;
+    public void setjBttsalir(JButton jBttsalir) {
+        this.jBttsalir = jBttsalir;
     }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
-    }
-
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
-    }
-
-    public JLabel getjLabel9() {
-        return jLabel9;
-    }
-
-    public void setjLabel9(JLabel jLabel9) {
-        this.jLabel9 = jLabel9;
-    }
-
-    public JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
-
-    public JPanel getjPanel2() {
-        return jPanel2;
-    }
-
-    public void setjPanel2(JPanel jPanel2) {
-        this.jPanel2 = jPanel2;
-    }
-
-    public JPanel getjPanel3() {
-        return jPanel3;
-    }
-
-    public void setjPanel3(JPanel jPanel3) {
-        this.jPanel3 = jPanel3;
-    }
-
-    public JPanel getjPanel4() {
-        return jPanel4;
-    }
-
-    public void setjPanel4(JPanel jPanel4) {
-        this.jPanel4 = jPanel4;
-    }
-
-    public JPanel getjPanel5() {
-        return jPanel5;
-    }
-
-    public void setjPanel5(JPanel jPanel5) {
-        this.jPanel5 = jPanel5;
-    }
-
-    public JPanel getjPanel6() {
-        return jPanel6;
-    }
-
-    public void setjPanel6(JPanel jPanel6) {
-        this.jPanel6 = jPanel6;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JLabel getLblape() {
-        return lblape;
-    }
-
-    public void setLblape(JLabel lblape) {
-        this.lblape = lblape;
-    }
-
-    public JLabel getLblid() {
-        return lblid;
-    }
-
-    public void setLblid(JLabel lblid) {
-        this.lblid = lblid;
-    }
-
-    public JTable getTblemp() {
-        return tblemp;
-    }
-
-    public void setTblemp(JTable tblemp) {
-        this.tblemp = tblemp;
-    }
-
-    public JTextField getTxtbu() {
-        return txtbu;
-    }
-
-    public void setTxtbu(JTextField txtbu) {
-        this.txtbu = txtbu;
-    }
-
-    public JTextField getTxtced() {
-        return txtced;
-    }
-
-    public void setTxtced(JTextField txtced) {
-        this.txtced = txtced;
-    }
-
-    
 
     public JTextField getJtxtapellidos() {
         return jtxtapellidos;
@@ -291,6 +171,37 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         this.jtxttelefono = jtxttelefono;
     }
 
+    public JTable getTblemp() {
+        return tblemp;
+    }
+
+    public void setTblemp(JTable tblemp) {
+        this.tblemp = tblemp;
+    }
+
+    public JTextField getTxtbu() {
+        return txtbu;
+    }
+
+    public void setTxtbu(JTextField txtbu) {
+        this.txtbu = txtbu;
+    }
+
+    public JTextField getTxtcargo() {
+        return txtcargo;
+    }
+
+    public void setTxtcargo(JTextField txtcargo) {
+        this.txtcargo = txtcargo;
+    }
+
+    public JTextField getTxtced() {
+        return txtced;
+    }
+
+    public void setTxtced(JTextField txtced) {
+        this.txtced = txtced;
+    }
 
     public JTextField getTxtcoem() {
         return txtcoem;
@@ -300,6 +211,23 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         this.txtcoem = txtcoem;
     }
 
+    public JLabel getLbNombreca1() {
+        return lbNombreca1;
+    }
+
+    public void setLbNombreca1(JLabel lbNombreca1) {
+        this.lbNombreca1 = lbNombreca1;
+    }
+
+    public JLabel getLbsueldoca() {
+        return lbsueldoca;
+    }
+
+    public void setLbsueldoca(JLabel lbsueldoca) {
+        this.lbsueldoca = lbsueldoca;
+    }
+
+    
     
 
     
@@ -331,10 +259,22 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         jtxtdirecion = new javax.swing.JTextField();
         txtcargo = new javax.swing.JTextField();
         bttBuscar = new javax.swing.JButton();
+        lbsueldoca = new javax.swing.JLabel();
+        lbNombreca1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         btnac = new javax.swing.JButton();
         btnca = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
+        DlgCargo = new javax.swing.JDialog();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        bttagregar = new javax.swing.JButton();
+        bttatras = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tblcargos = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -400,7 +340,21 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel8.setText("Direción:");
 
-        bttBuscar.setText("Buscar");
+        txtcargo.setEditable(false);
+        txtcargo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        bttBuscar.setText("Agregar");
+
+        lbsueldoca.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbsueldoca.setForeground(new java.awt.Color(255, 255, 255));
+        lbsueldoca.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbsueldoca.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lbNombreca1.setBackground(new java.awt.Color(255, 255, 255));
+        lbNombreca1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbNombreca1.setForeground(new java.awt.Color(255, 255, 255));
+        lbNombreca1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbNombreca1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -429,19 +383,29 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
                         .addComponent(txtced, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtcoem, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblape)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bttBuscar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(59, 59, 59)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbNombreca1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbsueldoca, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(bttBuscar)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtcoem, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(lblape)
+                                .addGap(104, 104, 104))))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -456,13 +420,14 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
                     .addComponent(jtxtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(txtcoem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jtxtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblape))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jtxtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jtxttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -473,15 +438,17 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jtxtdirecion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(22, Short.MAX_VALUE))
+                            .addComponent(jtxtdirecion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblape)
-                            .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtcargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNombreca1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bttBuscar))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbsueldoca, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(0, 102, 102));
@@ -508,7 +475,7 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnac)
                     .addComponent(btnca))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dlgempLayout = new javax.swing.GroupLayout(dlgemp.getContentPane());
@@ -527,6 +494,123 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(102, 153, 255));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Descripcion de cargos");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBackground(new java.awt.Color(102, 153, 255));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+
+        jPanel9.setBackground(new java.awt.Color(204, 204, 255));
+
+        bttagregar.setText("Agregar");
+
+        bttatras.setText("Atras");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(bttagregar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bttatras, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bttagregar)
+                    .addComponent(bttatras))
+                .addContainerGap())
+        );
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+
+        Tblcargos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Codigo", "Nombre", "Salario"
+            }
+        ));
+        jScrollPane2.setViewportView(Tblcargos);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout DlgCargoLayout = new javax.swing.GroupLayout(DlgCargo.getContentPane());
+        DlgCargo.getContentPane().setLayout(DlgCargoLayout);
+        DlgCargoLayout.setHorizontalGroup(
+            DlgCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        DlgCargoLayout.setVerticalGroup(
+            DlgCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DlgCargoLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -647,7 +731,7 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -673,6 +757,8 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog DlgCargo;
+    private javax.swing.JTable Tblcargos;
     private javax.swing.JButton btnac;
     private javax.swing.JButton btnca;
     private javax.swing.JButton btncr;
@@ -681,10 +767,13 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
     private javax.swing.JButton bttBuscar;
+    private javax.swing.JButton bttagregar;
+    private javax.swing.JButton bttatras;
     private javax.swing.JDialog dlgemp;
     private javax.swing.JButton jBttsalir;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -694,19 +783,26 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jtxtapellidos;
     private javax.swing.JTextField jtxtcorreo;
     private javax.swing.JTextField jtxtdirecion;
     private javax.swing.JTextField jtxtnombre;
     private javax.swing.JTextField jtxttelefono;
+    private javax.swing.JLabel lbNombreca1;
     private javax.swing.JLabel lblape;
     private javax.swing.JLabel lblid;
+    private javax.swing.JLabel lbsueldoca;
     private javax.swing.JTable tblemp;
     private javax.swing.JTextField txtbu;
     private javax.swing.JTextField txtcargo;

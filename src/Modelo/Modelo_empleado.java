@@ -22,17 +22,19 @@ public class Modelo_empleado extends empleado{
     public Modelo_empleado() {
     }
 
-    public Modelo_empleado(String cargo, String cod, String nom_car, String suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+    public Modelo_empleado(String cargo, String cod, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
         super(cargo, cod, nom_car, suel, ci, nombres, apellidos, telefono, correo, direccion);
     }
 
     
+
+    
     public List<empleado> ListaEmpleados(String aguja) {
-        String sql = "select * from empleado where";
-        sql += " UPPER(id) like UPPER('%" + aguja + "%') OR";
-        sql += " UPPER(nom_empleado) like UPPER('%" + aguja + "%') OR";
-        sql += " UPPER(cargo) like UPPER('%" + aguja + "%') OR";
-        sql += " UPPER(ape_empleado) like UPPER('%" + aguja + "%')";
+        String sql = "select e.id, e.nom_empleado, e.ape_empleado, e.telefono,e.correo,e.direccion, e.cargo, e.cod_emp,c.nom_car, c.sueldo from empleado e Join cargo c ON(e.cargo=c.cod_cargo) where";
+        sql += " UPPER(e.id) like UPPER('%" + aguja + "%') OR";
+        sql += " UPPER(e.nom_empleado) like UPPER('%" + aguja + "%') OR";
+        sql += " UPPER(e.cargo) like UPPER('%" + aguja + "%') OR";
+        sql += " UPPER(e.ape_empleado) like UPPER('%" + aguja + "%')";
         ResultSet result = conexion.Consulta(sql);
         List<empleado> lista = new ArrayList<>();
         try {
@@ -46,6 +48,9 @@ public class Modelo_empleado extends empleado{
                 e.setCorreo(result.getString("correo"));
                 e.setDireccion(result.getString("direccion"));
                 e.setCargo(result.getString("cargo"));
+                e.setNom_car(result.getString("nom_car"));
+                e.setSuel(result.getInt("sueldo"));
+                
                 lista.add(e);
             }
             result.close();
