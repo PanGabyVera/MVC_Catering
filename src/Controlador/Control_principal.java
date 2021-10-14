@@ -10,9 +10,13 @@ import Modelo.Modelo_Ingrediente_Menu;
 import Modelo.Modelo_Menu;
 import Modelo.Modelo_Menu_Paquete;
 import Modelo.Modelo_Paquete;
+import Modelo.Modelo_cargo;
+import Modelo.Modelo_empleado;
 import Modelo.Modelo_inventario;
 import Modelo.Modelo_pedido;
+import Vista.Vista_Cargo;
 import Vista.Vista_Cliente;
+import Vista.Vista_Empleado;
 import Vista.Vista_Ingrediente;
 import Vista.Vista_Inventario;
 import Vista.Vista_Menu;
@@ -39,6 +43,8 @@ public class Control_principal {
         vst.getJmimen().addActionListener(l->crudMenu());
         vst.getJmiinv().addActionListener(l->crudInventario());
         vst.getJmiped().addActionListener(l->crudPedido());
+        vst.getJmicar().addActionListener(l->crudCargo());
+        vst.getJmiemp().addActionListener(l->crudEmpleado());
     }
     
     private void crudClienete(){
@@ -66,6 +72,7 @@ public class Control_principal {
         Controlador_Menu come=new Controlador_Menu(mome, vime,moin,moinme);
         come.iniciaControl();
     }
+    
     private void crudPaquete(){
         Modelo_Menu mome=new Modelo_Menu();
         Modelo_Paquete mopa=new Modelo_Paquete();
@@ -90,6 +97,22 @@ public class Control_principal {
         vst.getJdpmen().add(vp);
         Controlador_pedido cp=new Controlador_pedido(ped, vp);
         cp.iniciaControl();
+    }
+    
+    private void crudCargo(){
+        Modelo_cargo car=new Modelo_cargo();
+        Vista_Cargo vc=new Vista_Cargo();
+        vst.getJdpmen().add(vc);
+        Controlador_cargo cc=new Controlador_cargo(car, vc);
+        cc.iniciaControl();
+    }
+    
+    private void crudEmpleado(){
+        Modelo_empleado em=new Modelo_empleado();
+        Vista_Empleado ve=new Vista_Empleado();
+        vst.getJdpmen().add(ve);
+        Controlador_empleado ce=new Controlador_empleado(em, ve);
+        ce.iniciaControl();
     }
      
     
