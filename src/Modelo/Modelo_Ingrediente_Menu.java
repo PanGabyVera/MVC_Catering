@@ -73,6 +73,13 @@ public class Modelo_Ingrediente_Menu extends Ingrediente_menu{
         return con.accion(sql);
          
     }
+    public boolean EliminarIngre_menu(){
+        
+        String sql;
+        sql="DELETE FROM ing_menu where cod_men='"+getCod_menu()+"'";
+        return con.accion(sql);
+         
+    }
     public boolean EditarIng_menu() {
         String sql;
         sql = "UPDATE ing_menu set cantidad='" + getCantidad() +"'";

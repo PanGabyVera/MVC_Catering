@@ -45,6 +45,7 @@ public class Control_principal {
         vst.getJmiped().addActionListener(l->crudPedido());
         vst.getJmicar().addActionListener(l->crudCargo());
         vst.getJmiemp().addActionListener(l->crudEmpleado());
+        vst.getJmipaq().addActionListener(l->crudPaquete());
     }
     
     private void crudClienete(){
@@ -77,9 +78,10 @@ public class Control_principal {
         Modelo_Menu mome=new Modelo_Menu();
         Modelo_Paquete mopa=new Modelo_Paquete();
         Modelo_Menu_Paquete momepa=new Modelo_Menu_Paquete();
+        Modelo_inventario moinv=new Modelo_inventario();
         Vista_Paquete vipa=new Vista_Paquete();
         vst.getJdpmen().add(vipa);
-        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa);
+        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa,moinv);
         come.iniciaControl();
     }
     

@@ -12,6 +12,7 @@ import Vista.Vista_Menu;
 import Modelo.Modelo_Menu;
 import Modelo.Modelo_Menu_Paquete;
 import Modelo.Modelo_Paquete;
+import Modelo.Modelo_inventario;
 import Modelo.Paquete;
 import Vista.Vista_MenuPrincipal;
 import Vista.Vista_Paquete;
@@ -46,11 +47,13 @@ public class Controlador_Paquete extends Paquete{
     private Modelo_Menu ModeloMenu;
     private Vista_Paquete Vista;
     private Modelo_Menu_Paquete Modelo_Menu_Paquete;
-    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete) {
+    private Modelo_inventario Modelo_inventario;
+    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete,Modelo_inventario Modelo_inventario) {
         this.Modelo = Modelo;
         this.Vista = Vista;
         this.ModeloMenu = ModeloMenu;
         this.Modelo_Menu_Paquete =Modelo_Menu_Paquete;
+        this.Modelo_inventario=Modelo_inventario;
         Vista.setVisible(true);
     }
     public void iniciaControl(){
@@ -298,8 +301,8 @@ public class Controlador_Paquete extends Paquete{
         
             String cod_paq = Vista.getTblpaq().getValueAt(ind, 0).toString();
             Modelo_Menu_Paquete menu_paqu = new Modelo_Menu_Paquete();
-                menu_paqu.setCod_menu(cod_paq);
-                if(menu_paqu.EliminarMenu_paq()){
+                menu_paqu.setCod_paq(cod_paq);
+                if(menu_paqu.EliminarMenu_paquete()){
                     Modelo_Paquete paquete = new Modelo_Paquete();
                     paquete.setCod_paquete(cod_paq);
                     if(paquete.EliminarPaq()){
@@ -319,7 +322,7 @@ public class Controlador_Paquete extends Paquete{
             String cod_paq = Vista.getTxtcomen().getText();
             Modelo_Menu_Paquete menu_paq = new Modelo_Menu_Paquete();
                 menu_paq.setCod_paq(cod_paq);
-                if(menu_paq.EliminarMenu_paq()){
+                if(menu_paq.EliminarMenu_paquete()){
                     Modelo_Paquete paque = new Modelo_Paquete();
                     paque.setCod_paquete(cod_paq);
                     if(paque.EliminarPaq()){
