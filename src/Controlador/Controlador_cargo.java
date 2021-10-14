@@ -36,7 +36,6 @@ public class Controlador_cargo {
         this.vista = vista;
          vista.setTitle("CRUDCARGO");
         vista.setVisible(true);
-        vista.getBttagregar().setVisible(false);
         Cargarlistados("");
     }
     
@@ -118,7 +117,7 @@ public class Controlador_cargo {
         }
     }
     
-    private void Cargarlistados(String aguja) {
+    public void Cargarlistados(String aguja) {
 
         DefaultTableCellRenderer render = new DefaultTableCellRenderer();
         DefaultTableModel tblModel; //Estructura JTbable

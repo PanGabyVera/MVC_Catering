@@ -11,6 +11,7 @@ import Modelo.cargo;
 import Modelo.empleado;
 import Vista.Vista_Cargo;
 import Vista.Vista_Empleado;
+import Vista.Vista_MenuPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -31,32 +32,33 @@ import javax.xml.ws.Holder;
  * @author Pandora
  */
 public class Controlador_empleado {
-   private Modelo_empleado modelo;
+
+    private Modelo_empleado modelo;
     private Vista_Empleado vista;
-    private Vista_Cargo vs_crago;
     private Modelo_cargo mo_crago;
 
-    public Controlador_empleado(Modelo_empleado modelo, Vista_Empleado vista) {
+    public Controlador_empleado(Modelo_empleado modelo, Vista_Empleado vista, Modelo_cargo cargo) {
         this.modelo = modelo;
         this.vista = vista;
+        this.mo_crago = cargo;
         vista.setTitle("CRUD EMPLEADO");
         vista.setVisible(true);
-        
+
         Cargarlistados("");
-        
     }
-    
- public void iniciaControl() {
+
+    public void iniciaControl() {
         KeyListener kl = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
                 // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
                 // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            vista.getBttBuscar().addActionListener(l -> agregar());
+
             }
 
             @Override
@@ -74,25 +76,22 @@ public class Controlador_empleado {
         vista.getBtnel().addActionListener(l -> EliminarEM());
         vista.getBtnca().addActionListener(l -> vista.getDlgemp().setVisible(false));
         vista.getjBttsalir().addActionListener(l -> vista.setVisible(false));
-
+        //dialogo del cargo
+        vista.getBttBuscar().addActionListener(l -> MostarVentana(3));
+        vista.getBttagregar().addActionListener(l -> pasarCargo());
+        vista.getBttatras().addActionListener(l -> vista.getDlgCargo().setVisible(false));
         //reporte y busqueda
         // vista.getBtnim().addActionListener(l->);
         vista.getTxtbu().addKeyListener(kl);
     }
- private void btcrear_editar(int origen) {
+
+    private void btcrear_editar(int origen) {
         if (origen == 1) {
             vista.getBtnac().addActionListener(l -> GuardarEM());
         } else if (origen == 2) {
             vista.getBtnac().addActionListener(l -> EditarEM());
 
         }
-    }   
- 
- private void agregar() {
-        vs_crago.getBttagregar().addActionListener((ActionListener) this);
-        vs_crago.setVisible(true);
-        vs_crago.getBttagregar().setVisible(true);
-        
     }
 
     public void MostarVentana(int origen) {
@@ -100,23 +99,29 @@ public class Controlador_empleado {
             btcrear_editar(origen);
             vista.getDlgemp().setTitle("Crear registro de empleado");
             vista.getDlgemp().setLocationRelativeTo(vista);
-            vista.getDlgemp().setSize(500, 430);
+            vista.getDlgemp().setSize(580, 450);
             vista.getDlgemp().setVisible(true);
 
         } else if (origen == 2) {
             btcrear_editar(origen);
             vista.getDlgemp().setTitle("Editar empleado");
             vista.getDlgemp().setLocationRelativeTo(vista);
-            vista.getDlgemp().setSize(500, 430);
+            vista.getDlgemp().setSize(580, 450);
             vista.getDlgemp().setVisible(true);
             pasarDatos();
+        } else if (origen == 3) {
+            vista.getDlgCargo().setTitle("Selecciòn de cargo");
+            CargarCargo("");
+            vista.getDlgCargo().setLocationRelativeTo(vista);
+            vista.getDlgCargo().setSize(450, 350);
+            vista.getDlgCargo().setVisible(true);
+
         } else {
             vista.getDlgemp().setVisible(false);
         }
     }
-        
-        
-        public void pasarDatos() {
+
+    public void pasarDatos() {
         int cont = vista.getTblemp().getSelectedRow();
         if (cont != -1) {
             //llenamos datos en la ventana emergente
@@ -130,15 +135,58 @@ public class Controlador_empleado {
             vista.getJtxtcorreo().setText(vista.getTblemp().getValueAt(cont, 5).toString().toUpperCase());
             vista.getJtxtdirecion().setText(vista.getTblemp().getValueAt(cont, 6).toString().toUpperCase());
             vista.getTxtcargo().setText(vista.getTblemp().getValueAt(cont, 7).toString().toUpperCase());
-            
+            vista.getLbNombreca1().setText(vista.getTblemp().getValueAt(cont, 8).toString().toUpperCase());
+            vista.getLbsueldoca().setText(vista.getTblemp().getValueAt(cont, 9).toString());
 
         } else {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar una fila");
         }
     }
 
-        
-     public void Cargarlistados(String aguja) {
+    public void pasarCargo() {
+        int cont = vista.getTblcargos().getSelectedRow();
+        if (cont != -1) {
+            //llenamos datos en la ventana emergente
+            Modelo_cargo mc = new Modelo_cargo();
+            mc.setCod_car(vista.getTblcargos().getValueAt(cont, 0).toString());
+            vista.getTxtcargo().setText(vista.getTblcargos().getValueAt(cont, 0).toString().toUpperCase());
+            vista.getLbNombreca1().setText(vista.getTblcargos().getValueAt(cont, 1).toString().toUpperCase());
+            vista.getLbsueldoca().setText(vista.getTblcargos().getValueAt(cont, 2).toString().toUpperCase());
+            vista.getDlgCargo().setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(vista, "Debe seleccionar una fila");
+        }
+    }
+
+    public void CargarCargo(String aguja) {
+        DefaultTableCellRenderer render = new DefaultTableCellRenderer();
+        DefaultTableModel tblModel; //Estructura JTbable
+
+        tblModel = (DefaultTableModel) vista.getTblcargos().getModel();
+        tblModel.setNumRows(0);
+        List<cargo> lista = mo_crago.Listacargo(aguja);
+        int colum = tblModel.getColumnCount();//extraemos el# de colum
+        Holder<Integer> a = new Holder<>(0);//contador
+        //ORDENAR LOS DATOS DE LA TABLA
+        TableRowSorter<TableModel> sorter = new TableRowSorter<>(tblModel);
+        vista.getTblcargos().setRowSorter(sorter);
+        List<SortKey> sotk = new ArrayList<>();
+
+        lista.stream().forEach(inve -> {
+
+            tblModel.addRow(new Object[colum]);//para crear colum
+            //ubcacion en la tabla
+            vista.getTblcargos().setValueAt(inve.getCod_car(), a.value, 0);
+            vista.getTblcargos().setValueAt(inve.getNom(), a.value, 1);
+            vista.getTblcargos().setValueAt(inve.getSueldo(), a.value, 2);
+
+            a.value++;
+
+        });
+
+    }
+
+    public void Cargarlistados(String aguja) {
 
         DefaultTableCellRenderer render = new DefaultTableCellRenderer();
 
@@ -146,20 +194,18 @@ public class Controlador_empleado {
         tblModel = (DefaultTableModel) vista.getTblemp().getModel();
         tblModel.setNumRows(0);
         List<empleado> lista = modelo.ListaEmpleados(aguja);
-        
+       // List<cargo> lis = mo_crago.Listacargo(aguja);
         int colum = tblModel.getColumnCount();//extraemos el# de colum
         Holder<Integer> a = new Holder<>(0);//contador
         //ORDENAR LOS DATOS DE LA TABLA
         TableRowSorter<TableModel> sorter = new TableRowSorter<>(tblModel);
         vista.getTblemp().setRowSorter(sorter);
         List<SortKey> sotk = new ArrayList<>();
-
         lista.stream().forEach(emp -> {
-            
 
             tblModel.addRow(new Object[colum]);//para crear colum
             //ubcacion en la tabla
-            
+
             vista.getTblemp().setValueAt(emp.getCod(), a.value, 0);
             vista.getTblemp().setValueAt(emp.getCi(), a.value, 1);
             vista.getTblemp().setValueAt(emp.getNombres(), a.value, 2);
@@ -169,13 +215,14 @@ public class Controlador_empleado {
             vista.getTblemp().setValueAt(emp.getDireccion(), a.value, 6);
             vista.getTblemp().setValueAt(emp.getCargo(), a.value, 7);
             vista.getTblemp().setValueAt(emp.getNom_car(), a.value, 8);
-            vista.getTblemp().setValueAt(emp.getSuel(), a.value, 9);
+            int su=Integer.valueOf(emp.getSuel());
+            vista.getTblemp().setValueAt(su, a.value, 9);
             
             a.value++;
-           });
+        });
 
     }
-    
+
     private void GuardarEM() {
 
         modelo.setCod(vista.getTxtcoem().getText().toUpperCase());
@@ -186,18 +233,21 @@ public class Controlador_empleado {
         modelo.setCorreo(vista.getJtxtcorreo().getText());
         modelo.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
         modelo.setCargo(vista.getTxtcargo().getText().toUpperCase());
-        
+        modelo.setNom_car(vista.getLbNombreca1().getText().toUpperCase());
+        int su = Integer.valueOf(vista.getLbsueldoca().getText());
+        modelo.setSuel(su);
 
-            int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Informacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (resultado == JOptionPane.YES_NO_OPTION) {
-                if (modelo.Crear()) {
-                    JOptionPane.showMessageDialog(vista, "Se guardo correctamente..");
-                    Limpiar();
-                } else {
-                    JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
-                }
+        int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Informacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (resultado == JOptionPane.YES_NO_OPTION) {
+            if (modelo.Crear()) {
+                JOptionPane.showMessageDialog(vista, "Se guardo correctamente..");
+                Limpiar();
+            } else {
+                JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
             }
+        }
     }
+
     public void EliminarEM() {
         DefaultTableModel tblPersonas = (DefaultTableModel) vista.getTblemp().getModel();
         int fila = vista.getTblemp().getSelectedRow();
@@ -218,7 +268,7 @@ public class Controlador_empleado {
         }
 
     }
-    
+
     public void EditarEM() {
         int cont = vista.getTblemp().getSelectedRow();
         Modelo_empleado e = new Modelo_empleado();
@@ -243,7 +293,7 @@ public class Controlador_empleado {
         }
 
     }
-    
+
     private void Limpiar() {
         vista.getTxtcoem().setText("");
         vista.getTxtced().setText("");

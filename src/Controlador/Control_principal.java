@@ -111,9 +111,10 @@ public class Control_principal {
     
     private void crudEmpleado(){
         Modelo_empleado em=new Modelo_empleado();
+        Modelo_cargo ca=new Modelo_cargo(); 
         Vista_Empleado ve=new Vista_Empleado();
         vst.getJdpmen().add(ve);
-        Controlador_empleado ce=new Controlador_empleado(em, ve);
+        Controlador_empleado ce=new Controlador_empleado(em, ve,ca);
         ce.iniciaControl();
     }
      
