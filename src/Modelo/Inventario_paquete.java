@@ -9,18 +9,28 @@ package Modelo;
  *
  * @author Pandora
  */
-public class inventario_paquete {
-    private String cod_inv;
+public class Inventario_paquete {
     private String cod_paq;
+    private String cod_inv;
     private int cantidad;
+    private String nombre;
 
-    public inventario_paquete() {
+    public Inventario_paquete() {
     }
 
-    public inventario_paquete(String cod_inv, String cod_paq, int cantidad) {
-        this.cod_inv = cod_inv;
+    public Inventario_paquete(String cod_paq, String cod_inv, int cantidad, String nombre) {
         this.cod_paq = cod_paq;
+        this.cod_inv = cod_inv;
         this.cantidad = cantidad;
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getCod_inv() {

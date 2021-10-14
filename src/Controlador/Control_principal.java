@@ -7,6 +7,7 @@ import Modelo.Modelo_cliente;
 import Modelo.Ingredientes;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
+import Modelo.Modelo_Inventario_Paquete;
 import Modelo.Modelo_Menu;
 import Modelo.Modelo_Menu_Paquete;
 import Modelo.Modelo_Paquete;
@@ -79,9 +80,10 @@ public class Control_principal {
         Modelo_Paquete mopa=new Modelo_Paquete();
         Modelo_Menu_Paquete momepa=new Modelo_Menu_Paquete();
         Modelo_inventario moinv=new Modelo_inventario();
+        Modelo_Inventario_Paquete moinpa=new Modelo_Inventario_Paquete();
         Vista_Paquete vipa=new Vista_Paquete();
         vst.getJdpmen().add(vipa);
-        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa,moinv);
+        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa,moinv,moinpa);
         come.iniciaControl();
     }
     

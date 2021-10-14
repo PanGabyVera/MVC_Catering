@@ -3,17 +3,20 @@ package Controlador;
 
 import Modelo.Ingrediente_menu;
 import Modelo.Ingredientes;
+import Modelo.Inventario_paquete;
 import Modelo.Menu;
 import Modelo.Menu_paquete;
 import Modelo.Modelo_ConexionBD;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
+import Modelo.Modelo_Inventario_Paquete;
 import Vista.Vista_Menu;
 import Modelo.Modelo_Menu;
 import Modelo.Modelo_Menu_Paquete;
 import Modelo.Modelo_Paquete;
 import Modelo.Modelo_inventario;
 import Modelo.Paquete;
+import Modelo.inventario;
 import Vista.Vista_MenuPrincipal;
 import Vista.Vista_Paquete;
 import java.awt.Image;
@@ -48,12 +51,14 @@ public class Controlador_Paquete extends Paquete{
     private Vista_Paquete Vista;
     private Modelo_Menu_Paquete Modelo_Menu_Paquete;
     private Modelo_inventario Modelo_inventario;
-    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete,Modelo_inventario Modelo_inventario) {
+    private Modelo_Inventario_Paquete Modelo_Inventario_Paquete;
+    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete,Modelo_inventario Modelo_inventario, Modelo_Inventario_Paquete Modelo_Inventario_Paquete) {
         this.Modelo = Modelo;
         this.Vista = Vista;
         this.ModeloMenu = ModeloMenu;
         this.Modelo_Menu_Paquete =Modelo_Menu_Paquete;
         this.Modelo_inventario=Modelo_inventario;
+        this.Modelo_Inventario_Paquete=Modelo_Inventario_Paquete;
         Vista.setVisible(true);
     }
     public void iniciaControl(){
@@ -81,7 +86,7 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnsig().addActionListener(l->cargarDialogoEsmen(33));
     Vista.getBtnsig().addActionListener(l->cargaListadosMenPa(""));
     Vista.getBtnsig().addActionListener(l->GuardarMenuP());
-    Vista.getBtnfinme().addActionListener(l->GuardarPaquete());
+//    Vista.getBtnfinme().addActionListener(l->GuardarPaquete());
     Vista.getBtnacep().addActionListener(l->EditarPaquete());
     Vista.getBtnel().addActionListener(l-> EliminarPaquete());
     Vista.getBtncarmen().addActionListener(l->AgregramMen());
@@ -97,13 +102,37 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnelied().addActionListener(l->EliminarMenuPaqueEd());
     Vista.getBtnagre1().addActionListener(l->GuardarEdmen());
     Vista.getBtnca3().addActionListener(l->cargaListadosMen_Paq(""));
-    Vista.getBtnfi1().addActionListener(l->cargarDialogo(22));
+//    Vista.getBtnfi1().addActionListener(l->cargarDialogo(22));
 //    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
+    //RELACIÓN INVENTARIO-PAQUETE
+    Vista.getBtnsigme().addActionListener(l->cargarDialogoEsinv(66));
+    Vista.getBtnsigme().addActionListener(l->cargaListadosInventar(""));
+    Vista.getBtnagrin().addActionListener(l->GuardarEscinv());
+    Vista.getBtncarinv().addActionListener(l->AgregrarInv());
+    Vista.getBtncainv().addActionListener(l->EliminarInveCancelar());
+    Vista.getBtncainv().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtncainv().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    Vista.getBtnca6().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtnca6().addActionListener(l->Vista.getDlgedinv().setVisible(true));
+    //EDICIÓN INVENTARIO_PAQUETE
+    Vista.getBtnfi1().addActionListener(l->cargarDialogoEsinvEd(88));
+    Vista.getBtnfi1().addActionListener(l->cargaListadosInven_Paq(""));
+    Vista.getBtncared1().addActionListener(l->EditarInvPaquCant());
+    Vista.getBtnedime1().addActionListener(l->EditarInvenPaqu());
+    Vista.getBtnsiged1().addActionListener(l->cargarDialogoEsinv(77));
+    Vista.getBtnsiged1().addActionListener(l->cargaListadosInventar(""));
+    Vista.getBtnelied1().addActionListener(l->EliminarInventaPaqueEd());
+    Vista.getBtnagre2().addActionListener(l->GuardarEdInv());
+    Vista.getBtnca6().addActionListener(l->cargaListadosInven_Paq(""));
+    Vista.getBtnca5().addActionListener(l->Vista.getDlgedinv().setVisible(false));
+    Vista.getBtnca5().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    //
     Vista.getBtnca4().addActionListener(l->Vista.getDlgpaq().setVisible(false));
     Vista.getBtnca2().addActionListener(l->Vista.getDlgedmen().setVisible(false));
     Vista.getBtncanmen().addActionListener(l->Vista.getDlgesmen().setVisible(false));
     Vista.getBtncanmen().addActionListener(l->Vista.getDlgpaq().setVisible(true));
     Vista.getBtnca3().addActionListener(l->Vista.getDlgesmen().setVisible(false));
+    Vista.getBtncainv().addActionListener(l->Vista.getDlgesinv().setVisible(false));
     //Controlador Buscar
     Vista.getTxtbu().addKeyListener(kl);
     
@@ -293,33 +322,35 @@ public class Controlador_Paquete extends Paquete{
                 Vista.getTxtcomen().setText(cod_menu);
         }
     }
-    
-    
-    
     public void EliminarPaquete(){
         int ind=Vista.getTblpaq().getSelectedRow();
         
             String cod_paq = Vista.getTblpaq().getValueAt(ind, 0).toString();
-            Modelo_Menu_Paquete menu_paqu = new Modelo_Menu_Paquete();
+            Modelo_Inventario_Paquete inve_paq = new Modelo_Inventario_Paquete();
+            inve_paq.setCod_paq(cod_paq);
+            if(inve_paq.EliminarInv_paquete()){
+                Modelo_Menu_Paquete menu_paqu = new Modelo_Menu_Paquete();
                 menu_paqu.setCod_paq(cod_paq);
                 if(menu_paqu.EliminarMenu_paquete()){
-                    Modelo_Paquete paquete = new Modelo_Paquete();
-                    paquete.setCod_paquete(cod_paq);
-                    if(paquete.EliminarPaq()){
-                        cargaListadosPa("");
-                        JOptionPane.showMessageDialog(Vista, "Se elimino");
-                    }else{
-                   
-                        JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");
-                    }   
+                    Modelo_Paquete paque = new Modelo_Paquete();
+                    paque.setCod_paquete(cod_paq);
+                        if(paque.EliminarPaq()){
+                            cargaListadosPa("");
+                            JOptionPane.showMessageDialog(Vista, "Se elimino");
+                        }else{
+                            JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");         
+                        }   
                 }else{                  
-                    JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");
+                    JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
                 }
+            }else{
+                JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
+            }
         
     }
     public void EliminarMenuP(){
         
-            String cod_paq = Vista.getTxtcomen().getText();
+            String cod_paq = Vista.getTxtcopa().getText();
             Modelo_Menu_Paquete menu_paq = new Modelo_Menu_Paquete();
                 menu_paq.setCod_paq(cod_paq);
                 if(menu_paq.EliminarMenu_paquete()){
@@ -337,7 +368,6 @@ public class Controlador_Paquete extends Paquete{
                 }
         
     }
-    
     public void EditarPaquete() {
         int cont = Vista.getTblpaq().getSelectedRow();
         String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
@@ -454,5 +484,178 @@ public class Controlador_Paquete extends Paquete{
             Vista.getDlgedmen().setTitle("Editar menú de paquete");
         }
         Vista.getDlgedmen().setVisible(true);
+    }
+    //INVENTARIO-PAQUETE
+    private void cargarDialogoEsinv(int origen){
+        Vista.getDlgesinv().setSize(650,400);
+        Vista.getDlgesinv().setLocationRelativeTo(Vista);
+        Vista.getTxtcaninv().setText("");
+        Vista.getTxtcoin().setText("");
+        if(origen==66){
+            Vista.getDlgesinv().setTitle("Escoger Inventario");
+            Vista.getBtnagre2().setVisible(false);
+            Vista.getBtnagrin().setVisible(true);
+            Vista.getBtnca6().setVisible(false);
+            Vista.getBtncainv().setVisible(true);
+            Vista.getBtnfi2().setVisible(false);
+            Vista.getBtnsigin().setVisible(true);
+        }
+        if(origen==77){
+            Vista.getDlgesmen().setTitle("Escoger Inventario");
+            Vista.getBtnagre2().setVisible(true);
+            Vista.getBtnagrin().setVisible(false);
+            Vista.getBtnca6().setVisible(true);
+            Vista.getBtncainv().setVisible(false);
+            Vista.getBtnfi2().setVisible(true);
+            Vista.getBtnsigin().setVisible(false);
+        }
+        Vista.getDlgesinv().setVisible(true);
+    }
+    private void cargaListadosInventar(String aguja){
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblesinv().getModel();
+        tblModel.setNumRows(0);
+        List<inventario> lista = Modelo_inventario.Listainventario(aguja);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblesinv().setValueAt(per.getCod_inventario() , i.value , 0);
+           Vista.getTblesinv().setValueAt(per.getNombre(), i.value , 1);
+           Vista.getTblesinv().setValueAt(per.getPrecio() , i.value , 2);
+           i.value++;
+        });
+    }
+    private void GuardarEscinv(){
+      String cod_pa = Vista.getTxtcopa().getText();
+      String cod_inv = Vista.getTxtcoin().getText();
+      int cantidad = Integer.parseInt(Vista.getTxtcaninv().getText());
+      
+      Modelo_Inventario_Paquete invent_paquete = new Modelo_Inventario_Paquete();
+      invent_paquete.setCod_paq(cod_pa);
+      invent_paquete.setCod_inv(cod_inv);
+      invent_paquete.setCantidad(cantidad);
+       
+        if (invent_paquete.grabarInv_paq()) {
+            JOptionPane.showMessageDialog(Vista, "Se agrego ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro agregar");
+        }
+    }
+    public void AgregrarInv(){
+        int cont = Vista.getTblesinv().getSelectedRow();
+            if (cont != -1) {
+                String cod_inv = Vista.getTblesinv().getValueAt(cont, 0).toString();
+                
+                Modelo_inventario inventar = new Modelo_inventario();
+                inventar.setCod_inventario(cod_inv);
+                Vista.getTxtcoin().setText(cod_inv);
+        }
+    }
+    public void EliminarInveCancelar(){
+        
+            String cod_paq = Vista.getTxtcopa().getText();
+            Modelo_Inventario_Paquete inve_paq = new Modelo_Inventario_Paquete();
+            inve_paq.setCod_paq(cod_paq);
+            if(inve_paq.EliminarInv_paquete()){
+                  JOptionPane.showMessageDialog(Vista, "Asignación de inventario cancelada");
+            }else{
+                JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
+            }       
+                                
+    }
+    //EDICION INVENTARIO-PAQUETE
+    public void EditarInvenPaqu() {
+        int cont = Vista.getTblinvpaqed().getSelectedRow();
+        String cod_paq = Vista.getTblinvpaqed().getValueAt(cont, 0).toString();
+        String cod_inv = Vista.getTblinvpaqed().getValueAt(cont, 1).toString();
+        int cantidad = Integer.parseInt(Vista.getTxtcaned1().getText());
+        
+        Modelo_Inventario_Paquete inve_paq = new Modelo_Inventario_Paquete();
+        inve_paq.setCod_paq(cod_paq) ; 
+        inve_paq.setCod_inv(cod_inv);
+        inve_paq.setCantidad(cantidad);
+        if (inve_paq.EditarInv_paq() == true) {
+            cargaListadosInven_Paq("");
+            Vista.getDlgpaq().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Registro actualizado");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "Hubo un error");
+        }
+    }
+    public void EditarInvPaquCant(){
+        int cont = Vista.getTblinvpaqed().getSelectedRow();
+            if (cont != -1) {
+                String cod_inv = Vista.getTblinvpaqed().getValueAt(cont, 1).toString();
+                String cantidad = Vista.getTblinvpaqed().getValueAt(cont, 2).toString();
+                Modelo_Inventario_Paquete inve_paqu = new Modelo_Inventario_Paquete();
+                inve_paqu.setCod_inv(cod_inv);
+                Vista.getTxtcoined().setText(cod_inv);
+                Vista.getTxtcaned1().setText(cantidad);
+        }
+    }
+    private void cargaListadosInven_Paq(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblinvpaqed().getModel();
+        tblModel.setNumRows(0);
+        
+        List<Inventario_paquete> lista=Modelo_Inventario_Paquete.listaInventario_Paquete(aguja);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblinvpaqed().setValueAt(per.getCod_paq() , i.value , 0);
+           Vista.getTblinvpaqed().setValueAt(per.getCod_inv(), i.value , 1);
+           Vista.getTblinvpaqed().setValueAt(per.getCantidad(), i.value , 2);
+           Vista.getTblinvpaqed().setValueAt(per.getNombre(), i.value , 3);
+           i.value++;
+          
+        });   
+    }
+    public void EliminarInventaPaqueEd(){
+        int cont = Vista.getTblinvpaqed().getSelectedRow();
+        String cod_paq = Vista.getTblinvpaqed().getValueAt(cont, 0).toString();    
+        String cod_inv = Vista.getTxtcoined().getText();
+            Modelo_Inventario_Paquete invent_paqu = new Modelo_Inventario_Paquete();
+            invent_paqu.setCod_paq(cod_paq) ;   
+            invent_paqu.setCod_inv(cod_inv);
+                if(invent_paqu.EliminarInv_paq()){
+                        cargaListadosInven_Paq("");
+                        JOptionPane.showMessageDialog(Vista, "Eliminado");
+                    }else{
+                         JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");   
+       
+                    }      
+    }
+    private void GuardarEdInv(){
+      int ind=Vista.getTblpaq().getSelectedRow();
+        
+      String cod_paq = Vista.getTblpaq().getValueAt(ind, 0).toString();
+      String cod_inv = Vista.getTxtcoin().getText();
+      int cantidad = Integer.parseInt(Vista.getTxtcaninv().getText());
+      
+      Modelo_Inventario_Paquete inve_paque = new Modelo_Inventario_Paquete();
+      inve_paque.setCod_paq(cod_paq);
+      inve_paque.setCod_inv(cod_inv);
+      inve_paque.setCantidad(cantidad);
+       
+        if (inve_paque.grabarInv_paq()) {
+            cargaListadosInven_Paq("");
+            Vista.getDlgpaq().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Se agrego ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro agregar");
+        }
+    }
+    private void cargarDialogoEsinvEd(int origen){
+        Vista.getDlgedinv().setSize(650,450);
+        Vista.getDlgedinv().setLocationRelativeTo(Vista);
+        Vista.getTxtcoined().setText("");
+        Vista.getTxtcaned1().setText("");
+        if(origen==88){
+            Vista.getDlgedinv().setTitle("Editar inventario de paquete");
+        }
+        Vista.getDlgedinv().setVisible(true);
     }
 }

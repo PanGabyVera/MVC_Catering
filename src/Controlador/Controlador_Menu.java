@@ -180,7 +180,7 @@ public class Controlador_Menu extends Menu{
         Vista.getTxtcoined().setText("");
         Vista.getTxtcaned().setText("");
         if(origen==44){
-            Vista.getDlgedcing().setTitle("Editar ingrediente de menú");
+            Vista.getDlgedcing().setTitle("Editar menú de paquete");
         }
         Vista.getDlgedcing().setVisible(true);
     }
