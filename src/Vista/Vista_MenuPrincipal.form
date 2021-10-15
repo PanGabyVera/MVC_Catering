@@ -4,30 +4,6 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jmper">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Persona"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jmiper">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Crud Persona"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmiimpper">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Imprimir Persona"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmisalper">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Salir "/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="jmcli">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cliente"/>
@@ -296,17 +272,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btncarg">
           <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnimp">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Vista/png/015-printer.png"/>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Imprimir"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>

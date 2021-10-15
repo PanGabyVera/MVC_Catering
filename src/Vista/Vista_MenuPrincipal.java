@@ -31,13 +31,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.btncarg = btncarg;
     }
 
-    public JButton getBtnimp() {
-        return btnimp;
-    }
-
-    public void setBtnimp(JButton btnimp) {
-        this.btnimp = btnimp;
-    }
+//    public JButton getBtnimp() {
+//        return btnimp;
+//    }
+//
+//    public void setBtnimp(JButton btnimp) {
+//        this.btnimp = btnimp;
+//    }
 
     public JLabel getjLabel1() {
         return jLabel1;
@@ -63,13 +63,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.jPanel1 = jPanel1;
     }
 
-    public JPopupMenu.Separator getjSeparator1() {
-        return jSeparator1;
-    }
-
-    public void setjSeparator1(JPopupMenu.Separator jSeparator1) {
-        this.jSeparator1 = jSeparator1;
-    }
+//    public JPopupMenu.Separator getjSeparator1() {
+//        return jSeparator1;
+//    }
+//
+//    public void setjSeparator1(JPopupMenu.Separator jSeparator1) {
+//        this.jSeparator1 = jSeparator1;
+//    }
 
     public JPopupMenu.Separator getjSeparator2() {
         return jSeparator2;
@@ -263,13 +263,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.jmiimpped = jmiimpped;
     }
 
-    public JMenuItem getJmiimpper() {
-        return jmiimpper;
-    }
-
-    public void setJmiimpper(JMenuItem jmiimpper) {
-        this.jmiimpper = jmiimpper;
-    }
+//    public JMenuItem getJmiimpper() {
+//        return jmiimpper;
+//    }
+//
+//    public void setJmiimpper(JMenuItem jmiimpper) {
+//        this.jmiimpper = jmiimpper;
+//    }
 
     public JMenuItem getJmiing() {
         return jmiing;
@@ -327,13 +327,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.jmiped = jmiped;
     }
 
-    public JMenuItem getJmiper() {
-        return jmiper;
-    }
-
-    public void setJmiper(JMenuItem jmiper) {
-        this.jmiper = jmiper;
-    }
+//    public JMenuItem getJmiper() {
+//        return jmiper;
+//    }
+//
+//    public void setJmiper(JMenuItem jmiper) {
+//        this.jmiper = jmiper;
+//    }
 
     public JMenuItem getJmisalcar() {
         return jmisalcar;
@@ -399,13 +399,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.jmisalped = jmisalped;
     }
 
-    public JMenuItem getJmisalper() {
-        return jmisalper;
-    }
-
-    public void setJmisalper(JMenuItem jmisalper) {
-        this.jmisalper = jmisalper;
-    }
+//    public JMenuItem getJmisalper() {
+//        return jmisalper;
+//    }
+//
+//    public void setJmisalper(JMenuItem jmisalper) {
+//        this.jmisalper = jmisalper;
+//    }
 
     public JMenu getJmmen() {
         return jmmen;
@@ -431,13 +431,13 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         this.jmped = jmped;
     }
 
-    public JMenu getJmper() {
-        return jmper;
-    }
-
-    public void setJmper(JMenu jmper) {
-        this.jmper = jmper;
-    }
+//    public JMenu getJmper() {
+//        return jmper;
+//    }
+//
+//    public void setJmper(JMenu jmper) {
+//        this.jmper = jmper;
+//    }
 
    
 
@@ -448,16 +448,10 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
 
         jToolBar1 = new javax.swing.JToolBar();
         btncarg = new javax.swing.JButton();
-        btnimp = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jdpmen = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jmper = new javax.swing.JMenu();
-        jmiper = new javax.swing.JMenuItem();
-        jmiimpper = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jmisalper = new javax.swing.JMenuItem();
         jmcli = new javax.swing.JMenu();
         jmicli = new javax.swing.JMenuItem();
         jmiimpcli = new javax.swing.JMenuItem();
@@ -511,13 +505,6 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         btncarg.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btncarg);
 
-        btnimp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/png/015-printer.png"))); // NOI18N
-        btnimp.setToolTipText("Imprimir");
-        btnimp.setFocusable(false);
-        btnimp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnimp.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnimp);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -541,20 +528,6 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
         );
 
         jLabel1.setText("Version  1.0");
-
-        jmper.setText("Persona");
-
-        jmiper.setText("Crud Persona");
-        jmper.add(jmiper);
-
-        jmiimpper.setText("Imprimir Persona");
-        jmper.add(jmiimpper);
-        jmper.add(jSeparator1);
-
-        jmisalper.setText("Salir ");
-        jmper.add(jmisalper);
-
-        jMenuBar1.add(jmper);
 
         jmcli.setText("Cliente");
 
@@ -704,11 +677,9 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncarg;
-    private javax.swing.JButton btnimp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
@@ -733,7 +704,6 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiimpmen;
     private javax.swing.JMenuItem jmiimppaq;
     private javax.swing.JMenuItem jmiimpped;
-    private javax.swing.JMenuItem jmiimpper;
     private javax.swing.JMenuItem jmiing;
     private javax.swing.JMenuItem jmiinv;
     private javax.swing.JMenuItem jmimen;
@@ -741,7 +711,6 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jminv;
     private javax.swing.JMenuItem jmipaq;
     private javax.swing.JMenuItem jmiped;
-    private javax.swing.JMenuItem jmiper;
     private javax.swing.JMenuItem jmisalcar;
     private javax.swing.JMenuItem jmisalcli;
     private javax.swing.JMenuItem jmisalemp;
@@ -750,11 +719,9 @@ public class Vista_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmisalinv;
     private javax.swing.JMenuItem jmisalpaq;
     private javax.swing.JMenuItem jmisalped;
-    private javax.swing.JMenuItem jmisalper;
     private javax.swing.JMenu jmmen;
     private javax.swing.JMenu jmpaq;
     private javax.swing.JMenu jmped;
-    private javax.swing.JMenu jmper;
     // End of variables declaration//GEN-END:variables
 
    
