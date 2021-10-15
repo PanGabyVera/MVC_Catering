@@ -1,12 +1,14 @@
 
 package Controlador;
 
+import Modelo.Empleado_paquete;
 import Modelo.Ingrediente_menu;
 import Modelo.Ingredientes;
 import Modelo.Inventario_paquete;
 import Modelo.Menu;
 import Modelo.Menu_paquete;
 import Modelo.Modelo_ConexionBD;
+import Modelo.Modelo_Empleado_Paquete;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
 import Modelo.Modelo_Inventario_Paquete;
@@ -14,8 +16,10 @@ import Vista.Vista_Menu;
 import Modelo.Modelo_Menu;
 import Modelo.Modelo_Menu_Paquete;
 import Modelo.Modelo_Paquete;
+import Modelo.Modelo_empleado;
 import Modelo.Modelo_inventario;
 import Modelo.Paquete;
+import Modelo.empleado;
 import Modelo.inventario;
 import Vista.Vista_MenuPrincipal;
 import Vista.Vista_Paquete;
@@ -52,13 +56,19 @@ public class Controlador_Paquete extends Paquete{
     private Modelo_Menu_Paquete Modelo_Menu_Paquete;
     private Modelo_inventario Modelo_inventario;
     private Modelo_Inventario_Paquete Modelo_Inventario_Paquete;
-    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete,Modelo_inventario Modelo_inventario, Modelo_Inventario_Paquete Modelo_Inventario_Paquete) {
+    private Modelo_empleado Modelo_empleado;
+    private Modelo_Empleado_Paquete Modelo_Empleado_Paquete;
+    public Controlador_Paquete(Modelo_Paquete Modelo, Vista_Paquete Vista, Modelo_Menu ModeloMenu,Modelo_Menu_Paquete Modelo_Menu_Paquete,
+        Modelo_inventario Modelo_inventario, Modelo_Inventario_Paquete Modelo_Inventario_Paquete, 
+        Modelo_Empleado_Paquete Modelo_Empleado_Paquete,Modelo_empleado Modelo_empleado) {
         this.Modelo = Modelo;
         this.Vista = Vista;
         this.ModeloMenu = ModeloMenu;
         this.Modelo_Menu_Paquete =Modelo_Menu_Paquete;
         this.Modelo_inventario=Modelo_inventario;
         this.Modelo_Inventario_Paquete=Modelo_Inventario_Paquete;
+        this.Modelo_Empleado_Paquete=Modelo_Empleado_Paquete;
+        this.Modelo_empleado=Modelo_empleado;
         Vista.setVisible(true);
     }
     public void iniciaControl(){
@@ -104,6 +114,7 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnca3().addActionListener(l->cargaListadosMen_Paq(""));
 //    Vista.getBtnfi1().addActionListener(l->cargarDialogo(22));
 //    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
+    
     //RELACIÓN INVENTARIO-PAQUETE
     Vista.getBtnsigme().addActionListener(l->cargarDialogoEsinv(66));
     Vista.getBtnsigme().addActionListener(l->cargaListadosInventar(""));
@@ -114,6 +125,7 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtncainv().addActionListener(l->Vista.getDlgesmen().setVisible(true));
     Vista.getBtnca6().addActionListener(l->Vista.getDlgesinv().setVisible(false));
     Vista.getBtnca6().addActionListener(l->Vista.getDlgedinv().setVisible(true));
+    
     //EDICIÓN INVENTARIO_PAQUETE
     Vista.getBtnfi1().addActionListener(l->cargarDialogoEsinvEd(88));
     Vista.getBtnfi1().addActionListener(l->cargaListadosInven_Paq(""));
@@ -126,6 +138,31 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnca6().addActionListener(l->cargaListadosInven_Paq(""));
     Vista.getBtnca5().addActionListener(l->Vista.getDlgedinv().setVisible(false));
     Vista.getBtnca5().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    
+    //RELACIÓN EMPLEADO-PAQUETE
+    Vista.getBtnsigin().addActionListener(l->cargarDialogoEsemp(5));
+    Vista.getBtnsigin().addActionListener(l->cargaListadosEmpleado(""));
+    Vista.getBtnagremp().addActionListener(l->GuardarEscemp());
+//    Vista.getBtncarinv().addActionListener(l->AgregrarInv());
+    Vista.getBtncaemp().addActionListener(l->EliminarEmpleCancelar());
+    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    Vista.getBtnca7().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtnca7().addActionListener(l->Vista.getDlgedinv().setVisible(true));
+    
+    //EDICIÓN EMPLEADO_PAQUETE
+    Vista.getBtnfi2().addActionListener(l->cargarDialogoEsempEd(7));
+    Vista.getBtnfi2().addActionListener(l->cargaListadosEmple_Paq(""));
+    Vista.getBtncared1().addActionListener(l->EditarInvPaquCant());
+    Vista.getBtnedime1().addActionListener(l->EditarInvenPaqu());
+    Vista.getBtnsiged2().addActionListener(l->cargarDialogoEsemp(6));
+    Vista.getBtnsiged2().addActionListener(l->cargaListadosEmpleado(""));
+    Vista.getBtnelied1().addActionListener(l->EliminarEmpleaPaqueEd());
+    Vista.getBtnagre2().addActionListener(l->GuardarEdEmp());
+    Vista.getBtnca6().addActionListener(l->cargaListadosEmple_Paq(""));
+    Vista.getBtnca8().addActionListener(l->Vista.getDlgedinv().setVisible(false));
+    Vista.getBtnca8().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    
     //
     Vista.getBtnca4().addActionListener(l->Vista.getDlgpaq().setVisible(false));
     Vista.getBtnca2().addActionListener(l->Vista.getDlgedmen().setVisible(false));
@@ -657,5 +694,142 @@ public class Controlador_Paquete extends Paquete{
             Vista.getDlgedinv().setTitle("Editar inventario de paquete");
         }
         Vista.getDlgedinv().setVisible(true);
+    }
+    //EMPLEADO-PAQUETE
+    private void cargarDialogoEsemp(int origen){
+        Vista.getDlgesemp().setSize(650,400);
+        Vista.getDlgesemp().setLocationRelativeTo(Vista);
+        if(origen==5){
+            Vista.getDlgesemp().setTitle("Escoger Empleado");
+            Vista.getBtnagre3().setVisible(false);
+            Vista.getBtnagremp().setVisible(true);
+            Vista.getBtnca8().setVisible(false);
+            Vista.getBtncaemp().setVisible(true);
+            Vista.getBtnfi3().setVisible(false);
+            Vista.getBtnfinme().setVisible(true);
+        }
+        if(origen==6){
+            Vista.getDlgesemp().setTitle("Escoger Empleado");
+            Vista.getBtnagre3().setVisible(true);
+            Vista.getBtnagremp().setVisible(false);
+            Vista.getBtnca8().setVisible(true);
+            Vista.getBtncaemp().setVisible(false);
+            Vista.getBtnfi3().setVisible(true);
+            Vista.getBtnfinme().setVisible(false);
+        }
+        Vista.getDlgesemp().setVisible(true);
+    }
+    private void cargaListadosEmpleado(String aguja){
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblesemp().getModel();
+        tblModel.setNumRows(0);
+        List<empleado> lista = Modelo_empleado.ListaEmpleados(aguja);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblesemp().setValueAt(per.getCi() , i.value , 0);
+           Vista.getTblesemp().setValueAt(per.getNom_car(), i.value , 1);
+           i.value++;
+        });
+    }
+    private void GuardarEscemp(){
+      int cont = Vista.getTblesemp().getSelectedRow();
+      String cod_emp = Vista.getTblesemp().getValueAt(cont, 0).toString();
+      String cod_pa = Vista.getTxtcopa().getText();
+      
+      Modelo_Empleado_Paquete emp_paquete = new Modelo_Empleado_Paquete();
+      emp_paquete.setCod_paq(cod_pa);
+      emp_paquete.setCod_emp(cod_emp);
+       
+        if (emp_paquete.grabarEmpleado_paq()) {
+            JOptionPane.showMessageDialog(Vista, "Se agrego ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro agregar");
+        }
+    }
+//    public void AgregrarInv(){
+//        int cont = Vista.getTblesinv().getSelectedRow();
+//            if (cont != -1) {
+//                String cod_inv = Vista.getTblesinv().getValueAt(cont, 0).toString();
+//                
+//                Modelo_inventario inventar = new Modelo_inventario();
+//                inventar.setCod_inventario(cod_inv);
+//                Vista.getTxtcoin().setText(cod_inv);
+//        }
+//    }
+    public void EliminarEmpleCancelar(){
+        
+            String cod_paq = Vista.getTxtcopa().getText();
+            Modelo_Empleado_Paquete emple_paq = new Modelo_Empleado_Paquete();
+            emple_paq.setCod_paq(cod_paq);
+            if(emple_paq.EliminarEmple_paquete()){
+                  JOptionPane.showMessageDialog(Vista, "Asignación de empleado cancelada");
+            }else{
+                JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
+            }       
+                                
+    }
+    
+
+    //EDICION INVENTARIO-PAQUETE
+    private void cargaListadosEmple_Paq(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblemppaqed().getModel();
+        tblModel.setNumRows(0);
+        
+        List<Empleado_paquete> lista=Modelo_Empleado_Paquete.listaEmpleado_Paquete(aguja);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblemppaqed().setValueAt(per.getCod_paq() , i.value , 0);
+           Vista.getTblemppaqed().setValueAt(per.getCod_emp(), i.value , 1);
+           Vista.getTblemppaqed().setValueAt(per.getNombre(), i.value , 2);
+           i.value++;
+          
+        });   
+    }
+    public void EliminarEmpleaPaqueEd(){
+        int cont = Vista.getTblemppaqed().getSelectedRow();
+        String cod_paq = Vista.getTblemppaqed().getValueAt(cont, 0).toString();
+        String cod_emp = Vista.getTblemppaqed().getValueAt(cont, 1).toString(); 
+            Modelo_Empleado_Paquete emple_paqu = new Modelo_Empleado_Paquete();
+            emple_paqu.setCod_paq(cod_paq) ;   
+            emple_paqu.setCod_emp(cod_emp);
+                if(emple_paqu.grabarEmpleado_paq()){
+                        cargaListadosEmple_Paq("");
+                        JOptionPane.showMessageDialog(Vista, "Eliminado");
+                    }else{
+                         JOptionPane.showMessageDialog(Vista, "No se pudo eliminar");   
+       
+                    }      
+    }
+    private void GuardarEdEmp(){
+      int ind=Vista.getTblpaq().getSelectedRow();
+        
+      String cod_paq = Vista.getTblpaq().getValueAt(ind, 0).toString();
+      String cod_emp = Vista.getTblpaq().getValueAt(ind, 1).toString();
+      
+      Modelo_Empleado_Paquete emple_paque = new Modelo_Empleado_Paquete();
+      emple_paque.setCod_paq(cod_paq);
+      emple_paque.setCod_emp(cod_emp);
+       
+        if (emple_paque.grabarEmpleado_paq()) {
+            cargaListadosEmple_Paq("");
+            Vista.getDlgpaq().setVisible(false);
+            JOptionPane.showMessageDialog(Vista, "Se agrego ");
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro agregar");
+        }
+    }
+    private void cargarDialogoEsempEd(int origen){
+        Vista.getDlgedemp().setSize(650,450);
+        Vista.getDlgedemp().setLocationRelativeTo(Vista);
+        if(origen==7){
+            Vista.getDlgedemp().setTitle("Editar empleado de paquete");
+        }
+        Vista.getDlgedemp().setVisible(true);
     }
 }

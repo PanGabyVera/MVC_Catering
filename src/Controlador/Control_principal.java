@@ -5,6 +5,7 @@ package Controlador;
 import javax.swing.JDesktopPane;
 import Modelo.Modelo_cliente;
 import Modelo.Ingredientes;
+import Modelo.Modelo_Empleado_Paquete;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
 import Modelo.Modelo_Inventario_Paquete;
@@ -81,9 +82,11 @@ public class Control_principal {
         Modelo_Menu_Paquete momepa=new Modelo_Menu_Paquete();
         Modelo_inventario moinv=new Modelo_inventario();
         Modelo_Inventario_Paquete moinpa=new Modelo_Inventario_Paquete();
+        Modelo_Empleado_Paquete moempa=new Modelo_Empleado_Paquete();
+        Modelo_empleado moem=new Modelo_empleado();
         Vista_Paquete vipa=new Vista_Paquete();
         vst.getJdpmen().add(vipa);
-        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa,moinv,moinpa);
+        Controlador_Paquete come=new Controlador_Paquete(mopa,vipa,mome,momepa,moinv,moinpa,moempa,moem);
         come.iniciaControl();
     }
     
