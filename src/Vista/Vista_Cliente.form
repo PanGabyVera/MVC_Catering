@@ -78,8 +78,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lblid" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -87,23 +87,18 @@
                           <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtcocligo" alignment="1" min="-2" pref="131" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtcedula" max="32767" attributes="0"/>
-                              <Component id="jtxtnombre" max="32767" attributes="0"/>
-                              <Component id="jtxtdirecion" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jtxtcorreo" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jtxttelefono" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jtxtapellidos" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtcedula" max="32767" attributes="0"/>
+                          <Component id="jtxtnombre" max="32767" attributes="0"/>
+                          <Component id="jtxtdirecion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtcorreo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxttelefono" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtapellidos" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="aviso1" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="aviso7" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="aviso6" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="aviso5" min="-2" pref="22" max="-2" attributes="0"/>
@@ -111,20 +106,14 @@
                           <Component id="aviso3" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="aviso2" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtcocligo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="aviso1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblid" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtcedula" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -160,7 +149,7 @@
                           <Component id="jtxtdirecion" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="aviso7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -175,16 +164,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="C.I."/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo de cliente"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtcocligo">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -235,17 +214,6 @@
             <Component class="javax.swing.JTextField" name="jtxttelefono">
             </Component>
             <Component class="javax.swing.JTextField" name="jtxtdirecion">
-            </Component>
-            <Component class="javax.swing.JLabel" name="aviso1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="0" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="*"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="aviso2">
               <Properties>
@@ -485,8 +453,7 @@
             <Component class="javax.swing.JTable" name="tblcli">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="7" rowCount="4">
-                    <Column editable="true" title="C&#xf3;digo de cliente" type="java.lang.Object"/>
+                  <Table columnCount="6" rowCount="4">
                     <Column editable="true" title="C.I." type="java.lang.Object"/>
                     <Column editable="true" title="Nombres" type="java.lang.Object"/>
                     <Column editable="true" title="Apellidos" type="java.lang.Object"/>

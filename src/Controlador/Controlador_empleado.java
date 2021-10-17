@@ -1,4 +1,4 @@
-/*
+  /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -126,17 +126,16 @@ public class Controlador_empleado {
         if (cont != -1) {
             //llenamos datos en la ventana emergente
             Modelo_empleado mc = new Modelo_empleado();
-            mc.setCi(vista.getTblemp().getValueAt(cont, 1).toString());
-            vista.getTxtcoem().setText(vista.getTblemp().getValueAt(cont, 0).toString().toUpperCase());
-            vista.getTxtced().setText(vista.getTblemp().getValueAt(cont, 1).toString().toUpperCase());
-            vista.getJtxtnombre().setText(vista.getTblemp().getValueAt(cont, 2).toString().toUpperCase());
-            vista.getJtxtapellidos().setText(vista.getTblemp().getValueAt(cont, 3).toString().toUpperCase());
-            vista.getJtxttelefono().setText(vista.getTblemp().getValueAt(cont, 4).toString().toUpperCase());
-            vista.getJtxtcorreo().setText(vista.getTblemp().getValueAt(cont, 5).toString().toUpperCase());
-            vista.getJtxtdirecion().setText(vista.getTblemp().getValueAt(cont, 6).toString().toUpperCase());
-            vista.getTxtcargo().setText(vista.getTblemp().getValueAt(cont, 7).toString().toUpperCase());
-            vista.getLbNombreca1().setText(vista.getTblemp().getValueAt(cont, 8).toString().toUpperCase());
-            vista.getLbsueldoca().setText(vista.getTblemp().getValueAt(cont, 9).toString());
+            mc.setCi(vista.getTblemp().getValueAt(cont, 0).toString());
+            vista.getTxtced().setText(vista.getTblemp().getValueAt(cont, 0).toString().toUpperCase());
+            vista.getJtxtnombre().setText(vista.getTblemp().getValueAt(cont, 1).toString().toUpperCase());
+            vista.getJtxtapellidos().setText(vista.getTblemp().getValueAt(cont, 2).toString().toUpperCase());
+            vista.getJtxttelefono().setText(vista.getTblemp().getValueAt(cont, 3).toString().toUpperCase());
+            vista.getJtxtcorreo().setText(vista.getTblemp().getValueAt(cont, 4).toString().toUpperCase());
+            vista.getJtxtdirecion().setText(vista.getTblemp().getValueAt(cont, 5).toString().toUpperCase());
+            vista.getTxtcargo().setText(vista.getTblemp().getValueAt(cont, 6).toString().toUpperCase());
+            vista.getLbNombreca1().setText(vista.getTblemp().getValueAt(cont, 7).toString().toUpperCase());
+            vista.getLbsueldoca().setText(vista.getTblemp().getValueAt(cont, 8).toString());
 
         } else {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar una fila");
@@ -206,17 +205,16 @@ public class Controlador_empleado {
             tblModel.addRow(new Object[colum]);//para crear colum
             //ubcacion en la tabla
 
-            vista.getTblemp().setValueAt(emp.getCod(), a.value, 0);
-            vista.getTblemp().setValueAt(emp.getCi(), a.value, 1);
-            vista.getTblemp().setValueAt(emp.getNombres(), a.value, 2);
-            vista.getTblemp().setValueAt(emp.getApellidos(), a.value, 3);
-            vista.getTblemp().setValueAt(emp.getTelefono(), a.value, 4);
-            vista.getTblemp().setValueAt(emp.getCorreo(), a.value, 5);
-            vista.getTblemp().setValueAt(emp.getDireccion(), a.value, 6);
-            vista.getTblemp().setValueAt(emp.getCargo(), a.value, 7);
-            vista.getTblemp().setValueAt(emp.getNom_car(), a.value, 8);
+            vista.getTblemp().setValueAt(emp.getCi(), a.value, 0);
+            vista.getTblemp().setValueAt(emp.getNombres(), a.value, 1);
+            vista.getTblemp().setValueAt(emp.getApellidos(), a.value, 2);
+            vista.getTblemp().setValueAt(emp.getTelefono(), a.value, 3);
+            vista.getTblemp().setValueAt(emp.getCorreo(), a.value, 4);
+            vista.getTblemp().setValueAt(emp.getDireccion(), a.value, 5);
+            vista.getTblemp().setValueAt(emp.getCargo(), a.value, 6);
+            vista.getTblemp().setValueAt(emp.getNom_car(), a.value, 7);
             int su=Integer.valueOf(emp.getSuel());
-            vista.getTblemp().setValueAt(su, a.value, 9);
+            vista.getTblemp().setValueAt(su, a.value, 8);
             
             a.value++;
         });
@@ -225,7 +223,6 @@ public class Controlador_empleado {
 
     private void GuardarEM() {
 
-        modelo.setCod(vista.getTxtcoem().getText().toUpperCase());
         modelo.setCi(vista.getTxtced().getText());
         modelo.setNombres(vista.getJtxtnombre().getText().toUpperCase());
         modelo.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
@@ -252,7 +249,7 @@ public class Controlador_empleado {
         DefaultTableModel tblPersonas = (DefaultTableModel) vista.getTblemp().getModel();
         int fila = vista.getTblemp().getSelectedRow();
         if (fila != -1) {
-            String id = tblPersonas.getValueAt(fila, 1).toString();
+            String id = tblPersonas.getValueAt(fila, 0).toString();
             Modelo_empleado em = new Modelo_empleado();
             int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Eliminar?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {
@@ -272,13 +269,12 @@ public class Controlador_empleado {
     public void EditarEM() {
         int cont = vista.getTblemp().getSelectedRow();
         Modelo_empleado e = new Modelo_empleado();
-        e.setCi(vista.getTblemp().getValueAt(cont, 0).toString().toUpperCase());
+        e.setCi(vista.getTblemp().getValueAt(cont, 0).toString());
         e.setNombres(vista.getJtxtnombre().getText().toUpperCase());
         e.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
         e.setTelefono(vista.getJtxttelefono().getText().toUpperCase());
         e.setCorreo(vista.getJtxtcorreo().getText().toUpperCase());
         e.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
-        e.setCod(vista.getTxtcoem().getText().toUpperCase());
         e.setCargo(vista.getTxtcargo().getText().toUpperCase());/*
         e.setNom_car(vista.getLbNombreca1().getText().toUpperCase());
         int a =Integer.valueOf(vista.getLbsueldoca().getText().toUpperCase());
@@ -298,7 +294,6 @@ public class Controlador_empleado {
     }
 
     private void Limpiar() {
-        vista.getTxtcoem().setText("");
         vista.getTxtced().setText("");
         vista.getJtxtnombre().setText("");
         vista.getJtxtapellidos().setText("");
@@ -306,6 +301,8 @@ public class Controlador_empleado {
         vista.getJtxtcorreo().setText("");
         vista.getJtxtdirecion().setText("");
         vista.getTxtcargo().setText("");
+        vista.getLbNombreca1().setText("");
+        vista.getLbsueldoca().setText("");
 
     }
 }
