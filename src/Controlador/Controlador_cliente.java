@@ -34,7 +34,6 @@ public class Controlador_cliente {
         vista.setVisible(true);
         Cargarlistados("");
 
-        vista.getAviso1().setVisible(false);
         vista.getAviso2().setVisible(false);
         vista.getAviso3().setVisible(false);
         vista.getAviso4().setVisible(false);
@@ -90,14 +89,14 @@ public class Controlador_cliente {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Crear registro de cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(358, 420);
+            vista.getDlgcli().setSize(358, 410);
             vista.getDlgcli().setVisible(true);
 
         } else if (origen == 2) {
             btcrear_editar(origen);
             vista.getDlgcli().setTitle("Editar cliente");
             vista.getDlgcli().setLocationRelativeTo(vista);
-            vista.getDlgcli().setSize(358, 420);
+            vista.getDlgcli().setSize(358, 410);
             vista.getDlgcli().setVisible(true);
             pasarDatos();
         } else {
@@ -112,13 +111,13 @@ public class Controlador_cliente {
             //llenamos datos en la ventana emergente
             Modelo_cliente mc = new Modelo_cliente();
             mc.setCi(vista.getTblcli().getValueAt(cont, 0).toString());
-            vista.getTxtcocli().setText(vista.getTblcli().getValueAt(cont, 0).toString().toUpperCase());
-            vista.getTxtced().setText(vista.getTblcli().getValueAt(cont, 1).toString().toUpperCase());
-            vista.getJtxtnombre().setText(vista.getTblcli().getValueAt(cont, 2).toString().toUpperCase());
-            vista.getJtxtapellidos().setText(vista.getTblcli().getValueAt(cont, 3).toString().toUpperCase());
-            vista.getJtxttelefono().setText(vista.getTblcli().getValueAt(cont, 4).toString().toUpperCase());
-            vista.getJtxtcorreo().setText(vista.getTblcli().getValueAt(cont, 5).toString().toUpperCase());
-            vista.getJtxtdirecion().setText(vista.getTblcli().getValueAt(cont, 6).toString().toUpperCase());
+           // vista.getTxtcocli().setText(vista.getTblcli().getValueAt(cont, 0).toString().toUpperCase());
+            vista.getTxtced().setText(vista.getTblcli().getValueAt(cont, 0).toString().toUpperCase());
+            vista.getJtxtnombre().setText(vista.getTblcli().getValueAt(cont, 1).toString().toUpperCase());
+            vista.getJtxtapellidos().setText(vista.getTblcli().getValueAt(cont, 2).toString().toUpperCase());
+            vista.getJtxttelefono().setText(vista.getTblcli().getValueAt(cont, 3).toString().toUpperCase());
+            vista.getJtxtcorreo().setText(vista.getTblcli().getValueAt(cont, 4).toString().toUpperCase());
+            vista.getJtxtdirecion().setText(vista.getTblcli().getValueAt(cont, 5).toString().toUpperCase());
 
         } else {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar una fila");
@@ -144,13 +143,13 @@ public class Controlador_cliente {
 
             tblModel.addRow(new Object[colum]);//para crear colum
             //ubcacion en la tabla
-            vista.getTblcli().setValueAt(clie.getCod(), a.value, 0);
-            vista.getTblcli().setValueAt(clie.getCi(), a.value, 1);
-            vista.getTblcli().setValueAt(clie.getNombres(), a.value, 2);
-            vista.getTblcli().setValueAt(clie.getApellidos(), a.value, 3);
-            vista.getTblcli().setValueAt(clie.getTelefono(), a.value, 4);
-            vista.getTblcli().setValueAt(clie.getCorreo(), a.value, 5);
-            vista.getTblcli().setValueAt(clie.getDireccion(), a.value, 6);
+            //vista.getTblcli().setValueAt(clie.getCod(), a.value, 0);
+            vista.getTblcli().setValueAt(clie.getCi(), a.value, 0);
+            vista.getTblcli().setValueAt(clie.getNombres(), a.value, 1);
+            vista.getTblcli().setValueAt(clie.getApellidos(), a.value, 2);
+            vista.getTblcli().setValueAt(clie.getTelefono(), a.value, 3);
+            vista.getTblcli().setValueAt(clie.getCorreo(), a.value, 4);
+            vista.getTblcli().setValueAt(clie.getDireccion(), a.value, 5);
 
             a.value++;
 
@@ -159,14 +158,14 @@ public class Controlador_cliente {
 
     private void GuardarCli() {
 
-        modelo.setCod(vista.getTxtcocli().getText().toUpperCase());
+       // modelo.setCod(vista.getTxtcocli().getText().toUpperCase());
         modelo.setCi(vista.getTxtced().getText());
         modelo.setNombres(vista.getJtxtnombre().getText().toUpperCase());
         modelo.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
         modelo.setTelefono(vista.getJtxttelefono().getText());
         modelo.setCorreo(vista.getJtxtcorreo().getText());
         modelo.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
-        if (Validaciones() == false) {
+       // if (Validaciones() == false) {
 
             int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Guardar?", "Informacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {
@@ -177,9 +176,9 @@ public class Controlador_cliente {
                     JOptionPane.showMessageDialog(vista, "Huvo un error al guardar");
                 }
             }
-        } else {
-            JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
-        }
+       // } else {
+         //   JOptionPane.showMessageDialog(vista, "Debe llenar todos los campos");
+        //}
 
     }
 
@@ -187,7 +186,7 @@ public class Controlador_cliente {
         DefaultTableModel tblPersonas = (DefaultTableModel) vista.getTblcli().getModel();
         int fila = vista.getTblcli().getSelectedRow();
         if (fila != -1) {
-            String idPersona = tblPersonas.getValueAt(fila, 1).toString();
+            String idPersona = tblPersonas.getValueAt(fila, 0).toString();
             Modelo_cliente cli = new Modelo_cliente();
             int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Eliminar?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (resultado == JOptionPane.YES_NO_OPTION) {
@@ -207,13 +206,12 @@ public class Controlador_cliente {
     public void EditarCli() {
         int cont = vista.getTblcli().getSelectedRow();
         Modelo_cliente clie = new Modelo_cliente();
-        clie.setCi(vista.getTblcli().getValueAt(cont, 1).toString().toUpperCase());
+        clie.setCi(vista.getTblcli().getValueAt(cont, 0).toString().toUpperCase());
         clie.setNombres(vista.getJtxtnombre().getText().toUpperCase());
         clie.setApellidos(vista.getJtxtapellidos().getText().toUpperCase());
         clie.setTelefono(vista.getJtxttelefono().getText().toUpperCase());
         clie.setCorreo(vista.getJtxtcorreo().getText().toUpperCase());
         clie.setDireccion(vista.getJtxtdirecion().getText().toUpperCase());
-        clie.setCod(vista.getTxtcocli().getText().toUpperCase());
 
         int resultado = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de Modificar los datos?", "Información", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (resultado == JOptionPane.YES_NO_OPTION) {
@@ -229,7 +227,6 @@ public class Controlador_cliente {
     }
 
     private void Limpiar() {
-        vista.getTxtcocli().setText("");
         vista.getTxtced().setText("");
         vista.getJtxtnombre().setText("");
         vista.getJtxtapellidos().setText("");
@@ -240,9 +237,6 @@ public class Controlador_cliente {
     }
 
     private boolean Validaciones() {
-
-        if (vista.getTxtcocli().getText().isEmpty()) {
-            vista.getAviso1().setVisible(true);
 
             if (vista.getTxtced().getText().trim().isEmpty()) {
                 vista.getAviso2().setVisible(true);
@@ -268,7 +262,7 @@ public class Controlador_cliente {
                     }
                 }
             }
-        }
+        
         return false;
     }
 
