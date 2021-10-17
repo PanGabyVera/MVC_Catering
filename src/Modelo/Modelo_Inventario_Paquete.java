@@ -56,7 +56,28 @@ public class Modelo_Inventario_Paquete extends Inventario_paquete{
             return null;
         }
     }
+    public List<Inventario_paquete> listaInventario_PaqueteBus(String aguja){
     
+        try {
+            String sql="select * from inv_paque join inventario USING(cod_inv) WHERE ";
+            sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Inventario_paquete> lp= new ArrayList<Inventario_paquete>();
+            while(rs.next()){
+                Inventario_paquete invent_paq= new Inventario_paquete();
+                invent_paq.setCod_paq(rs.getString("cod_paq"));
+                invent_paq.setCod_inv(rs.getString("cod_inv"));
+                invent_paq.setCantidad(rs.getInt("cantidad")); 
+                invent_paq.setNombre(rs.getString("nom_inv"));
+                lp.add(invent_paq);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Inventario_Paquete.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     
     public boolean grabarInv_paq(){
         

@@ -56,7 +56,28 @@ public class Modelo_Ingrediente_Menu extends Ingrediente_menu{
             return null;
         }
     }
+    public List<Ingrediente_menu> listaIngrediente_MenuBus(String aguja){
     
+        try {
+            String sql="select * from ing_menu join ingredientes ON (ing_menu.cod_ing=ingredientes.cod_ingrediente) WHERE ";
+            sql+=" UPPER(cod_men) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Ingrediente_menu> lp= new ArrayList<Ingrediente_menu>();
+            while(rs.next()){
+                Ingrediente_menu ingre_menu= new Ingrediente_menu();
+                ingre_menu.setCod_menu(rs.getString("cod_men"));
+                ingre_menu.setCod_ing(rs.getString("cod_ing"));
+                ingre_menu.setCantidad(rs.getInt("cantidad")); 
+                ingre_menu.setNombre(rs.getString("nom_ingre"));
+                lp.add(ingre_menu);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Ingrediente_Menu.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     
     public boolean grabarIng_menu(){
         

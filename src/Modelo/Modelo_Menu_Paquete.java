@@ -56,7 +56,28 @@ public class Modelo_Menu_Paquete extends Menu_paquete{
             return null;
         }
     }
+    public List<Menu_paquete> listaMenu_PaqueteBus(String aguja){
     
+        try {
+            String sql="select * from menu_paque join menu ON (menu_paque.cod_men=menu.cod_menu) WHERE ";
+            sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Menu_paquete> lp= new ArrayList<Menu_paquete>();
+            while(rs.next()){
+                Menu_paquete menu_paq= new Menu_paquete();
+                menu_paq.setCod_paq(rs.getString("cod_paq"));
+                menu_paq.setCod_menu(rs.getString("cod_men"));
+                menu_paq.setCantidad(rs.getInt("cantidad")); 
+                menu_paq.setNombre(rs.getString("nom_menu"));
+                lp.add(menu_paq);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Menu_Paquete.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     
     public boolean grabarMenu_paq(){
         

@@ -160,8 +160,8 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnelied2().addActionListener(l->EliminarEmpleaPaqueEd());
     Vista.getBtnagre3().addActionListener(l->GuardarEdEmp());
     Vista.getBtnca6().addActionListener(l->cargaListadosEmple_Paq(""));
-    Vista.getBtnca8().addActionListener(l->Vista.getDlgedmen().setVisible(false));
     Vista.getBtnca8().addActionListener(l->Vista.getDlgesinv().setVisible(true));
+    Vista.getBtnca8().addActionListener(l->Vista.getDlgedemp().setVisible(false));
     
     //
     Vista.getBtnca4().addActionListener(l->Vista.getDlgpaq().setVisible(false));
@@ -169,7 +169,12 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtncanmen().addActionListener(l->Vista.getDlgesmen().setVisible(false));
     Vista.getBtncanmen().addActionListener(l->Vista.getDlgpaq().setVisible(true));
     Vista.getBtnca3().addActionListener(l->Vista.getDlgesmen().setVisible(false));
+    Vista.getBtnca3().addActionListener(l->Vista.getDlgedmen().setVisible(true));
     Vista.getBtncainv().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtnfinal().addActionListener(l->Vista.getDlgpaq().setVisible(false));
+    Vista.getBtnfinal().addActionListener(l->Vista.getDlgesmen().setVisible(false));
+    Vista.getBtnfinal().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtnfinal().addActionListener(l->Vista.getDlgesemp().setVisible(false));
     //Controlador Buscar
     Vista.getTxtbu().addKeyListener(kl);
     
@@ -469,8 +474,9 @@ public class Controlador_Paquete extends Paquete{
         DefaultTableModel tblModel; 
         tblModel=(DefaultTableModel)Vista.getTblmenpaqed().getModel();
         tblModel.setNumRows(0);
-        
-        List<Menu_paquete> lista=Modelo_Menu_Paquete.listaMenu_Paquete(aguja);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Menu_paquete> lista=Modelo_Menu_Paquete.listaMenu_PaqueteBus(cod_paq);
         int ncols=tblModel.getColumnCount();
         Holder<Integer> i = new Holder<>(0);
         lista.stream().forEach(per->{
@@ -643,8 +649,9 @@ public class Controlador_Paquete extends Paquete{
         DefaultTableModel tblModel; 
         tblModel=(DefaultTableModel)Vista.getTblinvpaqed().getModel();
         tblModel.setNumRows(0);
-        
-        List<Inventario_paquete> lista=Modelo_Inventario_Paquete.listaInventario_Paquete(aguja);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Inventario_paquete> lista=Modelo_Inventario_Paquete.listaInventario_PaqueteBus(cod_paq);
         int ncols=tblModel.getColumnCount();
         Holder<Integer> i = new Holder<>(0);
         lista.stream().forEach(per->{
@@ -777,8 +784,9 @@ public class Controlador_Paquete extends Paquete{
         DefaultTableModel tblModel; 
         tblModel=(DefaultTableModel)Vista.getTblemppaqed().getModel();
         tblModel.setNumRows(0);
-        
-        List<Empleado_paquete> lista=Modelo_Empleado_Paquete.listaEmpleado_Paquete(aguja);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Empleado_paquete> lista=Modelo_Empleado_Paquete.listaEmpleado_PaqueteBus(cod_paq);
         int ncols=tblModel.getColumnCount();
         Holder<Integer> i = new Holder<>(0);
         lista.stream().forEach(per->{

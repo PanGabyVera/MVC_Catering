@@ -394,8 +394,9 @@ public class Controlador_Menu extends Menu{
         DefaultTableModel tblModel; 
         tblModel=(DefaultTableModel)Vista.getTblingmeed().getModel();
         tblModel.setNumRows(0);
-        
-        List<Ingrediente_menu> lista=Modelo_Ingre_Men.listaIngrediente_Menu(aguja);
+        int cont = Vista.getTblmen().getSelectedRow();
+        String cod_menu = Vista.getTblmen().getValueAt(cont, 0).toString();
+        List<Ingrediente_menu> lista=Modelo_Ingre_Men.listaIngrediente_MenuBus(cod_menu);
         int ncols=tblModel.getColumnCount();
         Holder<Integer> i = new Holder<>(0);
         lista.stream().forEach(per->{
@@ -425,9 +426,8 @@ public class Controlador_Menu extends Menu{
         
     }
     private void GuardarEdcing(){
-      int ind=Vista.getTblingmeed().getSelectedRow();
-        
-      String cod_menu = Vista.getTblingmeed().getValueAt(ind, 0).toString();
+      int indmen=Vista.getTblmen().getSelectedRow();  
+      String cod_menu = Vista.getTblmen().getValueAt(indmen, 0).toString();
       String cod_ing = Vista.getTxtcoin().getText();
       int cantidad = Integer.parseInt(Vista.getTxtcan().getText());
       
