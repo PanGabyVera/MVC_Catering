@@ -659,6 +659,9 @@ public class Vista_Empleado extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tblemp);
+        if (tblemp.getColumnModel().getColumnCount() > 0) {
+            tblemp.getColumnModel().getColumn(0).setHeaderValue("Código de empleado");
+        }
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
