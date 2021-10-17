@@ -11,17 +11,15 @@ package Modelo;
  */
 public class empleado extends persona{
       private String cargo;
-       private String cod;
        private String nom_car;
        private int suel;
 
     public empleado() {
     }
 
-    public empleado(String cargo, String cod, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+    public empleado(String cargo, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
         super(ci, nombres, apellidos, telefono, correo, direccion);
         this.cargo = cargo;
-        this.cod = cod;
         this.nom_car = nom_car;
         this.suel = suel;
     }
@@ -41,20 +39,6 @@ public class empleado extends persona{
     public void setSuel(int suel) {
         this.suel = suel;
     }
-
-    
-
-    
-
-    public String getCod() {
-        return cod;
-    }
-
-    public void setCod(String cod) {
-        this.cod = cod;
-    }
-
-
     public String getCargo() {
         return cargo;
     }

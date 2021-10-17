@@ -20,8 +20,8 @@ public class Modelo_cliente extends cliente {
     public Modelo_cliente() {
     }
 
-    public Modelo_cliente(String cod, String ci, String nombres, String apellidos) {
-        super(cod, ci, nombres, apellidos);
+    public Modelo_cliente(String ci, String nombres, String apellidos) {
+        super(ci, nombres, apellidos);
     }
 
     public List<cliente> ListaClientes(String aguja) {
@@ -34,7 +34,6 @@ public class Modelo_cliente extends cliente {
         try {
             while (result.next()) {
                 cliente cli = new cliente();
-                cli.setCod(result.getString("cod_cli"));
                 cli.setCi(result.getString("id"));
                 cli.setNombres(result.getString("nom_cli"));
                 cli.setApellidos(result.getString("ape_cli"));
@@ -53,10 +52,10 @@ public class Modelo_cliente extends cliente {
 
     public boolean Crear() {
        String sql;
-        sql = "INSERT INTO cliente(id,nom_cli,ape_cli,telefono,correo,direccion,cod_cli) ";
+        sql = "INSERT INTO cliente(id,nom_cli,ape_cli,telefono,correo,direccion) ";
         sql += " VALUES ('" + getCi() + "','" + getNombres() + "','"
                 + getApellidos() + "','" + getTelefono()+ "','"
-                + getCorreo() + "','" + getDireccion() + "','" + getCod() +"')";
+                + getCorreo() + "','" + getDireccion() +"')";
       return conexion.accion(sql);
     }
     
@@ -70,8 +69,7 @@ public class Modelo_cliente extends cliente {
     public boolean Editar(String id) {
         String sql = "UPDATE public.cliente "
                 + "SET id='" + getCi() + "', nom_cli='" + getNombres()+ "',ape_cli='" + getApellidos()
-                + "', telefono='" + getTelefono() + "', correo='" + getCorreo() + "', direccion='" + getDireccion() 
-                + "', cod_cli='" + getCod()+"'"
+                + "', telefono='" + getTelefono() + "', correo='" + getCorreo() + "', direccion='" + getDireccion()+"'"
                 + " WHERE id = '" + id + "'";
         return conexion.accion(sql);
     }

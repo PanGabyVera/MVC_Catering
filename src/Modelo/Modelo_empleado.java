@@ -22,15 +22,15 @@ public class Modelo_empleado extends empleado{
     public Modelo_empleado() {
     }
 
-    public Modelo_empleado(String cargo, String cod, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
-        super(cargo, cod, nom_car, suel, ci, nombres, apellidos, telefono, correo, direccion);
+    public Modelo_empleado(String cargo, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+        super(cargo,nom_car, suel, ci, nombres, apellidos, telefono, correo, direccion);
     }
 
     
 
     
     public List<empleado> ListaEmpleados(String aguja) {
-        String sql = "select e.id, e.nom_empleado, e.ape_empleado, e.telefono,e.correo,e.direccion, e.cargo, e.cod_emp,c.nom_car, c.sueldo from empleado e Join cargo c ON(e.cargo=c.cod_cargo) where";
+        String sql = "select e.id, e.nom_empleado, e.ape_empleado, e.telefono,e.correo,e.direccion, e.cargo,c.nom_car, c.sueldo from empleado e Join cargo c ON(e.cargo=c.cod_cargo) where";
         sql += " UPPER(e.id) like UPPER('%" + aguja + "%') OR";
         sql += " UPPER(e.nom_empleado) like UPPER('%" + aguja + "%') OR";
         sql += " UPPER(e.cargo) like UPPER('%" + aguja + "%') OR";
@@ -40,7 +40,6 @@ public class Modelo_empleado extends empleado{
         try {
             while (result.next()) {
                 empleado e = new empleado();
-                e.setCod(result.getString("cod_emp"));
                 e.setCi(result.getString("id"));
                 e.setNombres(result.getString("nom_empleado"));
                 e.setApellidos(result.getString("ape_empleado"));
@@ -63,10 +62,10 @@ public class Modelo_empleado extends empleado{
 
     public boolean Crear() {
        String sql;
-        sql = "INSERT INTO empleado(id,nom_empleado,ape_empleado,telefono,correo,direccion,cargo,cod_emp) ";
+        sql = "INSERT INTO empleado(id,nom_empleado,ape_empleado,telefono,correo,direccion,cargo) ";
         sql += " VALUES ('" + getCi() + "','" + getNombres() + "','"
                 + getApellidos() + "','" + getTelefono()+ "','"
-                + getCorreo() + "','" + getDireccion() + "','"+ getCargo()+"','" + getCod() +"')";
+                + getCorreo() + "','" + getDireccion() + "','"+ getCargo()+"')";
       return conexion.accion(sql);
     }
     
@@ -81,12 +80,10 @@ public class Modelo_empleado extends empleado{
         String sql = "UPDATE public.empleado "
                 + "SET id='" + getCi() + "', nom_empleado='" + getNombres()+ "',ape_empleado='" + getApellidos()
                 + "', telefono='" + getTelefono() + "', correo='" + getCorreo() + "', direccion='" + getDireccion() 
-                + "', cargo='" + getCargo()+ "', cod_emp='" + getCod()+"'"
+                + "', cargo='" + getCargo()+"'"
                 + " WHERE id = '" + id + "'";
         return conexion.accion(sql);
     }
-    //org.postgresql.util.PSQLException: ERROR: update o delete en «empleado» viola la llave foránea «emp_del_paq» en la tabla «emp_paq»
-    
     
     
     
