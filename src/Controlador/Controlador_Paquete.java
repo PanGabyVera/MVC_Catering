@@ -96,7 +96,7 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnsig().addActionListener(l->cargarDialogoEsmen(33));
     Vista.getBtnsig().addActionListener(l->cargaListadosMenPa(""));
     Vista.getBtnsig().addActionListener(l->GuardarMenuP());
-//    Vista.getBtnfinme().addActionListener(l->GuardarPaquete());
+    Vista.getBtnfinal().addActionListener(l->GuardarPaquete());
     Vista.getBtnacep().addActionListener(l->EditarPaquete());
     Vista.getBtnel().addActionListener(l-> EliminarPaquete());
     Vista.getBtncarmen().addActionListener(l->AgregramMen());
@@ -145,23 +145,23 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnagremp().addActionListener(l->GuardarEscemp());
 //    Vista.getBtncarinv().addActionListener(l->AgregrarInv());
     Vista.getBtncaemp().addActionListener(l->EliminarEmpleCancelar());
-    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesinv().setVisible(false));
-    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesmen().setVisible(true));
-    Vista.getBtnca7().addActionListener(l->Vista.getDlgesinv().setVisible(false));
-    Vista.getBtnca7().addActionListener(l->Vista.getDlgedinv().setVisible(true));
+    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesemp().setVisible(false));
+    Vista.getBtncaemp().addActionListener(l->Vista.getDlgesinv().setVisible(true));
+    Vista.getBtnca7().addActionListener(l->Vista.getDlgesemp().setVisible(false));
+    Vista.getBtnca7().addActionListener(l->Vista.getDlgedemp().setVisible(true));
     
     //EDICIÓN EMPLEADO_PAQUETE
     Vista.getBtnfi2().addActionListener(l->cargarDialogoEsempEd(7));
     Vista.getBtnfi2().addActionListener(l->cargaListadosEmple_Paq(""));
     Vista.getBtncared1().addActionListener(l->EditarInvPaquCant());
     Vista.getBtnedime1().addActionListener(l->EditarInvenPaqu());
-    Vista.getBtnsiged2().addActionListener(l->cargarDialogoEsemp(6));
+    Vista.getBtnsiged2().addActionListener(l->cargarDialogoEsemp(100));
     Vista.getBtnsiged2().addActionListener(l->cargaListadosEmpleado(""));
-    Vista.getBtnelied1().addActionListener(l->EliminarEmpleaPaqueEd());
-    Vista.getBtnagre2().addActionListener(l->GuardarEdEmp());
+    Vista.getBtnelied2().addActionListener(l->EliminarEmpleaPaqueEd());
+    Vista.getBtnagre3().addActionListener(l->GuardarEdEmp());
     Vista.getBtnca6().addActionListener(l->cargaListadosEmple_Paq(""));
-    Vista.getBtnca8().addActionListener(l->Vista.getDlgedinv().setVisible(false));
-    Vista.getBtnca8().addActionListener(l->Vista.getDlgesmen().setVisible(true));
+    Vista.getBtnca8().addActionListener(l->Vista.getDlgedmen().setVisible(false));
+    Vista.getBtnca8().addActionListener(l->Vista.getDlgesinv().setVisible(true));
     
     //
     Vista.getBtnca4().addActionListener(l->Vista.getDlgpaq().setVisible(false));
@@ -229,22 +229,23 @@ public class Controlador_Paquete extends Paquete{
         Vista.getTxtcanmen().setText("");
         Vista.getTxtcomen().setText("");
         if(origen==33){
-            Vista.getDlgesmen().setTitle("Escoger Ingrediente");
+            Vista.getDlgesmen().setTitle("Escoger Menú");
             Vista.getBtnagre1().setVisible(false);
             Vista.getBtnagrmen().setVisible(true);
             Vista.getBtnca3().setVisible(false);
             Vista.getBtncanmen().setVisible(true);
             Vista.getBtnfi1().setVisible(false);
-            Vista.getBtnfinme().setVisible(true);
+            Vista.getBtnsigme().setVisible(true);
         }
         if(origen==55){
-            Vista.getDlgesmen().setTitle("Escoger Ingrediente");
+            Vista.getDlgesmen().setTitle("Escoger Menú");
             Vista.getBtnagre1().setVisible(true);
             Vista.getBtnagrmen().setVisible(false);
             Vista.getBtnca3().setVisible(true);
             Vista.getBtncanmen().setVisible(false);
             Vista.getBtnfi1().setVisible(true);
-            Vista.getBtnfinme().setVisible(false);
+            Vista.getBtnsigme().setVisible(false);
+            
         }
         Vista.getDlgesmen().setVisible(true);
     }
@@ -369,14 +370,20 @@ public class Controlador_Paquete extends Paquete{
                 Modelo_Menu_Paquete menu_paqu = new Modelo_Menu_Paquete();
                 menu_paqu.setCod_paq(cod_paq);
                 if(menu_paqu.EliminarMenu_paquete()){
-                    Modelo_Paquete paque = new Modelo_Paquete();
-                    paque.setCod_paquete(cod_paq);
-                        if(paque.EliminarPaq()){
-                            cargaListadosPa("");
-                            JOptionPane.showMessageDialog(Vista, "Se elimino");
-                        }else{
-                            JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");         
-                        }   
+                    Modelo_Empleado_Paquete emp_paqu = new Modelo_Empleado_Paquete();
+                    emp_paqu.setCod_paq(cod_paq);
+                    if(emp_paqu.EliminarEmple_paquete()){
+                        Modelo_Paquete paque = new Modelo_Paquete();
+                        paque.setCod_paquete(cod_paq);
+                            if(paque.EliminarPaq()){
+                                cargaListadosPa("");
+                                JOptionPane.showMessageDialog(Vista, "Se elimino");
+                            }else{
+                                JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");         
+                            } 
+                    }else{
+                        JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
+                    }
                 }else{                  
                     JOptionPane.showMessageDialog(Vista, "No se pudo cancelar");
                 }
@@ -706,16 +713,17 @@ public class Controlador_Paquete extends Paquete{
             Vista.getBtnca8().setVisible(false);
             Vista.getBtncaemp().setVisible(true);
             Vista.getBtnfi3().setVisible(false);
-            Vista.getBtnfinme().setVisible(true);
+            Vista.getBtnfinal().setVisible(true);
         }
-        if(origen==6){
+        if(origen==100){
             Vista.getDlgesemp().setTitle("Escoger Empleado");
             Vista.getBtnagre3().setVisible(true);
             Vista.getBtnagremp().setVisible(false);
             Vista.getBtnca8().setVisible(true);
             Vista.getBtncaemp().setVisible(false);
             Vista.getBtnfi3().setVisible(true);
-            Vista.getBtnfinme().setVisible(false);
+            Vista.getBtnfinal().setVisible(false);
+            
         }
         Vista.getDlgesemp().setVisible(true);
     }
@@ -748,16 +756,7 @@ public class Controlador_Paquete extends Paquete{
             JOptionPane.showMessageDialog(Vista, "No se logro agregar");
         }
     }
-//    public void AgregrarInv(){
-//        int cont = Vista.getTblesinv().getSelectedRow();
-//            if (cont != -1) {
-//                String cod_inv = Vista.getTblesinv().getValueAt(cont, 0).toString();
-//                
-//                Modelo_inventario inventar = new Modelo_inventario();
-//                inventar.setCod_inventario(cod_inv);
-//                Vista.getTxtcoin().setText(cod_inv);
-//        }
-//    }
+
     public void EliminarEmpleCancelar(){
         
             String cod_paq = Vista.getTxtcopa().getText();
@@ -798,7 +797,7 @@ public class Controlador_Paquete extends Paquete{
             Modelo_Empleado_Paquete emple_paqu = new Modelo_Empleado_Paquete();
             emple_paqu.setCod_paq(cod_paq) ;   
             emple_paqu.setCod_emp(cod_emp);
-                if(emple_paqu.grabarEmpleado_paq()){
+                if(emple_paqu.EliminarEmple_paq()){
                         cargaListadosEmple_Paq("");
                         JOptionPane.showMessageDialog(Vista, "Eliminado");
                     }else{
@@ -808,9 +807,10 @@ public class Controlador_Paquete extends Paquete{
     }
     private void GuardarEdEmp(){
       int ind=Vista.getTblpaq().getSelectedRow();
+      int ind2=Vista.getTblesemp().getSelectedRow();
         
       String cod_paq = Vista.getTblpaq().getValueAt(ind, 0).toString();
-      String cod_emp = Vista.getTblpaq().getValueAt(ind, 1).toString();
+      String cod_emp = Vista.getTblesemp().getValueAt(ind2, 0).toString();
       
       Modelo_Empleado_Paquete emple_paque = new Modelo_Empleado_Paquete();
       emple_paque.setCod_paq(cod_paq);
