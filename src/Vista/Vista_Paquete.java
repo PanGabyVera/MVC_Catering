@@ -989,6 +989,118 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         this.tblemppaqed = tblemppaqed;
     }
 
+    public JDialog getDlgcos() {
+        return dlgcos;
+    }
+
+    public void setDlgcos(JDialog dlgcos) {
+        this.dlgcos = dlgcos;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
+    public JPanel getjPanel25() {
+        return jPanel25;
+    }
+
+    public void setjPanel25(JPanel jPanel25) {
+        this.jPanel25 = jPanel25;
+    }
+
+    public JPanel getjPanel26() {
+        return jPanel26;
+    }
+
+    public void setjPanel26(JPanel jPanel26) {
+        this.jPanel26 = jPanel26;
+    }
+
+    public JPanel getjPanel27() {
+        return jPanel27;
+    }
+
+    public void setjPanel27(JPanel jPanel27) {
+        this.jPanel27 = jPanel27;
+    }
+
+    public JScrollPane getjScrollPane10() {
+        return jScrollPane10;
+    }
+
+    public void setjScrollPane10(JScrollPane jScrollPane10) {
+        this.jScrollPane10 = jScrollPane10;
+    }
+
+    public JScrollPane getjScrollPane8() {
+        return jScrollPane8;
+    }
+
+    public void setjScrollPane8(JScrollPane jScrollPane8) {
+        this.jScrollPane8 = jScrollPane8;
+    }
+
+    public JTable getTblinvcos() {
+        return tblinvcos;
+    }
+
+    public void setTblinvcos(JTable tblinvcos) {
+        this.tblinvcos = tblinvcos;
+    }
+
+    public JTable getTblmencos() {
+        return tblmencos;
+    }
+
+    public void setTblmencos(JTable tblmencos) {
+        this.tblmencos = tblmencos;
+    }
+
+    public JButton getBtnfi4() {
+        return btnfi4;
+    }
+
+    public void setBtnfi4(JButton btnfi4) {
+        this.btnfi4 = btnfi4;
+    }
+
+    public JScrollPane getjScrollPane9() {
+        return jScrollPane9;
+    }
+
+    public void setjScrollPane9(JScrollPane jScrollPane9) {
+        this.jScrollPane9 = jScrollPane9;
+    }
+
+    public JTable getTblempcos() {
+        return tblempcos;
+    }
+
+    public void setTblempcos(JTable tblempcos) {
+        this.tblempcos = tblempcos;
+    }
+
+    public JButton getBtnatra() {
+        return btnatra;
+    }
+
+    public void setBtnatra(JButton btnatra) {
+        this.btnatra = btnatra;
+    }
+
+    public JButton getBtnfinal1() {
+        return btnfinal1;
+    }
+
+    public void setBtnfinal1(JButton btnfinal1) {
+        this.btnfinal1 = btnfinal1;
+    }
+    
    
     
    
@@ -1041,7 +1153,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         btnfi3 = new javax.swing.JButton();
         btnagre3 = new javax.swing.JButton();
         btnca7 = new javax.swing.JButton();
-        btnfinal = new javax.swing.JButton();
+        btnfi4 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblesemp = new javax.swing.JTable();
@@ -1107,6 +1219,20 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
         btnsiged2 = new javax.swing.JButton();
         btnca8 = new javax.swing.JButton();
         btnelied2 = new javax.swing.JButton();
+        dlgcos = new javax.swing.JDialog();
+        jPanel25 = new javax.swing.JPanel();
+        btnfinal = new javax.swing.JButton();
+        btnatra = new javax.swing.JButton();
+        btnfinal1 = new javax.swing.JButton();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblinvcos = new javax.swing.JTable();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tblmencos = new javax.swing.JTable();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblempcos = new javax.swing.JTable();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -1397,7 +1523,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
 
         btnca7.setText("Atras");
 
-        btnfinal.setText("Siguiente");
+        btnfi4.setText("Siguiente");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1416,10 +1542,10 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btncaemp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnfinal)
-                        .addGap(12, 12, 12)
+                        .addComponent(btnfi4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnagremp)))
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1433,7 +1559,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncaemp)
                     .addComponent(btnagremp)
-                    .addComponent(btnfinal))
+                    .addComponent(btnfi4))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -1451,6 +1577,9 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
             }
         ));
         jScrollPane3.setViewportView(tblesemp);
+        if (tblesemp.getColumnModel().getColumnCount() > 0) {
+            tblesemp.getColumnModel().getColumn(0).setHeaderValue("Código de empleado");
+        }
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -2059,6 +2188,143 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
                 .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel25.setBackground(new java.awt.Color(0, 102, 102));
+
+        btnfinal.setText("Finalizar");
+
+        btnatra.setText("Atras");
+
+        btnfinal1.setText("Siguiente");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(btnatra)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnfinal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnfinal1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnfinal)
+                    .addComponent(btnatra)
+                    .addComponent(btnfinal1))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanel26.setBackground(new java.awt.Color(0, 153, 153));
+
+        tblinvcos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Costo del inventario"
+            }
+        ));
+        jScrollPane8.setViewportView(tblinvcos);
+
+        tblmencos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Costo del menú"
+            }
+        ));
+        jScrollPane10.setViewportView(tblmencos);
+
+        tblempcos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Costo del empleado"
+            }
+        ));
+        jScrollPane9.setViewportView(tblempcos);
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jPanel27.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel19.setText("Costo del paquete");
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addComponent(jLabel19)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jLabel19)
+                .addGap(29, 29, 29))
+        );
+
+        javax.swing.GroupLayout dlgcosLayout = new javax.swing.GroupLayout(dlgcos.getContentPane());
+        dlgcos.getContentPane().setLayout(dlgcosLayout);
+        dlgcosLayout.setHorizontalGroup(
+            dlgcosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        dlgcosLayout.setVerticalGroup(
+            dlgcosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgcosLayout.createSequentialGroup()
+                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -2193,6 +2459,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnagremp;
     private javax.swing.JButton btnagrin;
     private javax.swing.JButton btnagrmen;
+    private javax.swing.JButton btnatra;
     private javax.swing.JButton btnca2;
     private javax.swing.JButton btnca3;
     private javax.swing.JButton btnca4;
@@ -2218,7 +2485,9 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnfi1;
     private javax.swing.JButton btnfi2;
     private javax.swing.JButton btnfi3;
+    private javax.swing.JButton btnfi4;
     private javax.swing.JButton btnfinal;
+    private javax.swing.JButton btnfinal1;
     private javax.swing.JButton btnim;
     private javax.swing.JButton btnli;
     private javax.swing.JButton btnsig;
@@ -2227,6 +2496,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnsiged2;
     private javax.swing.JButton btnsigin;
     private javax.swing.JButton btnsigme;
+    private javax.swing.JDialog dlgcos;
     private javax.swing.JDialog dlgedemp;
     private javax.swing.JDialog dlgedinv;
     private javax.swing.JDialog dlgedmen;
@@ -2242,6 +2512,7 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2264,6 +2535,9 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2272,12 +2546,15 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel lblape;
     private javax.swing.JLabel lblid;
     private javax.swing.JLabel lblid1;
@@ -2286,11 +2563,14 @@ public class Vista_Paquete extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblid5;
     private javax.swing.JLabel lblid6;
     private javax.swing.JLabel lblid7;
+    private javax.swing.JTable tblempcos;
     private javax.swing.JTable tblemppaqed;
     private javax.swing.JTable tblesemp;
     private javax.swing.JTable tblesinv;
     private javax.swing.JTable tblesmen;
+    private javax.swing.JTable tblinvcos;
     private javax.swing.JTable tblinvpaqed;
+    private javax.swing.JTable tblmencos;
     private javax.swing.JTable tblmenpaqed;
     private javax.swing.JTable tblpaq;
     private javax.swing.JTextField txtbu;

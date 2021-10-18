@@ -78,7 +78,25 @@ public class Modelo_Inventario_Paquete extends Inventario_paquete{
             return null;
         }
     }
+    public List<Inventario_paquete> listaInventario_PaqueteCos(String aguja){
     
+        try {
+            String sql="select SUM(inventario.precio_inv*inv_paque.cantidad) as multi FROM inventario JOIN inv_paque USING(cod_inv) WHERE ";
+            sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Inventario_paquete> lp= new ArrayList<Inventario_paquete>();
+            while(rs.next()){
+                Inventario_paquete inv_paq= new Inventario_paquete();
+                inv_paq.setCantidad(rs.getInt("multi")); 
+                lp.add(inv_paq);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Menu_Paquete.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     public boolean grabarInv_paq(){
         
         String sql;

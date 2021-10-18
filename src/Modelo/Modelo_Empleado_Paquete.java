@@ -28,8 +28,8 @@ public class Modelo_Empleado_Paquete extends Empleado_paquete{
     public Modelo_Empleado_Paquete(){
         
     }
-    public Modelo_Empleado_Paquete(String cod_paq, String cod_emp, String nombre) {
-        super(cod_paq,cod_emp,nombre);
+    public Modelo_Empleado_Paquete(String cod_paq, String cod_emp, String nombre,int cantidad) {
+        super(cod_paq,cod_emp,nombre,cantidad);
     }
     
     
@@ -73,6 +73,25 @@ public class Modelo_Empleado_Paquete extends Empleado_paquete{
           return lp;
         } catch (SQLException ex) {
             Logger.getLogger(Modelo_Empleado_Paquete.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    public List<Empleado_paquete> listaEmpleado_PaqueteCos(String aguja){
+    
+        try {
+            String sql="SELECT sum(cargo.sueldo*0.05) as multi FROM emp_paq JOIN empleado ON (empleado.id=emp_paq.cod_empl) join cargo on (empleado.cargo=cargo.cod_cargo) WHERE ";
+            sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Empleado_paquete> lp= new ArrayList<Empleado_paquete>();
+            while(rs.next()){
+                Empleado_paquete emp_paq= new Empleado_paquete();
+                emp_paq.setCantidad(rs.getInt("multi")); 
+                lp.add(emp_paq);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Menu_Paquete.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }

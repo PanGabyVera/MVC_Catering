@@ -19,6 +19,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import javax.swing.JLabel;
 import org.postgresql.util.Base64;
 
 
@@ -78,6 +79,25 @@ public class Modelo_Menu_Paquete extends Menu_paquete{
             return null;
         }
     }
+    public List<Menu_paquete> listaMenu_PaqueteCos(String aguja){
+    
+        try {
+            String sql="select SUM(menu.precio_menu*menu_paque.cantidad) as multi FROM menu JOIN menu_paque ON (menu.cod_menu=menu_paque.cod_men) WHERE ";
+            sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+            ResultSet rs=con.Consulta(sql);
+            List<Menu_paquete> lp= new ArrayList<Menu_paquete>();
+            while(rs.next()){
+                Menu_paquete menu_paq= new Menu_paquete();
+                menu_paq.setCantidad(rs.getInt("multi")); 
+                lp.add(menu_paq);
+            }
+          rs.close();
+          return lp;
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Menu_Paquete.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
     
     public boolean grabarMenu_paq(){
         
@@ -104,5 +124,17 @@ public class Modelo_Menu_Paquete extends Menu_paquete{
         sql = "UPDATE menu_paque set cantidad='" + getCantidad() +"'";
         sql += " WHERE cod_paq='"+getCod_paq()+"' and cod_men='"+getCod_menu()+"'";
         return con.accion(sql);
+    }
+    public String listaMenu_PaqueteCant(String aguja) {
+        String sql;
+        sql="SELECT to_char(sum(menu.precio_menu*menu_paque.cantidad),'9999999') as multi FROM menu JOIN menu_paque ON (menu.cod_menu=menu_paque.cod_men) WHERE";
+        sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+        return sql;
+    }
+    public String listaMenu_PaqueteCan(String aguja) {
+        String sql;
+        sql="SELECT menu.precio_menu FROM menu JOIN menu_paque ON (menu.cod_menu=menu_paque.cod_men) WHERE";
+        sql+=" UPPER(cod_paq) like UPPER('%"+aguja+"%')";
+        return sql;
     }
 }

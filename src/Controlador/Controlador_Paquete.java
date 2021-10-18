@@ -175,6 +175,22 @@ public class Controlador_Paquete extends Paquete{
     Vista.getBtnfinal().addActionListener(l->Vista.getDlgesmen().setVisible(false));
     Vista.getBtnfinal().addActionListener(l->Vista.getDlgesinv().setVisible(false));
     Vista.getBtnfinal().addActionListener(l->Vista.getDlgesemp().setVisible(false));
+    Vista.getBtnfi4().addActionListener(l->Vista.getDlgesemp().setVisible(false));
+    Vista.getBtnfi4().addActionListener(l->Vista.getDlgesinv().setVisible(false));
+    Vista.getBtnfi4().addActionListener(l->Vista.getDlgesmen().setVisible(false));
+    Vista.getBtnatra().addActionListener(l->Vista.getDlgcos().setVisible(false));
+    Vista.getBtnatra().addActionListener(l->Vista.getDlgesemp().setVisible(true));
+    Vista.getBtnfi4().addActionListener(l->cargarDialogoCosto(123));
+    Vista.getBtnfi4().addActionListener(l->cargaListadosCostoMen(""));
+    Vista.getBtnfi4().addActionListener(l->cargaListadosCostoInv(""));
+    Vista.getBtnfi4().addActionListener(l->cargaListadosCostoEmp(""));
+    Vista.getBtnfi3().addActionListener(l->cargarDialogoCosto(234));
+    Vista.getBtnfi3().addActionListener(l->cargaListadosCostoMenEd(""));
+    Vista.getBtnfi3().addActionListener(l->cargaListadosCostoInvEd(""));
+    Vista.getBtnfi3().addActionListener(l->cargaListadosCostoEmpEd(""));
+//    Vista.getBtnfinal1().addActionListener(l->GuardarPaquete());
+    Vista.getBtnfinal1().addActionListener(l->cargarDialogo(22));
+    
     //Controlador Buscar
     Vista.getTxtbu().addKeyListener(kl);
     
@@ -195,7 +211,7 @@ public class Controlador_Paquete extends Paquete{
 //        }      
 //    } 
     private void cargarDialogo(int origen){
-        Vista.getDlgpaq().setSize(600,350);
+        Vista.getDlgpaq().setSize(520,280);
         Vista.getDlgpaq().setLocationRelativeTo(Vista);
         Vista.getTxtcopa().setText("");
         Vista.getTxtnom().setText("");
@@ -297,27 +313,33 @@ public class Controlador_Paquete extends Paquete{
     }
     
     private void GuardarPaquete(){
-//      String cod_menu = Vista.getTxtcome().getText();
-//      String nombre = Vista.getTxtnom().getText();
-//      String tipo = Vista.getTxttip().getText();
-//      int precio = Integer.parseInt(Vista.getTxtpre().getText());
-//      
-//      Modelo_Menu menu = new Modelo_Menu();
-//      menu.setCod_menu(cod_menu);
-//      menu.setNombre(nombre);
-//      menu.setTipo(tipo);
-//      menu.setPrecio(precio);
-//       
-//        if (menu.grabarMen()) {
+        String cod_pa = Vista.getTxtcopa().getText();
+        int cont = Vista.getTblmencos().getSelectedRow();
+        int contin = Vista.getTblinvcos().getSelectedRow();
+        int contem = Vista.getTblempcos().getSelectedRow();
+        String pre = Vista.getTblmencos().getValueAt(cont, 0).toString();
+        String invpre = Vista.getTblinvcos().getValueAt(contin, 0).toString();
+        String emppre = Vista.getTblempcos().getValueAt(contem, 0).toString();
+        int multi = Integer.parseInt(pre); 
+        int multi2 = Integer.parseInt(invpre); 
+        int multi3 = Integer.parseInt(emppre); 
+        int multi4= multi+multi2+multi3;
+        
+      
+        Modelo_Paquete paq = new Modelo_Paquete();
+        paq.setCod_paquete(cod_pa);
+        paq.setPrecio(multi4); 
+        if (paq.EditarPaPre()) {
             cargaListadosPa("");
 //            Vista.getDlging().setVisible(false);
             JOptionPane.showMessageDialog(Vista, "Se guardo ");
             Vista.getDlgesmen().setVisible(false);
             Vista.getDlgedmen().setVisible(false);
-            Vista.getDlgpaq().setVisible(false);
-//        } else {
-//            JOptionPane.showMessageDialog(Vista, "No se logro guardar");
-//        }
+            
+            Vista.getDlgcos().setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(Vista, "No se logro guardar");
+        }
     }
     private void GuardarMenuP(){
       String cod_paq = Vista.getTxtcopa().getText();
@@ -419,21 +441,35 @@ public class Controlador_Paquete extends Paquete{
     }
     public void EditarPaquete() {
         int cont = Vista.getTblpaq().getSelectedRow();
-        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        String cod_paque = Vista.getTblpaq().getValueAt(cont, 0).toString();
         String nombre = Vista.getTxtnom().getText();
         String tipo = Vista.getTxttip().getText();
-//        int precio = Integer.parseInt(Vista.getTxtpre().getText());
+        int contme = Vista.getTblmencos().getSelectedRow();
+        int contin = Vista.getTblinvcos().getSelectedRow();
+        int contem = Vista.getTblempcos().getSelectedRow();
+        String pre = Vista.getTblmencos().getValueAt(contme, 0).toString();
+        String invpre = Vista.getTblinvcos().getValueAt(contin, 0).toString();
+        String emppre = Vista.getTblempcos().getValueAt(contem, 0).toString();
+        int multi = Integer.parseInt(pre); 
+        int multi2 = Integer.parseInt(invpre); 
+        int multi3 = Integer.parseInt(emppre); 
+        int multi4= multi+multi2+multi3;
         
         Modelo_Paquete paquete = new Modelo_Paquete();
-        paquete.setCod_paquete(cod_paq);
+        paquete.setCod_paquete(cod_paque);
         paquete.setNombre(nombre);
         paquete.setTipo(tipo);
-//        paquete.setPrecio(precio);
+        paquete.setPrecio(multi4);
         if (paquete.EditarPaq() == true) {
             cargaListadosPa("");
             Vista.getDlgpaq().setVisible(false);
             Vista.getDlgedmen().setVisible(false);
             Vista.getDlgesmen().setVisible(false);
+            Vista.getDlgedinv().setVisible(false);
+            Vista.getDlgesinv().setVisible(false);
+            Vista.getDlgedemp().setVisible(false);
+            Vista.getDlgesemp().setVisible(false);
+            Vista.getDlgcos().setVisible(false);
             JOptionPane.showMessageDialog(Vista, "Registro actualizado");
         } else {
             JOptionPane.showMessageDialog(Vista, "Hubo un error");
@@ -717,19 +753,19 @@ public class Controlador_Paquete extends Paquete{
             Vista.getDlgesemp().setTitle("Escoger Empleado");
             Vista.getBtnagre3().setVisible(false);
             Vista.getBtnagremp().setVisible(true);
-            Vista.getBtnca8().setVisible(false);
+            Vista.getBtnca7().setVisible(false);
             Vista.getBtncaemp().setVisible(true);
             Vista.getBtnfi3().setVisible(false);
-            Vista.getBtnfinal().setVisible(true);
+            Vista.getBtnfi4().setVisible(true);
         }
         if(origen==100){
             Vista.getDlgesemp().setTitle("Escoger Empleado");
             Vista.getBtnagre3().setVisible(true);
             Vista.getBtnagremp().setVisible(false);
-            Vista.getBtnca8().setVisible(true);
+            Vista.getBtnca7().setVisible(true);
             Vista.getBtncaemp().setVisible(false);
             Vista.getBtnfi3().setVisible(true);
-            Vista.getBtnfinal().setVisible(false);
+            Vista.getBtnfi4().setVisible(false);
             
         }
         Vista.getDlgesemp().setVisible(true);
@@ -839,5 +875,121 @@ public class Controlador_Paquete extends Paquete{
             Vista.getDlgedemp().setTitle("Editar empleado de paquete");
         }
         Vista.getDlgedemp().setVisible(true);
+    }
+    //costo
+    private void cargarDialogoCosto(int origen){
+        Vista.getDlgcos().setSize(500,280);
+        Vista.getDlgcos().setLocationRelativeTo(Vista);
+        if(origen==123){
+            Vista.getDlgcos().setTitle("Costo");
+            Vista.getBtnfinal1().setVisible(false);
+            Vista.getBtnfinal().setVisible(true);
+        }
+        if(origen==234){
+            Vista.getDlgcos().setTitle("Costo");
+            Vista.getBtnfinal1().setVisible(true);
+             Vista.getBtnfinal().setVisible(false);
+        }
+        Vista.getDlgcos().setVisible(true);
+    }
+    private void cargaListadosCostoMen(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblmencos().getModel();
+        tblModel.setNumRows(0);
+        String cod_pa = Vista.getTxtcopa().getText();
+        List<Menu_paquete> lista=Modelo_Menu_Paquete.listaMenu_PaqueteCos(cod_pa);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblmencos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
+    }
+    private void cargaListadosCostoInv(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblinvcos().getModel();
+        tblModel.setNumRows(0);
+        String cod_pa = Vista.getTxtcopa().getText();
+        List<Inventario_paquete> lista=Modelo_Inventario_Paquete.listaInventario_PaqueteCos(cod_pa);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblinvcos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
+    }
+    private void cargaListadosCostoEmp(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblempcos().getModel();
+        tblModel.setNumRows(0);
+        String cod_pa = Vista.getTxtcopa().getText();
+        List<Empleado_paquete> lista=Modelo_Empleado_Paquete.listaEmpleado_PaqueteCos(cod_pa);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblempcos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
+    }
+    //costo-edicion
+    private void cargaListadosCostoMenEd(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblmencos().getModel();
+        tblModel.setNumRows(0);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Menu_paquete> lista=Modelo_Menu_Paquete.listaMenu_PaqueteCos(cod_paq);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblmencos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
+    }
+    private void cargaListadosCostoInvEd(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblinvcos().getModel();
+        tblModel.setNumRows(0);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Inventario_paquete> lista=Modelo_Inventario_Paquete.listaInventario_PaqueteCos(cod_paq);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblinvcos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
+    }
+    private void cargaListadosCostoEmpEd(String aguja){
+ 
+        DefaultTableModel tblModel; 
+        tblModel=(DefaultTableModel)Vista.getTblempcos().getModel();
+        tblModel.setNumRows(0);
+        int cont = Vista.getTblpaq().getSelectedRow();
+        String cod_paq = Vista.getTblpaq().getValueAt(cont, 0).toString();
+        List<Empleado_paquete> lista=Modelo_Empleado_Paquete.listaEmpleado_PaqueteCos(cod_paq);
+        int ncols=tblModel.getColumnCount();
+        Holder<Integer> i = new Holder<>(0);
+        lista.stream().forEach(per->{
+        tblModel.addRow(new Object[ncols]);
+           Vista.getTblempcos().setValueAt(per.getCantidad() , i.value , 0);
+           i.value++;
+          
+        });   
     }
 }

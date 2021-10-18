@@ -67,6 +67,8 @@ public class Modelo_Paquete extends Paquete{
         return con.accion(sql);
     }
     
+    
+    
     public boolean EliminarPaq(){
         
         String sql;
@@ -77,6 +79,12 @@ public class Modelo_Paquete extends Paquete{
      public boolean EditarPaq() {
         String sql;
         sql = "UPDATE paquete set nom_paq='"+ getNombre()+"',precio_paq='" + getPrecio() +"'";
+        sql += " WHERE cod_paq='" + getCod_paquete() + "'";
+        return con.accion(sql);
+    }
+    public boolean EditarPaPre() {
+        String sql;
+        sql = "UPDATE paquete set precio_paq='" + getPrecio() +"'";
         sql += " WHERE cod_paq='" + getCod_paquete() + "'";
         return con.accion(sql);
     }
