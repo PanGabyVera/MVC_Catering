@@ -28,6 +28,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 
@@ -65,7 +71,7 @@ public class Controlador_Ingrediente extends Ingredientes{
     Vista.getBtnac1().addActionListener(l->GuardarIngrediente());
     Vista.getBtnac2().addActionListener(l->EditarIngrediente());
     Vista.getBtnel().addActionListener(l-> EliminarIngrediente());
-//    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
+    Vista.getBtnim().addActionListener(l-> ImprimirRegistro());
     Vista.getBtnca().addActionListener(l->Vista.getDlging().setVisible(false));
     
     //Controlador Buscar
@@ -73,20 +79,20 @@ public class Controlador_Ingrediente extends Ingredientes{
     
     
     }
-//    private void  ImprimirRegistro(){
-//        Modelo_ConexionBD con =new Modelo_ConexionBD();
-//        try {
-//        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/mvc/vista/reportes/ListaPersonas.jasper"));
+    private void  ImprimirRegistro(){
+        Modelo_ConexionBD con =new Modelo_ConexionBD();
+        try {
+        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/Vista/reportes/ListaIngrediente.jasper"));
 //        Map<String,Object> parametros= new HashMap<String, Object>();
 //        String aguja = vista.getTxtbu().getText();
 //        parametros.put("paguja" , "%"+aguja+"%");
-//        JasperPrint jp= JasperFillManager.fillReport(jr, parametros,con.getCon());
-//        JasperViewer jv= new JasperViewer(jp);
-//        jv.setVisible(true);    
-//        } catch (JRException ex) {
-//            Logger.getLogger(ControlPersona.class.getName()).log(Level.SEVERE,null,ex);
-//        }      
-//    } 
+        JasperPrint jp= JasperFillManager.fillReport(jr, null,con.getCon());
+        JasperViewer jv= new JasperViewer(jp);
+        jv.setVisible(true);    
+        } catch (JRException ex) {
+            Logger.getLogger(Controlador_Ingrediente.class.getName()).log(Level.SEVERE,null,ex);
+        }      
+    } 
     private void cargarDialogo(int origen){
         Vista.getDlging().setSize(600,350);
         Vista.getDlging().setLocationRelativeTo(Vista);

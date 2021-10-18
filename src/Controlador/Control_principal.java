@@ -5,6 +5,7 @@ package Controlador;
 import javax.swing.JDesktopPane;
 import Modelo.Modelo_cliente;
 import Modelo.Ingredientes;
+import Modelo.Modelo_ConexionBD;
 import Modelo.Modelo_Empleado_Paquete;
 import Modelo.Modelo_Ingrediente;
 import Modelo.Modelo_Ingrediente_Menu;
@@ -25,6 +26,16 @@ import Vista.Vista_Menu;
 import Vista.Vista_MenuPrincipal;
 import Vista.Vista_Paquete;
 import Vista.Vista_Pedido;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -48,6 +59,9 @@ public class Control_principal {
         vst.getJmicar().addActionListener(l->crudCargo());
         vst.getJmiemp().addActionListener(l->crudEmpleado());
         vst.getJmipaq().addActionListener(l->crudPaquete());
+        vst.getJmiimpmen().addActionListener(l->ImprimirMeú());
+        vst.getJmiimping().addActionListener(l->ImprimirIngrediente());
+  
     }
     
     private void crudClienete(){
@@ -123,7 +137,34 @@ public class Control_principal {
         ce.iniciaControl();
     }
      
-    
+    private void  ImprimirMeú(){
+        Modelo_ConexionBD con =new Modelo_ConexionBD();
+        try {
+        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/Vista/reportes/ListaMenú.jasper"));
+//        Map<String,Object> parametros= new HashMap<String, Object>();
+//        String aguja = "lux";
+//        parametros.put("paguja" , "%"+aguja+"%");
+        JasperPrint jp= JasperFillManager.fillReport(jr, null,con.getCon());
+        JasperViewer jv= new JasperViewer(jp);
+        jv.setVisible(true);    
+        } catch (JRException ex) {
+            Logger.getLogger(Controlador_Menu.class.getName()).log(Level.SEVERE,null,ex);
+        }      
+    } 
+    private void  ImprimirIngrediente(){
+        Modelo_ConexionBD con =new Modelo_ConexionBD();
+        try {
+        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/Vista/reportes/ListaIngrediente.jasper"));
+//        Map<String,Object> parametros= new HashMap<String, Object>();
+//        String aguja = vista.getTxtbu().getText();
+//        parametros.put("paguja" , "%"+aguja+"%");
+        JasperPrint jp= JasperFillManager.fillReport(jr, null,con.getCon());
+        JasperViewer jv= new JasperViewer(jp);
+        jv.setVisible(true);    
+        } catch (JRException ex) {
+            Logger.getLogger(Controlador_Ingrediente.class.getName()).log(Level.SEVERE,null,ex);
+        }      
+    } 
     
     
 }
