@@ -61,6 +61,7 @@ public class Control_principal {
         vst.getJmipaq().addActionListener(l->crudPaquete());
         vst.getJmiimpmen().addActionListener(l->ImprimirMeú());
         vst.getJmiimping().addActionListener(l->ImprimirIngrediente());
+        vst.getJmiimppaq().addActionListener(l->ImprimirPaquete());
   
     }
     
@@ -165,6 +166,19 @@ public class Control_principal {
             Logger.getLogger(Controlador_Ingrediente.class.getName()).log(Level.SEVERE,null,ex);
         }      
     } 
-    
+    private void  ImprimirPaquete(){
+        Modelo_ConexionBD con =new Modelo_ConexionBD();
+        try {
+        JasperReport jr= (JasperReport)JRLoader.loadObject(getClass().getResource("/vista/reportes/ListaPaquete1.jasper"));
+//        Map<String,Object> parametros= new HashMap<String, Object>();
+//        String aguja = vista.getTxtbu().getText();
+//        parametros.put("paguja" , "%"+aguja+"%");
+        JasperPrint jp= JasperFillManager.fillReport(jr, null,con.getCon());
+        JasperViewer jv= new JasperViewer(jp);
+        jv.setVisible(true);    
+        } catch (JRException ex) {
+            Logger.getLogger(Controlador_Paquete.class.getName()).log(Level.SEVERE,null,ex);
+        }      
+    } 
     
 }
