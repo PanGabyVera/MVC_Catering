@@ -10,21 +10,32 @@ package Modelo;
  * @author USER
  */
 public class persona {
+    
+    private String ci;
     private String nombres;
     private String apellidos;
     private String telefono;
     private String correo;
-    private int ci;
     private String direccion;
 
-    public persona(String nombres, String apellidos, String telefono, String correo, int ci, String direccion) {
+    public persona() {
+    }
+
+    public persona(String ci, String nombres, String apellidos) {
+        this.ci = ci;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+    }
+    
+    public persona(String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+        this.ci = ci;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
-        this.ci = ci;
         this.direccion = direccion;
     }
+
 
     public String getNombres() {
         return nombres;
@@ -58,11 +69,11 @@ public class persona {
         this.correo = correo;
     }
 
-    public int getCi() {
+    public String getCi() {
         return ci;
     }
 
-    public void setCi(int ci) {
+    public void setCi(String ci) {
         this.ci = ci;
     }
 

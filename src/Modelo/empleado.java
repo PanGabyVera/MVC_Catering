@@ -9,25 +9,36 @@ package Modelo;
  *
  * @author USER
  */
-public class empleado {
-     private int cod_empeado;
+public class empleado extends persona{
       private String cargo;
-       private int salario;
+       private String nom_car;
+       private int suel;
 
-    public empleado(int cod_empeado, String cargo, int salario) {
-        this.cod_empeado = cod_empeado;
+    public empleado() {
+    }
+
+    public empleado(String cargo, String nom_car, int suel, String ci, String nombres, String apellidos, String telefono, String correo, String direccion) {
+        super(ci, nombres, apellidos, telefono, correo, direccion);
         this.cargo = cargo;
-        this.salario = salario;
+        this.nom_car = nom_car;
+        this.suel = suel;
     }
 
-    public int getCod_empeado() {
-        return cod_empeado;
+    public String getNom_car() {
+        return nom_car;
     }
 
-    public void setCod_empeado(int cod_empeado) {
-        this.cod_empeado = cod_empeado;
+    public void setNom_car(String nom_car) {
+        this.nom_car = nom_car;
     }
 
+    public int getSuel() {
+        return suel;
+    }
+
+    public void setSuel(int suel) {
+        this.suel = suel;
+    }
     public String getCargo() {
         return cargo;
     }
@@ -36,11 +47,5 @@ public class empleado {
         this.cargo = cargo;
     }
 
-    public int getSalario() {
-        return salario;
-    }
-
-    public void setSalario(int salario) {
-        this.salario = salario;
-    }
+    
 }
